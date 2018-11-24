@@ -18,7 +18,10 @@
         </activity>
         <activity android:name=".Main2Activity" />
         <activity android:name=".month" />
-        <activity android:name=".Studystart"></activity>
+        <activity android:name=".Studystart" />
+        <activity android:name=".Study1" />
+        <activity android:name=".Study2" />
+        <activity android:name=".Starttest"></activity>
     </application>
 
 </manifest>
