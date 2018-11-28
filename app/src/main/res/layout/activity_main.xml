@@ -43,7 +43,7 @@
             app:scale_width="300"
             app:scale_height="100"
             android:text="회원가입"
-            app:scale_textsize="80"
+            app:scale_textsize="70"
             android:id="@+id/signup"
             tools:ignore="MissingPrefix"/>
 
