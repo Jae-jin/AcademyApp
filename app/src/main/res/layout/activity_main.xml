@@ -44,6 +44,7 @@
             app:scale_height="100"
             android:text="회원가입"
             app:scale_textsize="80"
+            android:id="@+id/signup"
             tools:ignore="MissingPrefix"/>
 
         <TextView
@@ -54,6 +55,7 @@
             app:scale_width="300"
             app:scale_height="100"
             android:text="로그인"
+            android:id="@+id/login"
             app:scale_textsize="80"
             tools:ignore="MissingPrefix"/>
         

@@ -18,8 +18,8 @@ public class month extends AppCompatActivity implements AdapterView.OnItemSelect
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_month);
 
+        selectedText = (TextView)findViewById(R.id.selectedText);
         spinner = (Spinner)findViewById(R.id.spinner);
-
         spinner.setOnItemSelectedListener(this);
 
         item = new String[]{"선택하세요","1주차(2018.09.18 ~2018.10.17","2주차(2018.10.18 ~2018.11.17","3주차(2018.11.18 ~2018.12.17"};
