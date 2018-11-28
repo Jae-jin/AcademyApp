@@ -6,6 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".Test">
 
+    <!-- 위에 남은 시간이랑 (234/300) 이런 식으로, 푼 개수를 (5/100) 이런식으로 표기한다. -->
+
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -72,5 +74,6 @@
             android:gravity="center"
             app:scale_textsize="150"
             tools:ignore="MissingPrefix"/>
+
     </com.ssomai.android.scalablelayout.ScalableLayout>
 </android.support.constraint.ConstraintLayout>
