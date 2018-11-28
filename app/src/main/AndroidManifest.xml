@@ -16,7 +16,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Main2Activity" />
         <activity android:name=".month" />
         <activity android:name=".Studystart" />
         <activity android:name=".Study1" />
@@ -24,7 +23,8 @@
         <activity android:name=".Starttest" />
         <activity android:name=".Test" />
         <activity android:name=".ResultPage" />
-        <activity android:name=".AdministerPage"></activity>
+        <activity android:name=".AdministerPage" />
+        <activity android:name=".SignUpActivity"></activity>
     </application>
 
 </manifest>
