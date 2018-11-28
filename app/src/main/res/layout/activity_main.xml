@@ -42,8 +42,7 @@
             app:scale_width="300"
             app:scale_height="100"
             android:text="회원가입"
-            app:scale_textsize="80"
-            android:texts/>
+            app:scale_textsize="80" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -53,8 +52,7 @@
             app:scale_width="300"
             app:scale_height="100"
             android:text="로그인"
-            app:scale_textsize="80"
-            android:texts/>
+            app:scale_textsize="80" />
         
         
     </com.ssomai.android.scalablelayout.ScalableLayout>
