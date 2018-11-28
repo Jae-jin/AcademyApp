@@ -8,43 +8,40 @@
 
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:scale_base_width="1080"
-        app:scale_base_height="1920">
+        android:layout_height="wrap_content"
+        app:scale_base_width="1000"
+        app:scale_base_height="1600">
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_left="80"
             app:scale_top="200"
-            app:scale_width="1100"
+            app:scale_width="1000"
             app:scale_height="300"
-            android:textAlignment="center"
             android:text="합/불 표시"
             android:gravity="center"
-            app:scale_textsize="150"
+            app:scale_textsize="100"
             tools:ignore="MissingPrefix"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_left="80"
-            app:scale_top="650"
-            app:scale_width="1100"
+            app:scale_top="600"
+            app:scale_width="1000"
             app:scale_height="300"
             android:textAlignment="center"
             android:text="맞은 개수/전체"
             android:gravity="center"
-            app:scale_textsize="150"
+            app:scale_textsize="100"
             tools:ignore="MissingPrefix"/>
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_left="200"
-            app:scale_top="1200"
-            app:scale_width="860"
+            app:scale_left="100"
+            app:scale_top="1000"
+            app:scale_width="800"
             app:scale_height="250"
             android:text="다시하기 or 완료"
             app:scale_textsize="80"
