@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -8,38 +9,155 @@
 
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:scale_base_width="1080"
-        app:scale_base_height="1920">
+        android:layout_height="wrap_content"
+        app:scale_base_height="1600"
+        app:scale_base_width="1000">
 
-
-        <TextView
+        <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_textsize="50"
-            app.scale_left="80"
-            app.scale_top="10"
-            app.scale_height="50"
-            app.scale_width="1100"
-            android:text=""
-            android:id="@+id/selectedText"
-            tools:ignore="MissingPrefix"/>
+            android:text="Day1\n60/3"
+            app:scale_height="200"
+            app:scale_left="100"
+            app:scale_textsize="90"
+            app:scale_top="400"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day2\n65/5"
+            app:scale_height="200"
+            app:scale_left="400"
+            app:scale_textsize="90"
+            app:scale_top="400"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day3\ntoday"
+            app:scale_height="200"
+            app:scale_left="700"
+            app:scale_textsize="90"
+            app:scale_top="400"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day4\nlock"
+            app:scale_height="200"
+            app:scale_left="100"
+            app:scale_textsize="90"
+            app:scale_top="700"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day5\nlock"
+            app:scale_height="200"
+            app:scale_left="400"
+            app:scale_textsize="90"
+            app:scale_top="700"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day6\nlock"
+            app:scale_height="200"
+            app:scale_left="700"
+            app:scale_textsize="90"
+            app:scale_top="700"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day7\nlock"
+            app:scale_height="200"
+            app:scale_left="100"
+            app:scale_textsize="90"
+            app:scale_top="1000"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day8\nlock"
+            app:scale_height="200"
+            app:scale_left="400"
+            app:scale_textsize="90"
+            app:scale_top="1000"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day9\nlock"
+            app:scale_height="200"
+            app:scale_left="700"
+            app:scale_textsize="90"
+            app:scale_top="1000"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day10\nlock"
+            app:scale_height="200"
+            app:scale_left="100"
+            app:scale_textsize="90"
+            app:scale_top="1300"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day11\nlock"
+            app:scale_height="200"
+            app:scale_left="400"
+            app:scale_textsize="90"
+            app:scale_top="1300"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day12\nlock"
+            app:scale_height="200"
+            app:scale_left="700"
+            app:scale_textsize="90"
+            app:scale_top="1300"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
 
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            app:scale_height="200"
             app:scale_left="80"
             app:scale_top="80"
-            app:scale_width="1100"
-            app:scale_height="200"
+            app:scale_width="820"
             tools:ignore="MissingPrefix">
 
         </Spinner>
-
-        <LinearLayout
-            android:layout_width=""
-            android:layout_height=""></LinearLayout>
     </com.ssomai.android.scalablelayout.ScalableLayout>
 
-</android.support.constraint.ConstraintLayout>
+
+</LinearLayout>
