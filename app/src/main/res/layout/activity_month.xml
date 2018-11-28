@@ -15,22 +15,11 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_left="200"
-            app:scale_top="60"
-            app:scale_width="860"
-            app:scale_height="250"
-            android:text="주차선택 및 날짜 확인"
-            app:scale_textsize="80"
-            tools:ignore="MissingPrefix"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             app:scale_left="80"
             app:scale_width="370"
             app:scale_height="370"
             app:scale_top="400"
-            android:text="Day1"
+            android:text="Day1\n60/3"
             app:scale_textsize="90"
             tools:ignore="MissingPrefix"/>
         <Button
@@ -40,7 +29,7 @@
             app:scale_width="370"
             app:scale_height="370"
             app:scale_top="400"
-            android:text="Day2"
+            android:text="Day2\n65/5"
             app:scale_textsize="90"
             tools:ignore="MissingPrefix"/>
         <Button
@@ -50,7 +39,7 @@
             app:scale_width="370"
             app:scale_height="370"
             app:scale_top="400"
-            android:text="Day3"
+            android:text="Day3\ntoday"
             app:scale_textsize="90"
             tools:ignore="MissingPrefix"/>
         <Button
@@ -60,7 +49,7 @@
             app:scale_width="370"
             app:scale_height="370"
             app:scale_top="770"
-            android:text="Day4"
+            android:text="Day4\nlock"
             app:scale_textsize="90"
             tools:ignore="MissingPrefix"/>
         <Button
@@ -70,7 +59,7 @@
             app:scale_width="370"
             app:scale_height="370"
             app:scale_top="770"
-            android:text="Day5"
+            android:text="Day5\nlock"
             app:scale_textsize="90"
             tools:ignore="MissingPrefix"/>
         <Button
@@ -80,7 +69,7 @@
             app:scale_width="370"
             app:scale_height="370"
             app:scale_top="770"
-            android:text="Day6"
+            android:text="Day6\nlock"
             app:scale_textsize="90"
             tools:ignore="MissingPrefix"/>
         <Button
@@ -90,7 +79,7 @@
             app:scale_width="370"
             app:scale_height="370"
             app:scale_top="1140"
-            android:text="Day7"
+            android:text="Day7\nlock"
             app:scale_textsize="90"
             tools:ignore="MissingPrefix"/>
         <Button
@@ -100,7 +89,7 @@
             app:scale_width="370"
             app:scale_height="370"
             app:scale_top="1140"
-            android:text="Day8"
+            android:text="Day8\nlock"
             app:scale_textsize="90"
             tools:ignore="MissingPrefix"/>
 
@@ -111,7 +100,7 @@
             app:scale_width="370"
             app:scale_height="370"
             app:scale_top="1140"
-            android:text="Day9"
+            android:text="Day9\nlock"
             app:scale_textsize="90"
             tools:ignore="MissingPrefix"/>
         <Button
@@ -121,7 +110,7 @@
             app:scale_width="370"
             app:scale_height="370"
             app:scale_top="1510"
-            android:text="Day10"
+            android:text="Day10\nlock"
             app:scale_textsize="90"
             tools:ignore="MissingPrefix"/>
         <Button
@@ -131,7 +120,7 @@
             app:scale_width="370"
             app:scale_height="370"
             app:scale_top="1510"
-            android:text="Day11"
+            android:text="Day11\nlock"
             app:scale_textsize="90"
             tools:ignore="MissingPrefix"/>
         <Button
@@ -141,11 +130,18 @@
             app:scale_width="370"
             app:scale_height="370"
             app:scale_top="1510"
-            android:text="Day12"
+            android:text="Day12\nlock"
             app:scale_textsize="90"
             tools:ignore="MissingPrefix"/>
 
 
     </com.ssomai.android.scalablelayout.ScalableLayout>
+
+    <Spinner
+        android:id="@+id/spinner2"
+        android:layout_width="366dp"
+        android:layout_height="89dp"
+        tools:layout_editor_absoluteX="8dp"
+        tools:layout_editor_absoluteY="0dp" />
 
 </android.support.constraint.ConstraintLayout>
