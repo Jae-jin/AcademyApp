@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Test">
+
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:scale_base_width="1080"
+        app:scale_base_height="1920">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="80"
+            app:scale_top="400"
+            app:scale_width="1100"
+            app:scale_height="600"
+            android:textAlignment="center"
+            android:text="Bag"
+            android:gravity="center"
+            app:scale_textsize="400"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="90"
+            app:scale_top="1100"
+            app:scale_width="500"
+            app:scale_height="300"
+            android:text="1.가방"
+            android:gravity="center"
+            app:scale_textsize="150"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="620"
+            app:scale_top="1100"
+            app:scale_width="500"
+            app:scale_height="300"
+            android:text="2.지갑"
+            android:gravity="center"
+            app:scale_textsize="150"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="90"
+            app:scale_top="1450"
+            app:scale_width="500"
+            app:scale_height="300"
+            android:text="3.돈"
+            android:gravity="center"
+            app:scale_textsize="150"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="620"
+            app:scale_top="1450"
+            app:scale_width="500"
+            app:scale_height="300"
+            android:text="4.구두"
+            android:gravity="center"
+            app:scale_textsize="150"/>
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+</android.support.constraint.ConstraintLayout>

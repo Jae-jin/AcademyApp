@@ -21,7 +21,10 @@
         <activity android:name=".Studystart" />
         <activity android:name=".Study1" />
         <activity android:name=".Study2" />
-        <activity android:name=".Starttest"></activity>
+        <activity android:name=".Starttest" />
+        <activity android:name=".Test" />
+        <activity android:name=".ResultPage" />
+        <activity android:name=".AdministerPage"></activity>
     </application>
 
 </manifest>
