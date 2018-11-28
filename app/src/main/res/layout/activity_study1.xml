@@ -9,7 +9,7 @@
 
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:scale_base_width="1080"
         app:scale_base_height="1920">
 
@@ -17,9 +17,8 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_left="80"
             app:scale_top="400"
-            app:scale_width="1100"
+            app:scale_width="1080"
             app:scale_height="600"
             android:textAlignment="center"
             android:text="Bag"
