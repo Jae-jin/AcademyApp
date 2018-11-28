@@ -23,7 +23,7 @@
             app:scale_textsize="100"
             android:text="ID"
             android:textAlignment="center"
-            />
+            tools:ignore="MissingPrefix" />
 
         <EditText
             android:layout_width="wrap_content"
@@ -32,6 +32,7 @@
             app:scale_top="800"
             app:scale_width="700"
             app:scale_height="130"
+            tools:ignore="MissingPrefix"
             />
 
         <TextView
@@ -42,7 +43,8 @@
             app:scale_width="300"
             app:scale_height="100"
             android:text="회원가입"
-            app:scale_textsize="80" />
+            app:scale_textsize="80"
+            tools:ignore="MissingPrefix"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -52,7 +54,8 @@
             app:scale_width="300"
             app:scale_height="100"
             android:text="로그인"
-            app:scale_textsize="80" />
+            app:scale_textsize="80"
+            tools:ignore="MissingPrefix"/>
         
         
     </com.ssomai.android.scalablelayout.ScalableLayout>

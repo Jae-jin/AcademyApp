@@ -23,7 +23,8 @@
             android:textAlignment="center"
             android:text="Bag"
             android:gravity="center"
-            app:scale_textsize="400"/>
+            app:scale_textsize="400"
+            tools:ignore="MissingPrefix"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,7 +36,8 @@
             android:textAlignment="center"
             android:text="가방"
             android:gravity="center"
-            app:scale_textsize="200"/>
+            app:scale_textsize="200"
+            tools:ignore="MissingPrefix"/>
 
 
     </com.ssomai.android.scalablelayout.ScalableLayout>

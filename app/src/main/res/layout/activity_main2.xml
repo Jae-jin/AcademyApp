@@ -21,7 +21,8 @@
             app:scale_width="470"
             app:scale_height="400"
             app:scale_top="700"
-            android:text="중등"/>
+            android:text="중등"
+            tools:ignore="MissingPrefix"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -30,7 +31,8 @@
             app:scale_width="470"
             app:scale_height="400"
             app:scale_top="700"
-            android:text="고등"/>
+            android:text="고등"
+            tools:ignore="MissingPrefix"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -40,6 +42,8 @@
             app:scale_width="550"
             app:scale_height="150"
             android:textAlignment="center"
-            android:text="내 기록 보기"/>
+            android:text="내 기록 보기"
+            tools:ignore="MissingPrefix"/>
+
     </com.ssomai.android.scalablelayout.ScalableLayout>
 </android.support.constraint.ConstraintLayout>

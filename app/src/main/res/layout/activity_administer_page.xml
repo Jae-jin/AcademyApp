@@ -19,7 +19,8 @@
             app:scale_height="370"
             app:scale_top="400"
             android:text="CLASS 선택"
-            app:scale_textsize="90"/>
+            app:scale_textsize="90"
+            tools:ignore="MissingPrefix"/>
 
 
     </com.ssomai.android.scalablelayout.ScalableLayout>

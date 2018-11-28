@@ -23,7 +23,8 @@
             android:textAlignment="center"
             android:text="합/불 표시"
             android:gravity="center"
-            app:scale_textsize="150"/>
+            app:scale_textsize="150"
+            tools:ignore="MissingPrefix"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,7 +36,8 @@
             android:textAlignment="center"
             android:text="맞은 개수/전체"
             android:gravity="center"
-            app:scale_textsize="150"/>
+            app:scale_textsize="150"
+            tools:ignore="MissingPrefix"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -45,7 +47,8 @@
             app:scale_width="860"
             app:scale_height="250"
             android:text="다시하기 or 완료"
-            app:scale_textsize="80"/>
+            app:scale_textsize="80"
+            tools:ignore="MissingPrefix"/>
 
 
     </com.ssomai.android.scalablelayout.ScalableLayout>

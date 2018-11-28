@@ -19,7 +19,8 @@
             app:scale_height="370"
             app:scale_top="400"
             android:text="학습 시작"
-            app:scale_textsize="90"/>
+            app:scale_textsize="90"
+            tools:ignore="MissingPrefix"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -29,6 +30,7 @@
             app:scale_width="1100"
             app:scale_height="150"
             android:textAlignment="center"
-            android:text="주의 사항 나열"/>
+            android:text="주의 사항 나열"
+            tools:ignore="MissingPrefix"/>
     </com.ssomai.android.scalablelayout.ScalableLayout>
 </android.support.constraint.ConstraintLayout>

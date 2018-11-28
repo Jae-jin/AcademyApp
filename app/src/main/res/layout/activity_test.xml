@@ -23,7 +23,8 @@
             android:textAlignment="center"
             android:text="Bag"
             android:gravity="center"
-            app:scale_textsize="400"/>
+            app:scale_textsize="400"
+            tools:ignore="MissingPrefix"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -34,7 +35,8 @@
             app:scale_height="300"
             android:text="1.가방"
             android:gravity="center"
-            app:scale_textsize="150"/>
+            app:scale_textsize="150"
+            tools:ignore="MissingPrefix"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -44,7 +46,8 @@
             app:scale_height="300"
             android:text="2.지갑"
             android:gravity="center"
-            app:scale_textsize="150"/>
+            app:scale_textsize="150"
+            tools:ignore="MissingPrefix"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -55,7 +58,8 @@
             app:scale_height="300"
             android:text="3.돈"
             android:gravity="center"
-            app:scale_textsize="150"/>
+            app:scale_textsize="150"
+            tools:ignore="MissingPrefix"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -66,6 +70,7 @@
             app:scale_height="300"
             android:text="4.구두"
             android:gravity="center"
-            app:scale_textsize="150"/>
+            app:scale_textsize="150"
+            tools:ignore="MissingPrefix"/>
     </com.ssomai.android.scalablelayout.ScalableLayout>
 </android.support.constraint.ConstraintLayout>

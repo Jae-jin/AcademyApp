@@ -20,7 +20,8 @@
             app:scale_width="860"
             app:scale_height="250"
             android:text="주차선택 및 날짜 확인"
-            app:scale_textsize="80"/>
+            app:scale_textsize="80"
+            tools:ignore="MissingPrefix"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -30,7 +31,8 @@
             app:scale_height="370"
             app:scale_top="400"
             android:text="Day1"
-            app:scale_textsize="90"/>
+            app:scale_textsize="90"
+            tools:ignore="MissingPrefix"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -39,7 +41,8 @@
             app:scale_height="370"
             app:scale_top="400"
             android:text="Day2"
-            app:scale_textsize="90"/>
+            app:scale_textsize="90"
+            tools:ignore="MissingPrefix"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -48,7 +51,8 @@
             app:scale_height="370"
             app:scale_top="400"
             android:text="Day3"
-            app:scale_textsize="90"/>
+            app:scale_textsize="90"
+            tools:ignore="MissingPrefix"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -57,7 +61,8 @@
             app:scale_height="370"
             app:scale_top="770"
             android:text="Day4"
-            app:scale_textsize="90"/>
+            app:scale_textsize="90"
+            tools:ignore="MissingPrefix"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -66,7 +71,8 @@
             app:scale_height="370"
             app:scale_top="770"
             android:text="Day5"
-            app:scale_textsize="90"/>
+            app:scale_textsize="90"
+            tools:ignore="MissingPrefix"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -75,7 +81,8 @@
             app:scale_height="370"
             app:scale_top="770"
             android:text="Day6"
-            app:scale_textsize="90"/>
+            app:scale_textsize="90"
+            tools:ignore="MissingPrefix"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -84,7 +91,8 @@
             app:scale_height="370"
             app:scale_top="1140"
             android:text="Day7"
-            app:scale_textsize="90"/>
+            app:scale_textsize="90"
+            tools:ignore="MissingPrefix"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -93,7 +101,8 @@
             app:scale_height="370"
             app:scale_top="1140"
             android:text="Day8"
-            app:scale_textsize="90"/>
+            app:scale_textsize="90"
+            tools:ignore="MissingPrefix"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -103,7 +112,8 @@
             app:scale_height="370"
             app:scale_top="1140"
             android:text="Day9"
-            app:scale_textsize="90"/>
+            app:scale_textsize="90"
+            tools:ignore="MissingPrefix"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -112,7 +122,8 @@
             app:scale_height="370"
             app:scale_top="1510"
             android:text="Day10"
-            app:scale_textsize="90"/>
+            app:scale_textsize="90"
+            tools:ignore="MissingPrefix"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -121,7 +132,8 @@
             app:scale_height="370"
             app:scale_top="1510"
             android:text="Day11"
-            app:scale_textsize="90"/>
+            app:scale_textsize="90"
+            tools:ignore="MissingPrefix"/>
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -130,7 +142,8 @@
             app:scale_height="370"
             app:scale_top="1510"
             android:text="Day12"
-            app:scale_textsize="90"/>
+            app:scale_textsize="90"
+            tools:ignore="MissingPrefix"/>
 
 
     </com.ssomai.android.scalablelayout.ScalableLayout>
