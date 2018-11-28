@@ -9,27 +9,26 @@
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:scale_base_width="1080"
-        app:scale_base_height="1920"
+        app:scale_base_width="1000"
+        app:scale_base_height="1600"
         >
         
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_left="30"
-            app:scale_top="800"
+            app:scale_top="700"
             app:scale_width="300"
             app:scale_height="130"
             app:scale_textsize="100"
             android:text="ID"
-            android:textAlignment="center"
+            android:gravity="center"
             tools:ignore="MissingPrefix" />
 
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_left="350"
-            app:scale_top="800"
+            app:scale_left="300"
+            app:scale_top="700"
             app:scale_width="700"
             app:scale_height="130"
             tools:ignore="MissingPrefix"
@@ -38,25 +37,27 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_left="300"
-            app:scale_top="1030"
+            app:scale_left="200"
+            app:scale_top="880"
             app:scale_width="300"
             app:scale_height="100"
             android:text="회원가입"
             app:scale_textsize="70"
+            android:gravity="center"
             android:id="@+id/signup"
             tools:ignore="MissingPrefix"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_left="700"
-            app:scale_top="1030"
+            app:scale_left="500"
+            app:scale_top="880"
             app:scale_width="300"
             app:scale_height="100"
             android:text="로그인"
+            android:gravity="center"
             android:id="@+id/login"
-            app:scale_textsize="80"
+            app:scale_textsize="70"
             tools:ignore="MissingPrefix"/>
         
         
