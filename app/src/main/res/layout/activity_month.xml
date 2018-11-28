@@ -15,17 +15,6 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_left="200"
-            app:scale_top="60"
-            app:scale_width="860"
-            app:scale_height="250"
-            android:text="주차선택 및 날짜 확인"
-            app:scale_textsize="80"
-            tools:ignore="MissingPrefix"/>
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             app:scale_left="80"
             app:scale_width="370"
             app:scale_height="370"
@@ -146,6 +135,17 @@
             tools:ignore="MissingPrefix"/>
 
 
+        <Spinner
+            android:id="@+id/spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="80"
+            app:scale_top="80"
+            app:scale_width="1100"
+            app:scale_height="200"
+            tools:ignore="MissingPrefix">
+
+        </Spinner>
     </com.ssomai.android.scalablelayout.ScalableLayout>
 
 </android.support.constraint.ConstraintLayout>
