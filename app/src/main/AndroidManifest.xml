@@ -24,7 +24,8 @@
         <activity android:name=".Starttest" />
         <activity android:name=".Test" />
         <activity android:name=".ResultPage" />
-        <activity android:name=".AdministerPage"></activity>
+        <activity android:name=".AdministerPage" />
+        <activity android:name=".SignUpActivity"></activity>
     </application>
 
 </manifest>

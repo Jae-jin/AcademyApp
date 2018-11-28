@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.jung_jaejin.myproject.SignUpActivity">
+
+    <!-- 여기서 가입버튼을 누르면 해당 학생의 번호와 관리자의 번호로 로그인
+    아이디가 문자로 전송된다. -->
+
+    <RadioGroup
+        android:layout_width="74dp"
+        android:layout_height="110dp"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="228dp">
+
+        <RadioButton
+            android:id="@+id/radioButton2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1학년" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2학년" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3학년" />
+
+    </RadioGroup>
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="131dp" />
+
+    <RadioGroup
+        android:layout_width="87dp"
+        android:layout_height="105dp"
+        tools:layout_editor_absoluteX="202dp"
+        tools:layout_editor_absoluteY="228dp" >
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="1학년" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="2학년" />
+
+        <RadioButton
+            android:id="@+id/radioButton3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="3학년" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="73dp"
+        android:layout_height="42dp"
+        android:text="중등"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="186dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="84dp"
+        android:layout_height="42dp"
+        android:text="고등"
+        tools:layout_editor_absoluteX="202dp"
+        tools:layout_editor_absoluteY="186dp" />
+
+    <RadioGroup
+        android:layout_width="203dp"
+        android:layout_height="35dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="390dp" >
+
+        <RadioButton
+            android:id="@+id/radioButton4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="S" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="A" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="B" />
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="반"
+        tools:layout_editor_absoluteX="85dp"
+        tools:layout_editor_absoluteY="371dp" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="가입"
+        tools:layout_editor_absoluteX="148dp"
+        tools:layout_editor_absoluteY="467dp" />
+
+</android.support.constraint.ConstraintLayout>
