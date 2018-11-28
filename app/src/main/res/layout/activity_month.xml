@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     tools:context=".month">
 
+    <!-- 중등 고등, S A B 반에 맞는 단어들이 나와야한다. -->
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -19,7 +20,7 @@
             android:text="Day1\n60/3"
             app:scale_height="200"
             app:scale_left="100"
-            app:scale_textsize="90"
+            app:scale_textsize="40"
             app:scale_top="400"
             app:scale_width="200"
             tools:ignore="MissingPrefix" />
@@ -30,7 +31,7 @@
             android:text="Day2\n65/5"
             app:scale_height="200"
             app:scale_left="400"
-            app:scale_textsize="90"
+            app:scale_textsize="40"
             app:scale_top="400"
             app:scale_width="200"
             tools:ignore="MissingPrefix" />
@@ -41,7 +42,7 @@
             android:text="Day3\ntoday"
             app:scale_height="200"
             app:scale_left="700"
-            app:scale_textsize="90"
+            app:scale_textsize="40"
             app:scale_top="400"
             app:scale_width="200"
             tools:ignore="MissingPrefix" />
@@ -52,8 +53,8 @@
             android:text="Day4\nlock"
             app:scale_height="200"
             app:scale_left="100"
-            app:scale_textsize="90"
-            app:scale_top="700"
+            app:scale_textsize="40"
+            app:scale_top="650"
             app:scale_width="200"
             tools:ignore="MissingPrefix" />
 
@@ -63,8 +64,8 @@
             android:text="Day5\nlock"
             app:scale_height="200"
             app:scale_left="400"
-            app:scale_textsize="90"
-            app:scale_top="700"
+            app:scale_textsize="40"
+            app:scale_top="650"
             app:scale_width="200"
             tools:ignore="MissingPrefix" />
 
@@ -74,8 +75,8 @@
             android:text="Day6\nlock"
             app:scale_height="200"
             app:scale_left="700"
-            app:scale_textsize="90"
-            app:scale_top="700"
+            app:scale_textsize="40"
+            app:scale_top="650"
             app:scale_width="200"
             tools:ignore="MissingPrefix" />
 
@@ -85,8 +86,8 @@
             android:text="Day7\nlock"
             app:scale_height="200"
             app:scale_left="100"
-            app:scale_textsize="90"
-            app:scale_top="1000"
+            app:scale_textsize="40"
+            app:scale_top="900"
             app:scale_width="200"
             tools:ignore="MissingPrefix" />
 
@@ -96,8 +97,8 @@
             android:text="Day8\nlock"
             app:scale_height="200"
             app:scale_left="400"
-            app:scale_textsize="90"
-            app:scale_top="1000"
+            app:scale_textsize="40"
+            app:scale_top="900"
             app:scale_width="200"
             tools:ignore="MissingPrefix" />
 
@@ -107,8 +108,8 @@
             android:text="Day9\nlock"
             app:scale_height="200"
             app:scale_left="700"
-            app:scale_textsize="90"
-            app:scale_top="1000"
+            app:scale_textsize="40"
+            app:scale_top="900"
             app:scale_width="200"
             tools:ignore="MissingPrefix" />
 
@@ -118,8 +119,8 @@
             android:text="Day10\nlock"
             app:scale_height="200"
             app:scale_left="100"
-            app:scale_textsize="90"
-            app:scale_top="1300"
+            app:scale_textsize="40"
+            app:scale_top="1150"
             app:scale_width="200"
             tools:ignore="MissingPrefix" />
 
@@ -129,8 +130,8 @@
             android:text="Day11\nlock"
             app:scale_height="200"
             app:scale_left="400"
-            app:scale_textsize="90"
-            app:scale_top="1300"
+            app:scale_textsize="40"
+            app:scale_top="1150"
             app:scale_width="200"
             tools:ignore="MissingPrefix" />
 
@@ -140,8 +141,8 @@
             android:text="Day12\nlock"
             app:scale_height="200"
             app:scale_left="700"
-            app:scale_textsize="90"
-            app:scale_top="1300"
+            app:scale_textsize="40"
+            app:scale_top="1150"
             app:scale_width="200"
             tools:ignore="MissingPrefix" />
 

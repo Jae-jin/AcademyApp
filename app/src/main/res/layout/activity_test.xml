@@ -19,6 +19,32 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:scale_left="80"
+            app:scale_top="100"
+            app:scale_width="300"
+            app:scale_height="100"
+            android:textAlignment="center"
+            android:text="110/300s"
+            android:gravity="center"
+            app:scale_textsize="70"
+            tools:ignore="MissingPrefix"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="900"
+            app:scale_top="100"
+            app:scale_width="300"
+            app:scale_height="100"
+            android:textAlignment="center"
+            android:text="87/100"
+            android:gravity="center"
+            app:scale_textsize="70"
+            tools:ignore="MissingPrefix"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="80"
             app:scale_top="400"
             app:scale_width="1100"
             app:scale_height="600"
