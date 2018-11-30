@@ -25,7 +25,6 @@
         <activity android:name=".ResultPage" />
         <activity android:name=".AdministerPage" />
         <activity android:name=".SignUpActivity" />
-        <activity android:name=".Month2Activity" />
         <activity android:name=".Signup2"></activity>
     </application>
 

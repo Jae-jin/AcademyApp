@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="com.example.jung_jaejin.myproject.SignUpActivity">
 
     <!-- 여기서 가입버튼을 누르면 해당 학생의 번호와 관리자의 번호로 로그인
@@ -217,4 +217,4 @@
 
     </com.ssomai.android.scalablelayout.ScalableLayout>
 
-</LinearLayout>
+</ScrollView>

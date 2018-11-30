@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context=".month">
+
 
     <!-- 중등 고등, S A B 반에 맞는 단어들이 나와야한다. -->
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:scale_base_height="1600"
+        app:scale_base_height="3150"
         app:scale_base_width="1000">
 
         <Button
@@ -147,6 +148,272 @@
             tools:ignore="MissingPrefix" />
 
 
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day13\nLock"
+            app:scale_height="200"
+            app:scale_left="100"
+            app:scale_textsize="40"
+            app:scale_top="1400"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day14\nLock"
+            app:scale_height="200"
+            app:scale_left="400"
+            app:scale_textsize="40"
+            app:scale_top="1400"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day15\nLock"
+            app:scale_height="200"
+            app:scale_left="700"
+            app:scale_textsize="40"
+            app:scale_top="1400"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day16\nlock"
+            app:scale_height="200"
+            app:scale_left="100"
+            app:scale_textsize="40"
+            app:scale_top="1650"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day17\nlock"
+            app:scale_height="200"
+            app:scale_left="400"
+            app:scale_textsize="40"
+            app:scale_top="1650"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day18\nlock"
+            app:scale_height="200"
+            app:scale_left="700"
+            app:scale_textsize="40"
+            app:scale_top="1650"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day19\nlock"
+            app:scale_height="200"
+            app:scale_left="100"
+            app:scale_textsize="40"
+            app:scale_top="1900"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day20\nlock"
+            app:scale_height="200"
+            app:scale_left="400"
+            app:scale_textsize="40"
+            app:scale_top="1900"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day21\nlock"
+            app:scale_height="200"
+            app:scale_left="700"
+            app:scale_textsize="40"
+            app:scale_top="1900"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day22\nlock"
+            app:scale_height="200"
+            app:scale_left="100"
+            app:scale_textsize="40"
+            app:scale_top="2150"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day23\nlock"
+            app:scale_height="200"
+            app:scale_left="400"
+            app:scale_textsize="40"
+            app:scale_top="2150"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day24\nlock"
+            app:scale_height="200"
+            app:scale_left="700"
+            app:scale_textsize="40"
+            app:scale_top="2150"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day25\nLock"
+            app:scale_height="200"
+            app:scale_left="100"
+            app:scale_textsize="40"
+            app:scale_top="2400"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day26\nLock"
+            app:scale_height="200"
+            app:scale_left="400"
+            app:scale_textsize="40"
+            app:scale_top="2400"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day27\nLock"
+            app:scale_height="200"
+            app:scale_left="700"
+            app:scale_textsize="40"
+            app:scale_top="2400"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day28\nlock"
+            app:scale_height="200"
+            app:scale_left="100"
+            app:scale_textsize="40"
+            app:scale_top="2650"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day29\nlock"
+            app:scale_height="200"
+            app:scale_left="400"
+            app:scale_textsize="40"
+            app:scale_top="2650"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day30\nlock"
+            app:scale_height="200"
+            app:scale_left="700"
+            app:scale_textsize="40"
+            app:scale_top="2650"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day31\nlock"
+            app:scale_height="200"
+            app:scale_left="100"
+            app:scale_textsize="40"
+            app:scale_top="2900"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day32\nlock"
+            app:scale_height="200"
+            app:scale_left="400"
+            app:scale_textsize="40"
+            app:scale_top="2900"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day33\nlock"
+            app:scale_height="200"
+            app:scale_left="700"
+            app:scale_textsize="40"
+            app:scale_top="2900"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day34\nlock"
+            app:scale_height="200"
+            app:scale_left="100"
+            app:scale_textsize="40"
+            app:scale_top="3150"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day35\nlock"
+            app:scale_height="200"
+            app:scale_left="400"
+            app:scale_textsize="40"
+            app:scale_top="3150"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day36\nlock"
+            app:scale_height="200"
+            app:scale_left="700"
+            app:scale_textsize="40"
+            app:scale_top="3150"
+            app:scale_width="200"
+            tools:ignore="MissingPrefix" />
+
+
+
         <Spinner
             android:id="@+id/spinner"
             android:layout_width="wrap_content"
@@ -161,4 +428,4 @@
     </com.ssomai.android.scalablelayout.ScalableLayout>
 
 
-</LinearLayout>
+</ScrollView>
