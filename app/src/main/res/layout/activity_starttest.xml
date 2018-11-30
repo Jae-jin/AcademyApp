@@ -18,7 +18,7 @@
             app:scale_width="1100"
             app:scale_height="370"
             app:scale_top="400"
-            android:text="테스트 시작"
+            android:text="Start Test"
             app:scale_textsize="90"
             tools:ignore="MissingPrefix"/>
 
@@ -30,7 +30,7 @@
             app:scale_width="1100"
             app:scale_height="150"
             android:textAlignment="center"
-            android:text="주의 사항 나열"
+            android:text="Tips"
             tools:ignore="MissingPrefix"/>
 
     </com.ssomai.android.scalablelayout.ScalableLayout>

@@ -19,7 +19,7 @@
             app:scale_top="200"
             app:scale_width="1000"
             app:scale_height="300"
-            android:text="합/불 표시"
+            android:text="120 / 120"
             android:gravity="center"
             app:scale_textsize="100"
             tools:ignore="MissingPrefix"/>
@@ -31,7 +31,7 @@
             app:scale_width="1000"
             app:scale_height="300"
             android:textAlignment="center"
-            android:text="맞은 개수/전체"
+            android:text="PASS"
             android:gravity="center"
             app:scale_textsize="100"
             tools:ignore="MissingPrefix"/>

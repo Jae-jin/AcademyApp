@@ -8,7 +8,7 @@
     tools:context="com.example.jung_jaejin.myproject.SignUpActivity">
 
     <!-- 여기서 가입버튼을 누르면 해당 학생의 번호와 관리자의 번호로 로그인
-    아이디가 문자로 전송된다. -->
+    아이디가 문자로 전송된다. 전화번호 추가-->
 
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
@@ -50,28 +50,54 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:scale_left="100"
-            app:scale_width="300"
+            app:scale_width="200"
             app:scale_height="150"
-            app:scale_top="200"
+            app:scale_top="100"
             android:text="이름"
+            app:scale_textsize="80"
+            android:gravity="center"
+            tools:ignore="MissingPrefix"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="100"
+            app:scale_width="200"
+            app:scale_height="150"
+            app:scale_top="250"
+            android:text="H.P"
             app:scale_textsize="80"
             android:gravity="center"
             tools:ignore="MissingPrefix"
             />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editTextName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
         android:text="Name"
-        app:scale_left="400"
-        app:scale_width="500"
-        app:scale_top="200"
+        app:scale_left="300"
+        app:scale_width="600"
+        app:scale_top="100"
         app:scale_height="150"
-        app:scale_textsize="80"
+        app:scale_textsize="60"
         android:gravity="center"
         tools:ignore="MissingPrefix"/>
+
+        <EditText
+            android:id="@+id/editTextHP"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:inputType="phone"
+            android:text="010-XXXX-XXXX"
+            app:scale_left="300"
+            app:scale_width="600"
+            app:scale_top="250"
+            app:scale_height="150"
+            app:scale_textsize="60"
+            android:gravity="center"
+            tools:ignore="MissingPrefix"/>
 
     <RadioGroup
         android:layout_width="wrap_content"
@@ -110,10 +136,10 @@
         app:scale_left="200"
         app:scale_width="300"
         app:scale_height="150"
-        app:scale_top="400"
+        app:scale_top="420"
         android:text="중등"
         android:gravity="center"
-        app:scale_textsize="80"
+        app:scale_textsize="70"
         tools:ignore="MissingPrefix"
         />
 
@@ -124,9 +150,9 @@
         app:scale_left="500"
         app:scale_width="300"
         app:scale_height="150"
-        app:scale_top="400"
+        app:scale_top="420"
         android:text="고등"
-        app:scale_textsize="80"
+        app:scale_textsize="70"
         android:gravity="center"
         tools:ignore="MissingPrefix"
         />
@@ -134,8 +160,8 @@
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:scale_top="1180"
-        app:scale_left="200"
+        app:scale_top="1150"
+        app:scale_left="230"
         app:scale_width="600"
         app:scale_height="100"
         android:gravity="center"
@@ -172,7 +198,7 @@
         app:scale_height="100"
         app:scale_top="1030"
         android:text="반"
-        app:scale_textsize="80"
+        app:scale_textsize="70"
         android:gravity="center"
         tools:ignore="MissingPrefix"/>
 
@@ -183,11 +209,11 @@
         app:scale_left="300"
         app:scale_width="400"
         app:scale_height="150"
-        app:scale_top="1300"
+        app:scale_top="1260"
         app:scale_textsize="80"
         android:gravity="center"
         tools:ignore="MissingPrefix"
-        android:text="가입" />
+        android:text="다음" />
 
     </com.ssomai.android.scalablelayout.ScalableLayout>
 
