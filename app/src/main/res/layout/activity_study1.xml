@@ -24,6 +24,8 @@
             android:text="Bag"
             android:gravity="center"
             app:scale_textsize="400"
-            tools:ignore="MissingPrefix"/>
+            tools:ignore="MissingPrefix"
+            android:id="@+id/study1"
+            />
     </com.ssomai.android.scalablelayout.ScalableLayout>
 </android.support.constraint.ConstraintLayout>

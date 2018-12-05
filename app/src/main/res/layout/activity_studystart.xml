@@ -20,7 +20,9 @@
             app:scale_top="400"
             android:text="Start Study"
             app:scale_textsize="90"
-            tools:ignore="MissingPrefix"/>
+            tools:ignore="MissingPrefix"
+            android:id="@+id/studyStart"
+            />
 
         <TextView
             android:layout_width="wrap_content"

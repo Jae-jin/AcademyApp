@@ -46,7 +46,9 @@
             app:scale_height="250"
             android:text="다시하기 or 완료"
             app:scale_textsize="80"
-            tools:ignore="MissingPrefix"/>
+            tools:ignore="MissingPrefix"
+            android:id="@+id/result"
+            />
 
 
     </com.ssomai.android.scalablelayout.ScalableLayout>

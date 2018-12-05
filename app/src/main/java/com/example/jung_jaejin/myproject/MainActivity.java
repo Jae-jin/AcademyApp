@@ -7,16 +7,16 @@ import android.view.View;
 import android.widget.TextView;
 
 public class MainActivity extends AppCompatActivity {
-    TextView text;
+    TextView login;
     TextView signup;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        text = (TextView) findViewById(R.id.login);
+        login = (TextView) findViewById(R.id.login);
         signup = (TextView) findViewById(R.id.signup);
-        text.setOnClickListener(new View.OnClickListener()
+        login.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v){

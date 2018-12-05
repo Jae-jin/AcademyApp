@@ -1,46 +1,49 @@
 package com.example.jung_jaejin.myproject;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.TextView;
 
-public class month extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+import java.util.ArrayList;
 
-    TextView selectedText;
-    Spinner spinner;
-    String[] item;
+public class month extends AppCompatActivity {
+
+
+    private Spinner spinner;
+    Button todayTest;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_month);
-
-        selectedText = (TextView)findViewById(R.id.selectedText);
         spinner = (Spinner)findViewById(R.id.spinner);
-        spinner.setOnItemSelectedListener(this);
 
-        item = new String[]{"선택하세요","1주차(2018.09.18 ~2018.10.17","2주차(2018.10.18 ~2018.11.17","3주차(2018.11.18 ~2018.12.17"};
+        final ArrayList<String> list = new ArrayList<>();
+        list.add("2018.12.31 ~ 2018.01.25");
+        list.add("2018.01.28 ~ 2018.02.22");
+        list.add("2018.02.25 ~ 2018.03.22");
+        list.add("2018.03.25 ~ 2018.04.19");
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,android.R.layout.simple_spinner_item,item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        ArrayAdapter spinnerAdapter;
+        spinnerAdapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, list);
+        spinner.setAdapter(spinnerAdapter);
 
-        spinner.setAdapter(adapter);
+        todayTest = (Button)findViewById(R.id.todayTest);
 
-    }
+        todayTest.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(getApplicationContext(),Studystart.class);
+                startActivity(intent);
+            }
+        });
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        selectedText.setText(item[position]);
-        if(selectedText.getText().toString().equals("선택하세요")){
-            selectedText.setText("");
-        }
-    }
-
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-        selectedText.setText("");
     }
 }

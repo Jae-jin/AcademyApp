@@ -64,7 +64,10 @@
             android:text="1.가방"
             android:gravity="center"
             app:scale_textsize="150"
-            tools:ignore="MissingPrefix"/>
+            tools:ignore="MissingPrefix"
+            android:id="@+id/test"
+            />
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
