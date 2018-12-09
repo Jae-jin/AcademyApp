@@ -5,7 +5,6 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import com.example.jung_jaejin.myproject.fragment.Fragment_one;
-import com.example.jung_jaejin.myproject.fragment.Fragment_three;
 import com.example.jung_jaejin.myproject.fragment.Fragment_two;
 
 public class MyPagerAdapter extends FragmentPagerAdapter {
