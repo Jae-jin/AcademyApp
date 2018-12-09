@@ -9,14 +9,14 @@
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:scale_base_width="1080"
-        app:scale_base_height="1920">
+        app:scale_base_width="1000"
+        app:scale_base_height="1600">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:scale_left="80"
-            app:scale_width="1100"
-            app:scale_height="370"
+            app:scale_width="920"
+            app:scale_height="300"
             app:scale_top="400"
             android:text="Start Test"
             app:scale_textsize="90"
@@ -28,8 +28,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:scale_left="80"
-            app:scale_top="1200"
-            app:scale_width="1100"
+            app:scale_top="1000"
+            app:scale_width="920"
             app:scale_height="150"
             android:textAlignment="center"
             android:text="Tips"

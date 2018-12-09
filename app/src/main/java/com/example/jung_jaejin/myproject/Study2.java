@@ -16,7 +16,7 @@ public class Study2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study2);
 
-        study2 = (TextView)findViewById(R.id.next);
+        study2 = (TextView)findViewById(R.id.study2);
 
         study2.setOnClickListener(new View.OnClickListener()
         {

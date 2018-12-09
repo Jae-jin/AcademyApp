@@ -15,7 +15,7 @@ public class Signup2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_signup2);
 
-        complete = (Button)findViewById(R.id.next);
+        complete = (Button)findViewById(R.id.complete);
 
         complete.setOnClickListener(new View.OnClickListener()
         {
