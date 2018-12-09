@@ -21,12 +21,11 @@ public class ManageResult extends AppCompatActivity {
         TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
         tabs.addTab(tabs.newTab().setText("Tab 1"));
         tabs.addTab(tabs.newTab().setText("Tab 2"));
-        tabs.addTab(tabs.newTab().setText("Tab 3"));
         tabs.setTabGravity(tabs.GRAVITY_FILL);
 
         //어답터설정
         final ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-        final MyPagerAdapter myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager(), 3);
+        final MyPagerAdapter myPagerAdapter = new MyPagerAdapter(getSupportFragmentManager(), 2);
         viewPager.setAdapter(myPagerAdapter);
 
         //탭메뉴를 클릭하면 해당 프래그먼트로 변경-싱크화

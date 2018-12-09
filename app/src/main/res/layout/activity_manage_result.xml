@@ -9,16 +9,40 @@
     tools:context=".ManageResult"
     android:orientation="vertical">
 
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:scale_base_width="1000"
+        app:scale_base_height="1600"
+        >
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_width="330"
+            app:scale_height="150"
+            tools:ignore="MissingPrefix"
+            android:text="CLASS"
+            app:scale_textsize="30"
+            />
     <android.support.design.widget.TabLayout
         android:id="@+id/tabs"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:scale_height="150"
+        app:scale_left = "340"
+        app:scale_width="660"/>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/viewpager"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        app:scale_top="150"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:scale_width="1000"
+        app:scale_height="1450">
 
     </android.support.v4.view.ViewPager>
+
+    </com.ssomai.android.scalablelayout.ScalableLayout>
 
 </LinearLayout>

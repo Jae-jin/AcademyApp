@@ -25,9 +25,6 @@ public class MyPagerAdapter extends FragmentPagerAdapter {
             case 1:
                 Fragment_two tab2 = new Fragment_two();
                 return tab2;
-            case 2:
-                Fragment_three tab3 = new Fragment_three();
-                return tab3;
             default:
                 return null;
         }
