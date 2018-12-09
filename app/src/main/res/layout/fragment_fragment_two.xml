@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     tools:context=".fragment.Fragment_three">
 
-    <!-- TODO: Update blank fragment layout -->
+    <!-- Result 화면 구성 -->
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
