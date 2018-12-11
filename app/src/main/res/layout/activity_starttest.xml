@@ -28,11 +28,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:scale_left="80"
-            app:scale_top="1000"
+            app:scale_top="900"
             app:scale_width="920"
-            app:scale_height="150"
+            app:scale_height="520"
             android:textAlignment="center"
-            android:text="Tips"
+            android:text="Tips\n\n제한시간 5분안에 총 120문제를 풀어야 합니다. 120문제를 다 맞추면 통과하게 되고 시험이 종료됩니다. 하나라도 틀리면 다시 재시험을 봐야합니다. 마음의 준비가 끝나셨으면 위에 버튼을 눌러 시험을 시작하세요"
+            app:scale_textsize="50"
             tools:ignore="MissingPrefix"/>
 
     </com.ssomai.android.scalablelayout.ScalableLayout>
