@@ -30,6 +30,7 @@ import static android.speech.tts.TextToSpeech.ERROR;
 public class Study1 extends AppCompatActivity {
     private TextView word;
     private TextView mean;
+    private TextView numofword;
     private TextToSpeech tts;
     private ArrayList<String> wordlist = new ArrayList<>();
     private ArrayList<String> meanlist = new ArrayList<>();
@@ -41,7 +42,7 @@ public class Study1 extends AppCompatActivity {
 
         word = (TextView) findViewById(R.id.word);
         mean = (TextView) findViewById(R.id.mean);
-
+        numofword = (TextView) findViewById(R.id.NumOfWord);
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
@@ -94,6 +95,7 @@ public class Study1 extends AppCompatActivity {
                         if(i<wordlist.size()) {
                             word.setText(wordlist.get(i));
                             mean.setText("");
+                            numofword.setText(i + 1 + "/" + wordlist.size());
                             Message message1 = handler.obtainMessage(3);
                             tts.speak(wordlist.get(i),TextToSpeech.QUEUE_FLUSH,null);
                             handler.sendMessageDelayed(message1, 2000);
@@ -108,6 +110,7 @@ public class Study1 extends AppCompatActivity {
                 case 3:
                             word.setText(wordlist.get(i));
                             mean.setText(meanlist.get(i));
+                            numofword.setText(i + 1 + "/" + wordlist.size());
                             tts.speak(wordlist.get(i),TextToSpeech.QUEUE_FLUSH,null);
                             Message message2 = handler.obtainMessage(2);
                             i++;

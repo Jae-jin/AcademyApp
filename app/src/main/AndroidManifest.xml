@@ -19,7 +19,6 @@
         <activity android:name=".month" />
         <activity android:name=".Studystart" />
         <activity android:name=".ManageResult" />
-        <activity android:name=".Study2" />
         <activity android:name=".Starttest" />
         <activity android:name=".Test" />
         <activity android:name=".ResultPage" />
