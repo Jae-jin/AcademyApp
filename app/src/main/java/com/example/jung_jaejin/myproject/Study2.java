@@ -10,12 +10,12 @@ import android.widget.TextView;
 public class Study2 extends AppCompatActivity {
 
     TextView study2;
-
+    Intent getintent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study2);
-
+        getintent = getIntent();
         study2 = (TextView)findViewById(R.id.study2);
 
         study2.setOnClickListener(new View.OnClickListener()

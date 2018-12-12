@@ -8,14 +8,14 @@
 
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         app:scale_base_width="1000"
         app:scale_base_height="1600">
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:scale_left="80"
-            app:scale_width="920"
+            app:scale_width="840"
             app:scale_height="300"
             app:scale_top="400"
             android:text="Start Study"
@@ -28,8 +28,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:scale_left="80"
-            app:scale_top="1000"
-            app:scale_width="920"
+            app:scale_top="850"
+            app:scale_width="840"
             app:scale_height="500"
             android:textAlignment="center"
             android:text="Tips\n\n위 버튼을 누르면 학습을 시작하게 됩니다. 단어 100개와 숙어 20개를 학습하게 됩니다. 열심히 보고 시험에 꼭 통과하시기를 바랍니다."

@@ -21,11 +21,10 @@
             app:scale_width="1000"
             app:scale_height="600"
             android:textAlignment="center"
-            android:text="Bag"
             android:gravity="center"
             app:scale_textsize="400"
             tools:ignore="MissingPrefix"
-            android:id="@+id/study1"
+            android:id="@+id/word"
             />
 
         <TextView
@@ -35,9 +34,9 @@
             app:scale_width="1000"
             app:scale_height="200"
             android:textAlignment="center"
-            android:text="가방"
             android:gravity="center"
             app:scale_textsize="100"
+            android:id="@+id/mean"
             tools:ignore="MissingPrefix"/>
     </com.ssomai.android.scalablelayout.ScalableLayout>
 </android.support.constraint.ConstraintLayout>

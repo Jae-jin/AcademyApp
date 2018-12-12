@@ -19,8 +19,8 @@ public class ManageResult extends AppCompatActivity {
 
         //TabLayout
         TabLayout tabs = (TabLayout) findViewById(R.id.tabs);
-        tabs.addTab(tabs.newTab().setText("Tab 1"));
-        tabs.addTab(tabs.newTab().setText("Tab 2"));
+        tabs.addTab(tabs.newTab().setText("Management"));
+        tabs.addTab(tabs.newTab().setText("Result"));
         tabs.setTabGravity(tabs.GRAVITY_FILL);
 
         //어답터설정
