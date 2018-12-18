@@ -26,7 +26,8 @@
             android:text="110/300s"
             android:gravity="center"
             app:scale_textsize="70"
-            tools:ignore="MissingPrefix"/>
+            tools:ignore="MissingPrefix"
+            android:id="@+id/timer"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,9 +38,11 @@
             app:scale_height="100"
             android:textAlignment="center"
             android:text="87/100"
+            android:id="@+id/process"
             android:gravity="center"
             app:scale_textsize="70"
-            tools:ignore="MissingPrefix"/>
+            tools:ignore="MissingPrefix"
+            />
 
         <TextView
             android:layout_width="wrap_content"
@@ -48,9 +51,9 @@
             app:scale_width="1000"
             app:scale_height="600"
             android:textAlignment="center"
-            android:text="Bag"
             android:gravity="center"
             app:scale_textsize="400"
+            android:id="@+id/problem"
             tools:ignore="MissingPrefix"/>
 
         <TextView
@@ -59,11 +62,10 @@
             app:scale_top="900"
             app:scale_width="500"
             app:scale_height="200"
-            android:text="1.가방"
             android:gravity="center"
             app:scale_textsize="150"
             tools:ignore="MissingPrefix"
-            android:id="@+id/test"
+            android:id="@+id/answer1"
             />
 
         <TextView
@@ -73,9 +75,9 @@
             app:scale_top="900"
             app:scale_width="500"
             app:scale_height="200"
-            android:text="2.지갑"
             android:gravity="center"
             app:scale_textsize="150"
+            android:id="@+id/answer2"
             tools:ignore="MissingPrefix"/>
 
         <TextView
@@ -84,9 +86,9 @@
             app:scale_top="1200"
             app:scale_width="500"
             app:scale_height="200"
-            android:text="3.돈"
             android:gravity="center"
             app:scale_textsize="150"
+            android:id="@+id/answer3"
             tools:ignore="MissingPrefix"/>
 
         <TextView
@@ -96,9 +98,9 @@
             app:scale_top="1200"
             app:scale_width="500"
             app:scale_height="200"
-            android:text="4.구두"
             android:gravity="center"
             app:scale_textsize="150"
+            android:id="@+id/answer4"
             tools:ignore="MissingPrefix"/>
 
     </com.ssomai.android.scalablelayout.ScalableLayout>

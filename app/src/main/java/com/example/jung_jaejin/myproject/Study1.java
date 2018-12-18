@@ -35,6 +35,7 @@ public class Study1 extends AppCompatActivity {
     private ArrayList<String> wordlist = new ArrayList<>();
     private ArrayList<String> meanlist = new ArrayList<>();
     private int i = 0;
+    private int limittime = 300;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
