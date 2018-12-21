@@ -15,6 +15,17 @@
         app:scale_base_height="3150"
         app:scale_base_width="1000">
 
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Day6~Day12 복습"
+            app:scale_height="200"
+            app:scale_left="200"
+            app:scale_textsize="60"
+            app:scale_top="100"
+            app:scale_width="600"
+            tools:ignore="MissingPrefix" />
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -414,19 +425,7 @@
             tools:ignore="MissingPrefix" />
 
 
-        <Spinner
-            android:id="@+id/spinner"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:visibility="visible"
-            app:scale_height="200"
-            app:scale_left="80"
-            app:scale_top="80"
-            app:scale_width="820"
-            tools:ignore="MissingPrefix">
 
-
-        </Spinner>
     </com.ssomai.android.scalablelayout.ScalableLayout>
 
 

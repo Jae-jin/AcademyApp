@@ -22,17 +22,12 @@ public class month extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_month);
-        spinner = (Spinner)findViewById(R.id.spinner);
 
-        final ArrayList<String> list = new ArrayList<>();
-        list.add("2018.12.31 ~ 2018.01.25");
-        list.add("2018.01.28 ~ 2018.02.22");
-        list.add("2018.02.25 ~ 2018.03.22");
-        list.add("2018.03.25 ~ 2018.04.19");
 
-        ArrayAdapter spinnerAdapter;
-        spinnerAdapter = new ArrayAdapter(this, R.layout.support_simple_spinner_dropdown_item, list);
-        spinner.setAdapter(spinnerAdapter);
+
+
+
+
 
         todayTest = (Button)findViewById(R.id.todayTest);
 
