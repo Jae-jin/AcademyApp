@@ -7,7 +7,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ManageResult"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/colorSkyBlue">
 
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
@@ -25,23 +26,23 @@
             android:text="CLASS"
             app:scale_textsize="30"
             />
-    <android.support.design.widget.TabLayout
-        android:id="@+id/tabs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:scale_height="150"
-        app:scale_left = "340"
-        app:scale_width="660"/>
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabs"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_height="150"
+            app:scale_left = "340"
+            app:scale_width="660"/>
 
-    <android.support.v4.view.ViewPager
-        android:id="@+id/viewpager"
-        app:scale_top="150"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:scale_width="1000"
-        app:scale_height="1450">
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewpager"
+            app:scale_top="150"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_width="1000"
+            app:scale_height="1450">
 
-    </android.support.v4.view.ViewPager>
+        </android.support.v4.view.ViewPager>
 
     </com.ssomai.android.scalablelayout.ScalableLayout>
 
