@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultPage_review">
+
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:scale_base_width="1000"
+        app:scale_base_height="1600">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/Howmuch"
+            app:scale_top="200"
+            app:scale_width="1000"
+            app:scale_height="300"
+            android:text="120 / 120"
+            android:gravity="center"
+            app:scale_textsize="100"
+            tools:ignore="MissingPrefix"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/PassOrFail"
+            app:scale_top="600"
+            app:scale_width="1000"
+            app:scale_height="300"
+            android:textAlignment="center"
+            android:text="PASS"
+            android:gravity="center"
+            app:scale_textsize="100"
+            tools:ignore="MissingPrefix"/>
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="100"
+            app:scale_top="1000"
+            app:scale_width="800"
+            app:scale_height="250"
+            android:text="다시하기 or 완료"
+            app:scale_textsize="80"
+            tools:ignore="MissingPrefix"
+            android:id="@+id/result"
+            />
+
+
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+</android.support.constraint.ConstraintLayout>

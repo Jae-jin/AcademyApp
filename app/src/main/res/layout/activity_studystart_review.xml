@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Studystart_review">
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:scale_base_width="1000"
+        app:scale_base_height="1600">
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="80"
+            app:scale_width="840"
+            app:scale_height="300"
+            app:scale_top="400"
+            android:text="Start Review"
+            app:scale_textsize="90"
+            tools:ignore="MissingPrefix"
+            android:id="@+id/studyreview"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="80"
+            app:scale_top="850"
+            app:scale_width="840"
+            app:scale_height="500"
+            android:textAlignment="center"
+            android:text="Tips\n\n위 버튼을 누르면 복습을 시작하게 됩니다. 6일까지의 테스트 중 틀린 단어들을 다시 한번 복습하게 됩니다. 열심히 보고 시험에 꼭 통과하시기를 바랍니다."
+            app:scale_textsize="50"
+            tools:ignore="MissingPrefix"/>
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+</android.support.constraint.ConstraintLayout>

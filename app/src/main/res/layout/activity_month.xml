@@ -19,12 +19,13 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Day6~Day12 복습"
-            app:scale_height="200"
+            android:text="복습하기"
+            app:scale_height="150"
             app:scale_left="200"
-            app:scale_textsize="60"
+            app:scale_textsize="50"
             app:scale_top="100"
             app:scale_width="600"
+            android:id="@+id/review_test"
             tools:ignore="MissingPrefix" />
         <Button
             android:layout_width="wrap_content"

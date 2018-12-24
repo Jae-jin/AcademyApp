@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Test_review">
+
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:scale_base_width="1000"
+        app:scale_base_height="1600">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="80"
+            app:scale_top="100"
+            app:scale_width="300"
+            app:scale_height="100"
+            android:textAlignment="center"
+            android:text="110/300s"
+            android:gravity="center"
+            app:scale_textsize="70"
+            tools:ignore="MissingPrefix"
+            android:id="@+id/timer"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="620"
+            app:scale_top="100"
+            app:scale_width="300"
+            app:scale_height="100"
+            android:textAlignment="center"
+            android:text="87/100"
+            android:id="@+id/process"
+            android:gravity="center"
+            app:scale_textsize="70"
+            tools:ignore="MissingPrefix"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_top="250"
+            app:scale_width="1000"
+            app:scale_height="600"
+            android:textAlignment="center"
+            android:gravity="center"
+            app:scale_textsize="400"
+            android:id="@+id/problem"
+            tools:ignore="MissingPrefix"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_top="900"
+            app:scale_width="500"
+            app:scale_height="200"
+            android:gravity="center"
+            app:scale_textsize="150"
+            tools:ignore="MissingPrefix"
+            android:id="@+id/answer1"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="500"
+            app:scale_top="900"
+            app:scale_width="500"
+            app:scale_height="200"
+            android:gravity="center"
+            app:scale_textsize="150"
+            android:id="@+id/answer2"
+            tools:ignore="MissingPrefix"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_top="1200"
+            app:scale_width="500"
+            app:scale_height="200"
+            android:gravity="center"
+            app:scale_textsize="150"
+            android:id="@+id/answer3"
+            tools:ignore="MissingPrefix"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="500"
+            app:scale_top="1200"
+            app:scale_width="500"
+            app:scale_height="200"
+            android:gravity="center"
+            app:scale_textsize="150"
+            android:id="@+id/answer4"
+            tools:ignore="MissingPrefix"/>
+
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+</android.support.constraint.ConstraintLayout>
