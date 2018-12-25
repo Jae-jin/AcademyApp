@@ -36,6 +36,7 @@ public class month extends AppCompatActivity implements View.OnClickListener {
     private int getFilenum;
     private int getDay;
     Button todayTest;
+    private Button review_test;
     private static String TAG = "month";
     private Button[] mButton = new Button[36];
 
@@ -79,6 +80,7 @@ public class month extends AppCompatActivity implements View.OnClickListener {
         mButton[33] = (Button)findViewById(R.id.day34);
         mButton[34] = (Button)findViewById(R.id.day35);
         mButton[35] = (Button)findViewById(R.id.day36);
+        review_test = (Button)findViewById(R.id.review_test);
         Intent intent = getIntent();
 
 
@@ -102,7 +104,13 @@ public class month extends AppCompatActivity implements View.OnClickListener {
             }
         }
 
-
+        review_test.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(getApplicationContext(),Studystart_review.class);
+                startActivity(intent);
+            }
+        });
 
 
 //        todayTest = (Button)findViewById(R.id.todayTest);
