@@ -20,6 +20,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:scale_top="600"
+        android:id="@+id/group0"
         app:scale_left="200"
         app:scale_width="300"
         app:scale_height="400"
@@ -27,22 +28,25 @@
         tools:ignore="MissingPrefix">
 
         <RadioButton
-            android:id="@+id/radioButton2"
+            android:id="@+id/middle1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="1학년" />
 
         <RadioButton
+
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="2학년" />
+            android:text="2학년"
+            android:id="@+id/middle2"/>
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:id="@+id/middle3"
             android:text="3학년" />
 
     </RadioGroup>
@@ -76,7 +80,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="정재진"
         app:scale_left="300"
         app:scale_width="600"
         app:scale_top="100"
@@ -90,7 +94,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:inputType="phone"
-            android:text="010-XXXX-XXXX"
+            android:hint="010xxxxxxxx"
             app:scale_left="300"
             app:scale_width="600"
             app:scale_top="250"
@@ -107,11 +111,13 @@
         app:scale_width="300"
         app:scale_height="400"
         android:gravity="center"
+        android:id="@+id/group1"
         tools:ignore="MissingPrefix" >
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:id="@+id/high1"
             android:layout_weight="1"
             android:text="1학년" />
 
@@ -119,10 +125,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:id="@+id/high2"
             android:text="2학년" />
 
         <RadioButton
-            android:id="@+id/radioButton3"
+            android:id="@+id/high3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -166,23 +173,26 @@
         app:scale_height="100"
         android:gravity="center"
         tools:ignore="MissingPrefix"
+        android:id="@+id/group2"
         android:orientation="horizontal"
          >
 
         <RadioButton
-            android:id="@+id/radioButton4"
+            android:id="@+id/Sclass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="S" />
 
         <RadioButton
+            android:id="@+id/Aclass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="A" />
 
         <RadioButton
+            android:id="@+id/Bclass"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"

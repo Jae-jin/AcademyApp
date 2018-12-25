@@ -49,6 +49,7 @@
             tools:ignore="MissingPrefix" />
 
         <EditText
+            android:id="@+id/signinid"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:scale_left="350"
@@ -59,6 +60,7 @@
             />
 
         <EditText
+            android:id="@+id/signinps"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:scale_left="350"
