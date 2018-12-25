@@ -32,6 +32,11 @@
         <activity android:name=".SignUpActivity" />
         <activity android:name=".Signup2" />
         <activity android:name=".Study1" />
+        <activity android:name=".Studystart_review" />
+        <activity android:name=".Review" />
+        <activity android:name=".Test_review" />
+        <activity android:name=".Starttest_review" />
+        <activity android:name=".ResultPage_review"></activity>
     </application>
 
 </manifest>

@@ -1,22 +1,21 @@
 package com.example.jung_jaejin.myproject;
 
-import android.annotation.SuppressLint;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Handler;
 import android.os.Message;
-import android.speech.tts.TextToSpeech;
-import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Random;
@@ -25,7 +24,8 @@ import jxl.Sheet;
 import jxl.Workbook;
 import jxl.read.biff.BiffException;
 
-public class Test extends AppCompatActivity {
+public class Test_review extends AppCompatActivity {
+
     private TextView timer;
     private TextView process;
     private TextView problem;
@@ -56,7 +56,7 @@ public class Test extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        setContentView(R.layout.activity_test_review);
         Random random = new Random();
 
         timer = (TextView)findViewById(R.id.timer);
@@ -96,31 +96,24 @@ public class Test extends AppCompatActivity {
             }
         });
 
-        try {
-            AssetManager am = getAssets();
-            InputStream is = am.open("English1.xls");
-            Workbook wb = Workbook.getWorkbook(is);
-            if(wb != null) {
-                Sheet sheet = wb.getSheet(0);   // 시트 불러오기
-                if(sheet != null) {
-
-                    int colTotal = sheet.getColumns();    // 전체 컬럼
-                    int rowIndexStart = 1;                  // row 인덱스 시작
-                    int rowTotal = sheet.getColumn(colTotal - 1).length;
-
-                    StringBuilder sb;
-                    for (int row = rowIndexStart; row < rowTotal; row++) {
-
-                        String getword = sheet.getCell(0, row).getContents();
-                        String getmean = sheet.getCell(1, row).getContents();
-                        wordlist.add(getword);
-                        meanlist.add(getmean);
-                    }
-                }
+        try{
+            StringBuffer data = new StringBuffer();
+            FileInputStream fis = openFileInput("_data.txt");
+            BufferedReader buffer = new BufferedReader(new InputStreamReader(fis));
+            String str = buffer.readLine();
+            while(str != null){
+                data.append(str+"\n");
+                String[] array = str.split(" ");
+                wordlist.add(array[0]);
+                meanlist.add(array[1]);
+                Log.d("word:",array[0]);
+                Log.d("mean:",array[1]);
+                str = buffer.readLine();
             }
-        } catch (IOException e) {
+            buffer.close();
+        } catch (FileNotFoundException e) {
             e.printStackTrace();
-        } catch (BiffException e) {
+        } catch (IOException e) {
             e.printStackTrace();
         }
 
@@ -141,9 +134,6 @@ public class Test extends AppCompatActivity {
         handler.sendMessageDelayed(message1, 1000);
 
     }
-
-
-
     private Handler handler;
 
     {
@@ -307,5 +297,4 @@ public class Test extends AppCompatActivity {
             }
         };
     }
-
 }

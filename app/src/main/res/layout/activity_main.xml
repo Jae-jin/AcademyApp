@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/colorSkyBlue">
 
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
@@ -95,13 +96,13 @@
             android:id="@+id/login"
             app:scale_textsize="70"
             tools:ignore="MissingPrefix"/>
-        
-        
+
+
     </com.ssomai.android.scalablelayout.ScalableLayout>
-    
 
 
 
-   
+
+
 
 </LinearLayout>
