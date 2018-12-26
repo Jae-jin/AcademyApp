@@ -8,6 +8,8 @@ import android.content.DialogInterface;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Message;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.util.Log;
@@ -37,10 +39,10 @@ import java.net.URL;
 import java.util.ArrayList;
 
 
-public class Fragment_two extends Fragment  {
+public class Fragment_two extends Fragment implements View.OnClickListener {
     ScalableLayout s1;
     View v;
-
+    private int check = 0;
     private int j;
     private Button[] mButton;
     private ArrayList<String> idlist = new ArrayList<>();
@@ -63,9 +65,36 @@ public class Fragment_two extends Fragment  {
         s1 = (ScalableLayout)v.findViewById(R.id.scale);
         Student task = new Student();
         task.execute("middle1","S");
+       
+        for(int q = 0; q<mButton.length;q++)
+        {
+            mButton[q].setOnClickListener(this);
+        }
         return v;
     }
+    private Handler handler = new Handler(){
+        public void handleMessage(Message msg){
+            switch(msg.what){
+                case 1:
 
+                    break;
+
+            }
+        }
+    };
+    @Override
+    public void onClick(View v) {
+        Button newButton = (Button) v;
+
+        for(Button tempButton : mButton){
+            if(tempButton == newButton)
+            {
+                int position = (Integer)v.getTag();
+                Getgradecl task1 = new Getgradecl();
+                task1.execute(idlist.get(position));
+            }
+        }
+    }
 
 
     class Student extends AsyncTask<String, Void, String> {
@@ -101,19 +130,12 @@ public class Fragment_two extends Fragment  {
                 mButton = new Button[length+1];
                 for(int i = 0;i<length;i++) {
                     Button idbutton = new Button(v.getContext());
-                    
                     mButton[i] = idbutton;
-                    mButton[i].setTag(i);
                     s1.addView(idbutton,0,i*100,250,150);
                     s1.setScale_TextSize(idbutton,50);
                     idbutton.setText(namelist.get(i));
-
                 }
-
-
-
-
-
+                check = 1;
             }
 
             else{
@@ -383,8 +405,6 @@ public class Fragment_two extends Fragment  {
             }
             return "error";
         }
-
-
     }
 
 }
