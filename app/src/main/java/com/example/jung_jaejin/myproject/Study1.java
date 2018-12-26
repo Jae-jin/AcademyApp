@@ -84,6 +84,13 @@ public class Study1 extends AppCompatActivity {
         handler.sendMessageDelayed(message, 1000);//1초 대기
 
     }
+    @Override
+    protected void onDestroy()
+    {
+        super.onDestroy();
+
+        tts.shutdown();
+    }
     private Handler handler = new Handler(){
         public void handleMessage(Message msg){
             switch(msg.what){
