@@ -1,6 +1,7 @@
 package com.example.jung_jaejin.myproject;
 
 import android.app.ProgressDialog;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.AsyncTask;
@@ -39,11 +40,18 @@ public class month extends AppCompatActivity implements View.OnClickListener {
     private Button review_test;
     private static String TAG = "month";
     private Button[] mButton = new Button[36];
+    private ArrayList<Integer> gradelist= new ArrayList<>();
+    private ArrayList<Integer> timelist = new ArrayList<>();
+    private ArrayList<Integer> maxlist = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_month);
+        for(int i = 0; i<180;i++)
+        {
+            gradelist.add(-1);
+        }
         mButton[0] = (Button)findViewById(R.id.day1);
         mButton[1] = (Button)findViewById(R.id.day2);
         mButton[2] = (Button)findViewById(R.id.day3);
@@ -89,19 +97,12 @@ public class month extends AppCompatActivity implements View.OnClickListener {
         getClass = intent.getStringExtra("class");
         getFilenum = Integer.parseInt(intent.getStringExtra("filenum"));
         getDay = Integer.parseInt(intent.getStringExtra("day"));
-        for(int i = 0; i<36;i++){
-            mButton[i].setTag(i);
-            mButton[i].setOnClickListener(this);
-            if(i == getDay) {
-                mButton[i].setText("Day" + (i+1) + "\n" + "Today");
-            }
-            else if(i <getDay){
-                mButton[i].setText("Day" + (i+1) + "\n" + "Past");
-            }
-            else{
-                mButton[i].setText("Day" + (i+1) + "\n" + "Lock");
-                mButton[i].setEnabled(false);
-            }
+        Grade task = new Grade();
+        task.execute(getId);
+
+
+        for(int i=0;i<36;i++){
+                                mButton[i].setOnClickListener(this);
         }
 
         review_test.setOnClickListener(new View.OnClickListener(){
@@ -145,105 +146,156 @@ public class month extends AppCompatActivity implements View.OnClickListener {
             }
     }
 
-//    class InsertData extends AsyncTask<String, Void, String> {
-//        ProgressDialog progressDialog;
-//
-//        @Override
-//        protected void onPreExecute(){
-//            super.onPreExecute();
-//
-//            progressDialog = progressDialog.show(month.this, "Please Wait",null,
-//                    true, true);
-//        }
-//
-//        @Override
-//        protected void onPostExecute(String result){
-//            super.onPostExecute(result);
-//
-//            progressDialog.dismiss();
-//            Log.d(TAG,"POST response - " + result);
-//            if(result.equals("success") == true){
-//                AlertDialog.Builder dialog = new AlertDialog.Builder(month.this);
-//                dialog.setTitle("가입 성공!")
-//                        .setPositiveButton("확인", new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialog, int which) {
-//                                Intent intent = new Intent(getApplicationContext(),MainActivity.class);
-//                                startActivity(intent);
-//                            }
-//                        }).create().show();
-//            }
-//            else if(result.equals("1062")==true){
-//                AlertDialog.Builder dialog = new AlertDialog.Builder(month.this);
-//                dialog.setTitle("가입 실패!")
-//                        .setMessage("ID 중복")
-//                        .setPositiveButton("확인", new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialog, int which) {
-//
-//                            }
-//                        }).create().show();
-//            }
-//            else{
-//                AlertDialog.Builder dialog = new AlertDialog.Builder(month.this);
-//                dialog.setTitle("가입 실패!")
-//                        .setMessage("에러 코드 : "+result)
-//                        .setPositiveButton("확인", new DialogInterface.OnClickListener() {
-//                            @Override
-//                            public void onClick(DialogInterface dialog, int which) {
-//
-//                            }
-//                        }).create().show();
-//            }
-//        }
-//
-//        @Override
-//        protected String doInBackground(String... params){
-//            String serverURL = "http://ymc7737.cafe24.com/appmake/student.php";
-//            String postParameters = "Id=" + params[0] + "&Pw=" + params[1] + "&Name=" + params[2] + "&Phone=" + params[3] + "&Grade=" +
-//                    params[4] + "&Class=" + params[5];
-//            try{
-//                URL url = new URL(serverURL);
-//                HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
-//                httpURLConnection.setReadTimeout(5000);
-//                httpURLConnection.setConnectTimeout(5000);
-//                httpURLConnection.setRequestMethod("POST");
-//                httpURLConnection.setDoInput(true);
-//                httpURLConnection.connect();
-//
-//                OutputStream outputStream = httpURLConnection.getOutputStream();
-//                outputStream.write(postParameters.getBytes("UTF-8"));
-//                outputStream.flush();
-//                outputStream.close();
-//
-//                int responseStatusCode = httpURLConnection.getResponseCode();
-//                Log.d(TAG, "POST response code - "+responseStatusCode);
-//
-//                InputStream inputStream;
-//                if(responseStatusCode == HttpURLConnection.HTTP_OK){
-//                    inputStream = httpURLConnection.getInputStream();
-//                }
-//                else{
-//                    inputStream = httpURLConnection.getErrorStream();
-//                }
-//
-//                InputStreamReader inputStreamReader = new InputStreamReader(inputStream,"UTF-8");
-//                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
-//
-//                StringBuilder sb = new StringBuilder();
-//                String line = null;
-//                while((line = bufferedReader.readLine()) != null){
-//                    sb.append(line);
-//                }
-//                bufferedReader.close();
-//                return sb.toString();
-//
-//            } catch (MalformedURLException e) {
-//                e.printStackTrace();
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
-//            return "error";
-//        }
-//    }
+    class Grade extends AsyncTask<String, Void, String> {
+        ProgressDialog progressDialog;
+
+        @Override
+        protected void onPreExecute(){
+            super.onPreExecute();
+
+            progressDialog = progressDialog.show(month.this, "Please Wait", null,
+                    true, true);
+        }
+
+        @Override
+        protected void onPostExecute(String result){
+            super.onPostExecute(result);
+
+            progressDialog.dismiss();
+            Log.d(TAG, "POST response - " + result);
+            String main[] = result.split("Q");
+            String temp[] = main[1].split("&");
+            int length = temp.length;
+            int start = 0;
+
+            if(main[0].equals("ok") == true){
+                for(int i = 0;i<length;i++) {
+                    String getarray1 = temp[i].split(",")[0];
+                    String getarray2 = temp[i].split(",")[1];
+                    String getarray3 = temp[i].split(",")[2];
+                    int qq = Integer.parseInt(getarray1);
+                    int qqq = Integer.parseInt(getarray2);
+                    int qqqq = Integer.parseInt(getarray3);
+                    while(qqq != start){
+                        start++;
+                    }
+
+                    gradelist.set(5*start+qqqq,qq);
+
+                }
+//                Toast.makeText(month.this," : " + gradelist.get(7),Toast.LENGTH_LONG).show();
+                for(int i = 0; i<36;i++){
+                    int max = 0;
+                    int maxtime = 0;
+                    int pass = 0;
+                    for(int j= 0;j<5;j++){
+                        if(gradelist.get(5*i+j)!=-1 && pass == 0) {
+                            if (gradelist.get(5 * i + j) > max) {
+                                max = gradelist.get(5 * i + j);
+                                maxtime = j;
+                            }
+                            if(j == 4){
+                                maxlist.add(max);
+                                timelist.add(j);
+                            }
+                        }
+                        else if(gradelist.get(5*i+j)==-1 && j !=0 && pass == 0){
+                            maxtime = j-1;
+                            maxlist.add(max);
+                            timelist.add(maxtime);
+                            pass = 1;
+                        }
+                        else if(gradelist.get(5*i+j)==-1 && j ==0 && pass == 0){
+                            maxtime = j;
+                            maxlist.add(max);
+                            timelist.add(maxtime);
+                            pass = 1;
+                        }
+                        else{
+
+                        }
+
+                    }
+
+                }
+                for(int i = 0; i<36;i++){
+                    mButton[i].setTag(i);
+//                    mButton[i].setOnClickListener(this);
+                    if(i == getDay) {
+                        mButton[i].setText("Day" + (i+1) + "\n" + "Today");
+                    }
+                    else if(i <getDay){
+                        mButton[i].setText("Day" + (i+1) + "\n" + maxlist.get(i)+ "/"+timelist.get(i));
+                    }
+                    else{
+                        mButton[i].setText("Day" + (i+1) + "\n" + "Lock");
+                        mButton[i].setEnabled(false);
+                    }
+                }
+            }
+
+            else{
+                AlertDialog.Builder dialog = new AlertDialog.Builder(month.this);
+                dialog.setTitle("송신 에러")
+                        .setMessage("에러 코드 : "+result)
+                        .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+
+                            }
+                        }).create().show();
+            }
+
+
+        }
+
+        @Override
+        protected String doInBackground(String... params){
+            String serverURL = "http://ymc7737.cafe24.com/appmake/getgrade.php";
+            String postParameters = "Id=" + params[0];
+            try{
+                URL url = new URL(serverURL);
+                HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();
+                httpURLConnection.setReadTimeout(5000);
+                httpURLConnection.setConnectTimeout(5000);
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoInput(true);
+                httpURLConnection.connect();
+
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                outputStream.write(postParameters.getBytes("UTF-8"));
+                outputStream.flush();
+                outputStream.close();
+
+                int responseStatusCode = httpURLConnection.getResponseCode();
+                Log.d(TAG, "POST response code - "+responseStatusCode);
+
+                InputStream inputStream;
+                if(responseStatusCode == HttpURLConnection.HTTP_OK){
+                    inputStream = httpURLConnection.getInputStream();
+                }
+                else{
+                    inputStream = httpURLConnection.getErrorStream();
+                }
+
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream,"UTF-8");
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+                StringBuilder sb = new StringBuilder();
+                String line = null;
+                while((line = bufferedReader.readLine()) != null){
+                    sb.append(line);
+                }
+                bufferedReader.close();
+                return sb.toString();
+
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return "error";
+        }
+
+    }
 }

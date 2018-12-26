@@ -1,175 +1,268 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
-    <!-- Result 화면 구성 -->
-      <LinearLayout
-          android:layout_width="match_parent"
-          android:layout_height="match_parent">
-          <ScrollView
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content">
-              <LinearLayout
-                  android:layout_width="wrap_content"
-                  android:layout_height="match_parent"
-                  android:orientation="vertical">
-                  <Button
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text="김동균"/>
-                  <Button
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text="정재진"/>
-                  <Button
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text="이장호"/>
-                  <Button
-                      android:layout_width="wrap_content"
-                      android:layout_height="wrap_content"
-                      android:text="차재성"/>
-              </LinearLayout>
-          </ScrollView>
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:scale_base_height="4500"
+        android:id="@+id/scale"
+        app:scale_base_width="1000">
 
-        <LinearLayout
-              android:layout_width="wrap_content"
-              android:layout_height="wrap_content"
-              android:orientation="vertical">
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--android:id="@+id/student1"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-              <TableLayout
-                  android:layout_width="wrap_content"
-                  android:layout_height="wrap_content"
-                  android:stretchColumns="*"
-                  >
-                  <TableRow>
-                      <TextView
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:text="날짜/횟수"
-                          android:textSize="15dp"
-                          />
-                      <TextView
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:text="1st"
-                          android:textSize="24dp"
-                          />
-                      <TextView
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:text="2nd"
-                          android:textSize="24dp"
-                          />
-                      <TextView
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:text="3rd"
-                          android:textSize="24dp"
-                          />
-                      <TextView
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:text="4th"
-                          android:textSize="24dp"
-                          />
-                      <TextView
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:text="5th"
-                          android:textSize="24dp"
-                          />
-                  </TableRow>
 
-                  <ScrollView
-                      android:layout_width="wrap_content"
-                      android:layout_height="match_parent">
-                      <TableLayout
-                          android:layout_width="wrap_content"
-                          android:layout_height="wrap_content"
-                          android:stretchColumns="*">
-                          <TableRow>
-                              <TextView
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-                                  android:text="Day 1"
-                                  android:textSize="24dp"
-                                  />
-                              <TextView
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-                                  android:text="60"
-                                  android:textSize="24dp"
-                                  />
-                              <TextView
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-                                  android:text="70"
-                                  android:textSize="24dp"
-                                  />
-                              <TextView
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-                                  android:text="80"
-                                  android:textSize="24dp"
-                                  />
-                              <TextView
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-                                  android:text="90"
-                                  android:textSize="24dp"
-                                  />
-                              <TextView
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-                                  android:text="100"
-                                  android:textSize="24dp"
-                                  />
-                          </TableRow>
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="150"-->
+            <!--android:id="@+id/student2"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-                          <TableRow>
-                              <TextView
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-                                  android:text="Day 2"
-                                  android:textSize="24dp"
-                                  />
-                              <TextView
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-                                  android:text="60"
-                                  android:textSize="24dp"
-                                  />
-                              <TextView
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-                                  android:text="70"
-                                  android:textSize="24dp"
-                                  />
-                              <TextView
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-                                  android:text="80"
-                                  android:textSize="24dp"
-                                  />
-                              <TextView
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-                                  android:text="90"
-                                  android:textSize="24dp"
-                                  />
-                              <TextView
-                                  android:layout_width="wrap_content"
-                                  android:layout_height="wrap_content"
-                                  android:text="100"
-                                  android:textSize="24dp"
-                                  />
-                          </TableRow>
-                      </TableLayout>
-                  </ScrollView>
-              </TableLayout>
-        </LinearLayout>
-      </LinearLayout>
-</FrameLayout>
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="300"-->
+            <!--android:id="@+id/student3"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="450"-->
+            <!--android:id="@+id/student4"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="600"-->
+            <!--android:id="@+id/student5"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="750"-->
+            <!--android:id="@+id/student6"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="900"-->
+            <!--android:id="@+id/student7"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="1050"-->
+            <!--android:id="@+id/student8"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="1200"-->
+            <!--android:id="@+id/student9"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="1350"-->
+            <!--android:id="@+id/student10"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="1500"-->
+            <!--android:id="@+id/student11"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_top="1650"-->
+            <!--app:scale_width="250"-->
+            <!--android:id="@+id/student12"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_top="1800"-->
+            <!--app:scale_width="250"-->
+            <!--android:id="@+id/student13"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="1950"-->
+            <!--android:id="@+id/student14"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="2100"-->
+            <!--android:id="@+id/student15"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="2250"-->
+            <!--android:id="@+id/student16"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="2400"-->
+            <!--android:id="@+id/student17"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="2550"-->
+            <!--android:id="@+id/student18"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="2700"-->
+            <!--android:id="@+id/student19"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--android:id="@+id/student20"-->
+            <!--app:scale_height="150"-->
+            <!--app:scale_top="2850"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--android:id="@+id/student21"-->
+            <!--app:scale_height="150"-->
+            <!--app:scale_top="3000"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="3150"-->
+            <!--android:id="@+id/student22"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="3300"-->
+            <!--android:id="@+id/student23"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="3450"-->
+            <!--android:id="@+id/student24"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--android:id="@+id/student25"-->
+            <!--app:scale_height="150"-->
+            <!--app:scale_top="3600"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--android:id="@+id/student26"-->
+            <!--app:scale_height="150"-->
+            <!--app:scale_top="3750"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--android:id="@+id/student27"-->
+            <!--app:scale_height="150"-->
+            <!--app:scale_top="3900"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--android:id="@+id/student28"-->
+            <!--app:scale_height="150"-->
+            <!--app:scale_top="4050"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="4200"-->
+            <!--android:id="@+id/student29"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--app:scale_width="250"-->
+            <!--app:scale_top="4350"-->
+            <!--android:id="@+id/student30"-->
+            <!--app:scale_height="150"-->
+            <!--tools:ignore="MissingPrefix" />-->
+
+
+
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+
+</ScrollView>
