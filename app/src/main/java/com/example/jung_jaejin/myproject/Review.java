@@ -1,5 +1,6 @@
 package com.example.jung_jaejin.myproject;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Handler;
@@ -13,9 +14,11 @@ import android.widget.TextView;
 import java.io.BufferedReader;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Locale;
 
@@ -53,7 +56,7 @@ public class Review extends AppCompatActivity {
         });//영어 단어 소리 내기 위한 객체 생성
         try{
             StringBuffer data = new StringBuffer();
-            FileInputStream fis = openFileInput("_data.txt");
+            FileInputStream fis = openFileInput("data.txt");
             BufferedReader buffer = new BufferedReader(new InputStreamReader(fis));
             String str = buffer.readLine();
             while(str != null){
@@ -95,8 +98,22 @@ public class Review extends AppCompatActivity {
                         handler.sendMessageDelayed(message1, 2000);//2초 있다가 뜻까지 같이 표시한다.
                     }
                     else {//단어 다 봤을 경우
+                        // 6배수 DAY를 100점맞았을때
+                        // data.txt 파일을 초기화
+                        try{
+                            FileOutputStream last_fos = openFileOutput("data.txt",Context.MODE_APPEND);
+
+                            PrintWriter writer = new PrintWriter(last_fos);
+
+                            writer.print("");
+                            writer.close();
+
+                        } catch (FileNotFoundException e) {
+                            e.printStackTrace();
+                        }
+
                         removeMessages(3);
-                        Intent intent = new Intent(getApplicationContext(),Starttest_review.class);//다음 화면으로 넘어간다.
+                        Intent intent = new Intent(getApplicationContext(),month.class);//다음 화면으로 넘어간다.
                         startActivity(intent);
                     }
                     break;
