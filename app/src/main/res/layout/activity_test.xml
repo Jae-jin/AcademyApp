@@ -52,8 +52,10 @@
             app:scale_height="600"
             android:textAlignment="center"
             android:gravity="center"
-            app:scale_textsize="400"
+            app:autoSizeTextType="uniform"
             android:id="@+id/problem"
+            app:autoSizeMinTextSize="20sp"
+            app:autoSizeMaxTextSize="50sp"
             tools:ignore="MissingPrefix"/>
 
         <TextView
@@ -63,7 +65,9 @@
             app:scale_width="500"
             app:scale_height="200"
             android:gravity="center"
-            app:scale_textsize="150"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="20sp"
+            app:autoSizeMaxTextSize="50sp"
             tools:ignore="MissingPrefix"
             android:id="@+id/answer1"
             />
@@ -76,7 +80,9 @@
             app:scale_width="500"
             app:scale_height="200"
             android:gravity="center"
-            app:scale_textsize="150"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="20sp"
+            app:autoSizeMaxTextSize="50sp"
             android:id="@+id/answer2"
             tools:ignore="MissingPrefix"/>
 
@@ -87,8 +93,10 @@
             app:scale_width="500"
             app:scale_height="200"
             android:gravity="center"
-            app:scale_textsize="150"
+            app:autoSizeTextType="uniform"
             android:id="@+id/answer3"
+            app:autoSizeMinTextSize="20sp"
+            app:autoSizeMaxTextSize="50sp"
             tools:ignore="MissingPrefix"/>
 
         <TextView
@@ -99,7 +107,9 @@
             app:scale_width="500"
             app:scale_height="200"
             android:gravity="center"
-            app:scale_textsize="150"
+            app:autoSizeMinTextSize="20sp"
+            app:autoSizeMaxTextSize="50sp"
+            app:autoSizeTextType="uniform"
             android:id="@+id/answer4"
             tools:ignore="MissingPrefix"/>
 

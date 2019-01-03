@@ -24,6 +24,7 @@
             app:scale_height="150"
             tools:ignore="MissingPrefix"
             android:text="CLASS"
+            android:id="@+id/buttonclass"
             app:scale_textsize="30"
             />
         <android.support.design.widget.TabLayout

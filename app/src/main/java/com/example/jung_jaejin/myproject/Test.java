@@ -38,13 +38,19 @@ public class Test extends AppCompatActivity {
     private int NumOfRight;
     private int NumOfProblem;
     private int Numrandom;
+    private int realday;
     private int SelectProblem;
     private int limittime=5;
     private int currenttime;
-    private int fulltime = 30;
+    private int fulltime = 300;
     private int gonext=0;
     private int start;
-
+    private String user_id;
+    private String grade;
+    private String classss;
+    private int filenum;
+    private int day;
+    private int time;
     private ArrayList<String> wordlist = new ArrayList<>();
     private ArrayList<String> meanlist = new ArrayList<>();
     private ArrayList<Integer> randomlist = new ArrayList<>();
@@ -57,8 +63,15 @@ public class Test extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
+        Intent intent = getIntent();
+        user_id = intent.getStringExtra("user_id");
+        grade = intent.getStringExtra("grade");
+        classss = intent.getStringExtra("class");
+        filenum = intent.getIntExtra("filenum",0);
+        day = intent.getIntExtra("day",0);
+        time = intent.getIntExtra("time",0);
+        realday = intent.getIntExtra("realday",0);
         Random random = new Random();
-
         timer = (TextView)findViewById(R.id.timer);
         process = (TextView)findViewById(R.id.process);
         problem = (TextView)findViewById(R.id.problem);
@@ -98,10 +111,25 @@ public class Test extends AppCompatActivity {
 
         try {
             AssetManager am = getAssets();
-            InputStream is = am.open("English1.xls");
+            InputStream is = null;
+            switch (filenum){
+                case 1:
+                    is = am.open("중1-중2 Day 1-41 단어.xls");
+                    break;
+                case 2:
+                    is = am.open("중3-고1 Day 1-66 단어.xls");
+                    break;
+                case 3:
+                    is = am.open("고2-고3 Day 1-36 단어.xls");
+                    break;
+                case 4:
+                    is = am.open("수능 Day 1-28 단어.xls");
+                    break;
+
+            }
             Workbook wb = Workbook.getWorkbook(is);
             if(wb != null) {
-                Sheet sheet = wb.getSheet(0);   // 시트 불러오기
+                Sheet sheet = wb.getSheet(day);   // 시트 불러오기
                 if(sheet != null) {
 
                     int colTotal = sheet.getColumns();    // 전체 컬럼
@@ -158,6 +186,13 @@ public class Test extends AppCompatActivity {
                             Intent intent = new Intent(getApplicationContext(), ResultPage.class);
                             intent.putExtra("numOfRight", NumOfRight);
                             intent.putExtra("numOfProblem", NumOfProblem);
+                            intent.putExtra("user_id", user_id);
+                            intent.putExtra("grade",grade);
+                            intent.putExtra("class",classss);
+                            intent.putExtra("filenum",filenum);
+                            intent.putExtra("day",day);
+                            intent.putExtra("time",time);
+                            intent.putExtra("realday",realday);
                             if (NumOfProblem == NumOfRight) {
                                 intent.putExtra("pass", 1);
                             } else {
@@ -244,7 +279,13 @@ public class Test extends AppCompatActivity {
                             intent.putExtra("numOfProblem", NumOfProblem);
                             intent.putExtra("wrong_meanlist", wrong_meanlist);
                             intent.putExtra("wrong_wordlist", wrong_wordlist);
-
+                            intent.putExtra("user_id", user_id);
+                            intent.putExtra("grade",grade);
+                            intent.putExtra("class",classss);
+                            intent.putExtra("filenum",filenum);
+                            intent.putExtra("day",day);
+                            intent.putExtra("time",time);
+                            intent.putExtra("realday",realday);
                             if (NumOfProblem == NumOfRight) {
                                 intent.putExtra("pass", 1);
                             } else {
@@ -264,21 +305,22 @@ public class Test extends AppCompatActivity {
                                 Message message1 = handler.obtainMessage(2);
                                 handler.sendMessage(message1);
                             } else {
-                                limittime = 5;
-                                gonext = 0;
-                                //Log.d("값",wordlist.get(randomlist.get(start)));
-                                //Log.d("값",meanlist.get(randomlist.get(start)));
 
-                                wrong_meanlist.add(meanlist.get(randomlist.get(start)));
-                                wrong_wordlist.add(wordlist.get(randomlist.get(start)));
+                                if(start < meanlist.size()) {
+                                    limittime = 5;
+                                    gonext = 0;
+                                    //Log.d("값",wordlist.get(randomlist.get(start)));
+                                    //Log.d("값",meanlist.get(randomlist.get(start)));
 
-                                start++;
+                                    wrong_meanlist.add(meanlist.get(randomlist.get(start)));
+                                    wrong_wordlist.add(wordlist.get(randomlist.get(start)));
+
+                                    start++;
 
 
-
-                                Message message1 = handler.obtainMessage(2);
-                                handler.sendMessage(message1);
-
+                                    Message message1 = handler.obtainMessage(2);
+                                    handler.sendMessage(message1);
+                                }
 
                             }
                         }
@@ -290,15 +332,15 @@ public class Test extends AppCompatActivity {
                         }
 
                         if (limittime == 0) {
+                            if(start < meanlist.size()) {
+                                wrong_meanlist.add(meanlist.get(randomlist.get(start)));
+                                wrong_wordlist.add(wordlist.get(randomlist.get(start)));
 
-                            wrong_meanlist.add(meanlist.get(randomlist.get(start)));
-                            wrong_wordlist.add(wordlist.get(randomlist.get(start)));
-
-                            start++;
-                            limittime = 5;
-                            Message message1 = handler.obtainMessage(2);
-                            handler.sendMessage(message1);
-
+                                start++;
+                                limittime = 5;
+                                Message message1 = handler.obtainMessage(2);
+                                handler.sendMessage(message1);
+                            }
                         }
 
                         break;

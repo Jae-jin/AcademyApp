@@ -18,6 +18,10 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ssomai.android.scalablelayout.ScalableLayout;
+
+import org.apache.log4j.chainsaw.Main;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -30,16 +34,18 @@ import java.util.ArrayList;
 
 public class month extends AppCompatActivity implements View.OnClickListener {
 
-
+    private ScalableLayout scalableLayout;
     private String getId;
     private String getGrade;
     private String getClass;
     private int getFilenum;
     private int getDay;
+    private int row;
     Button todayTest;
     private Button review_test;
     private static String TAG = "month";
-    private Button[] mButton = new Button[36];
+    private int buttonlimit;
+    private Button[] mButton;
     private ArrayList<Integer> gradelist= new ArrayList<>();
     private ArrayList<Integer> timelist = new ArrayList<>();
     private ArrayList<Integer> maxlist = new ArrayList<>();
@@ -48,46 +54,8 @@ public class month extends AppCompatActivity implements View.OnClickListener {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_month);
-        for(int i = 0; i<180;i++)
-        {
-            gradelist.add(-1);
-        }
-        mButton[0] = (Button)findViewById(R.id.day1);
-        mButton[1] = (Button)findViewById(R.id.day2);
-        mButton[2] = (Button)findViewById(R.id.day3);
-        mButton[3] = (Button)findViewById(R.id.day4);
-        mButton[4] = (Button)findViewById(R.id.day5);
-        mButton[5] = (Button)findViewById(R.id.day6);
-        mButton[6] = (Button)findViewById(R.id.day7);
-        mButton[7] = (Button)findViewById(R.id.day8);
-        mButton[8] = (Button)findViewById(R.id.day9);
-        mButton[9] = (Button)findViewById(R.id.day10);
-        mButton[10] = (Button)findViewById(R.id.day11);
-        mButton[11] = (Button)findViewById(R.id.day12);
-        mButton[12] = (Button)findViewById(R.id.day13);
-        mButton[13] = (Button)findViewById(R.id.day14);
-        mButton[14] = (Button)findViewById(R.id.day15);
-        mButton[15] = (Button)findViewById(R.id.day16);
-        mButton[16] = (Button)findViewById(R.id.day17);
-        mButton[17] = (Button)findViewById(R.id.day18);
-        mButton[18] = (Button)findViewById(R.id.day19);
-        mButton[19] = (Button)findViewById(R.id.day20);
-        mButton[20] = (Button)findViewById(R.id.day21);
-        mButton[21] = (Button)findViewById(R.id.day22);
-        mButton[22] = (Button)findViewById(R.id.day23);
-        mButton[23] = (Button)findViewById(R.id.day24);
-        mButton[24] = (Button)findViewById(R.id.day25);
-        mButton[25] = (Button)findViewById(R.id.day26);
-        mButton[26] = (Button)findViewById(R.id.day27);
-        mButton[27] = (Button)findViewById(R.id.day28);
-        mButton[28] = (Button)findViewById(R.id.day29);
-        mButton[29] = (Button)findViewById(R.id.day30);
-        mButton[30] = (Button)findViewById(R.id.day31);
-        mButton[31] = (Button)findViewById(R.id.day32);
-        mButton[32] = (Button)findViewById(R.id.day33);
-        mButton[33] = (Button)findViewById(R.id.day34);
-        mButton[34] = (Button)findViewById(R.id.day35);
-        mButton[35] = (Button)findViewById(R.id.day36);
+        scalableLayout = (ScalableLayout)findViewById(R.id.scaleid);
+
         review_test = (Button)findViewById(R.id.review_test);
         Intent intent = getIntent();
 
@@ -95,13 +63,54 @@ public class month extends AppCompatActivity implements View.OnClickListener {
         getId = intent.getStringExtra("user_id");
         getGrade = intent.getStringExtra("grade");
         getClass = intent.getStringExtra("class");
-        getFilenum = Integer.parseInt(intent.getStringExtra("filenum"));
-        getDay = Integer.parseInt(intent.getStringExtra("day"));
+        getFilenum = intent.getIntExtra("filenum",0);
+        getDay = intent.getIntExtra("day",0);
         Grade task = new Grade();
         task.execute(getId);
 
-
-        for(int i=0;i<36;i++){
+        switch (getFilenum){
+            case 1:
+                buttonlimit = 36;
+                break;
+            case 2:
+                buttonlimit = 28;
+                break;
+            case 3:
+                buttonlimit = 41;
+                break;
+            case 4:
+                buttonlimit = 66;
+                break;
+        }
+        for(int i = 0; i<buttonlimit*5;i++)
+        {
+            gradelist.add(-1);
+        }
+        if(buttonlimit%3 ==0){
+            row = buttonlimit/3;
+        }
+        else
+        {
+            row = (buttonlimit/3)+1;
+        }
+        mButton = new Button[buttonlimit];
+        for(int i = 0;i<row;i++)
+        {
+            for(int j = 0;j<3;j++)
+            {
+                if(3*i+(j+1)<=buttonlimit) {
+                    Button idbutton = new Button(this);
+                    mButton[3*i+j] = idbutton;
+                    mButton[3*i+j].setTag(3*i+j);
+                    scalableLayout.addView(idbutton, 100 + 300 * j, 400 + 250 * i, 200, 200);
+                    scalableLayout.setScale_TextSize(idbutton, 40);
+                }
+                else{
+                    continue;
+                }
+            }
+        }
+        for(int i=0;i<buttonlimit;i++){
                                 mButton[i].setOnClickListener(this);
         }
 
@@ -141,6 +150,8 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                     intent.putExtra("class",getClass);
                     intent.putExtra("filenum",getFilenum);
                     intent.putExtra("day",position);
+                    intent.putExtra("realday",getDay);
+                    intent.putExtra("time",timelist.get(position));
                     startActivity(intent);
                 }
             }
@@ -164,86 +175,130 @@ public class month extends AppCompatActivity implements View.OnClickListener {
             progressDialog.dismiss();
             Log.d(TAG, "POST response - " + result);
             String main[] = result.split("Q");
-            String temp[] = main[1].split("&");
-            int length = temp.length;
-            int start = 0;
+            if(main.length !=1) {
+                String temp[] = main[1].split("&");
+                int length = temp.length;
+                int start = 0;
 
-            if(main[0].equals("ok") == true){
-                for(int i = 0;i<length;i++) {
-                    String getarray1 = temp[i].split(",")[0];
-                    String getarray2 = temp[i].split(",")[1];
-                    String getarray3 = temp[i].split(",")[2];
-                    int qq = Integer.parseInt(getarray1);
-                    int qqq = Integer.parseInt(getarray2);
-                    int qqqq = Integer.parseInt(getarray3);
-                    while(qqq != start){
-                        start++;
+                if (main[0].equals("ok") == true) {
+                    for (int i = 0; i < length; i++) {
+                        String getarray1 = temp[i].split(",")[0];
+                        String getarray2 = temp[i].split(",")[1];
+                        String getarray3 = temp[i].split(",")[2];
+                        int qq = Integer.parseInt(getarray1);
+                        int qqq = Integer.parseInt(getarray2);
+                        int qqqq = Integer.parseInt(getarray3);
+                        while (qqq != start ) {
+                            start++;
+                        }
+
+                        gradelist.set(5 * start + qqqq-1, qq);
+
                     }
-
-                    gradelist.set(5*start+qqqq,qq);
-
-                }
 //                Toast.makeText(month.this," : " + gradelist.get(7),Toast.LENGTH_LONG).show();
-                for(int i = 0; i<36;i++){
-                    int max = 0;
-                    int maxtime = 0;
-                    int pass = 0;
-                    for(int j= 0;j<5;j++){
-                        if(gradelist.get(5*i+j)!=-1 && pass == 0) {
-                            if (gradelist.get(5 * i + j) > max) {
-                                max = gradelist.get(5 * i + j);
-                                maxtime = j;
-                            }
-                            if(j == 4){
+                    for (int i = 0; i < buttonlimit; i++) {
+                        int max = 0;
+                        int maxtime = 0;
+                        int pass = 0;
+                        for (int j = 0; j < 5; j++) {
+                            if (gradelist.get(5 * i + j) != -1 && pass == 0) {
+                                if (gradelist.get(5 * i + j) > max) {
+                                    max = gradelist.get(5 * i + j);
+                                    maxtime = j+1;
+                                }
+                                else {
+                                    maxtime = j+1;
+                                }
+                                if (j == 4) {
+                                    maxlist.add(max);
+                                    timelist.add(j);
+                                }
+                            } else if (gradelist.get(5 * i + j) == -1 && j != 0 && pass == 0) {
+
                                 maxlist.add(max);
-                                timelist.add(j);
+                                timelist.add(maxtime);
+                                pass = 1;
+                            } else if (gradelist.get(5 * i + j) == -1 && j == 0 && pass == 0) {
+                                maxtime = j;
+                                maxlist.add(max);
+                                timelist.add(maxtime);
+                                pass = 1;
+                            } else {
+
                             }
-                        }
-                        else if(gradelist.get(5*i+j)==-1 && j !=0 && pass == 0){
-                            maxtime = j-1;
-                            maxlist.add(max);
-                            timelist.add(maxtime);
-                            pass = 1;
-                        }
-                        else if(gradelist.get(5*i+j)==-1 && j ==0 && pass == 0){
-                            maxtime = j;
-                            maxlist.add(max);
-                            timelist.add(maxtime);
-                            pass = 1;
-                        }
-                        else{
 
                         }
 
                     }
-
-                }
-                for(int i = 0; i<36;i++){
-                    mButton[i].setTag(i);
+                    for (int i = 0; i < buttonlimit; i++) {
+                        mButton[i].setTag(i);
 //                    mButton[i].setOnClickListener(this);
-                    if(i == getDay) {
-                        mButton[i].setText("Day" + (i+1) + "\n" + "Today");
-                    }
-                    else if(i <getDay){
-                        mButton[i].setText("Day" + (i+1) + "\n" + maxlist.get(i)+ "/"+timelist.get(i));
-                    }
-                    else{
-                        mButton[i].setText("Day" + (i+1) + "\n" + "Lock");
-                        mButton[i].setEnabled(false);
+                        if (i+1 == getDay) {
+                            mButton[i].setText("Day" + (i + 1) + "\n" + "Today");
+                        } else if (i+1 < getDay) {
+                            mButton[i].setText("Day" + (i + 1) + "\n" + maxlist.get(i) + "/" + timelist.get(i));
+                        } else {
+                            mButton[i].setText("Day" + (i + 1) + "\n" + "Lock");
+                            mButton[i].setEnabled(false);
+                        }
                     }
                 }
             }
 
             else{
                 AlertDialog.Builder dialog = new AlertDialog.Builder(month.this);
-                dialog.setTitle("송신 에러")
-                        .setMessage("에러 코드 : "+result)
+                dialog.setTitle("기록 없음")
+                        .setMessage("아직 기록된 성적이 없습니다.")
                         .setPositiveButton("확인", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
 
                             }
                         }).create().show();
+                for (int i = 0; i < buttonlimit; i++) {
+                    int max = 0;
+                    int maxtime = 0;
+                    int pass = 0;
+                    for (int j = 0; j < 5; j++) {
+                        if (gradelist.get(5 * i + j) != -1 && pass == 0) {
+                            if (gradelist.get(5 * i + j) > max) {
+                                max = gradelist.get(5 * i + j);
+                                maxtime = j;
+                            }
+                            if (j == 4) {
+                                maxlist.add(max);
+                                timelist.add(j);
+                            }
+                        } else if (gradelist.get(5 * i + j) == -1 && j != 0 && pass == 0) {
+                            maxtime = j - 1;
+                            maxlist.add(max);
+                            timelist.add(maxtime);
+                            pass = 1;
+                        } else if (gradelist.get(5 * i + j) == -1 && j == 0 && pass == 0) {
+                            maxtime = j;
+                            maxlist.add(max);
+                            timelist.add(maxtime);
+                            pass = 1;
+                        } else {
+
+                        }
+
+                    }
+
+                }
+                for (int i = 0; i < buttonlimit; i++) {
+                    mButton[i].setTag(i);
+//                    mButton[i].setOnClickListener(this);
+                    if (i+1 == getDay) {
+                        mButton[i].setText("Day" + (i + 1) + "\n" + "Today");
+                    } else if (i +1< getDay) {
+                        mButton[i].setText("Day" + (i + 1) + "\n" + maxlist.get(i) + "/" + timelist.get(i));
+                    } else {
+                        mButton[i].setText("Day" + (i + 1) + "\n" + "Lock");
+                        mButton[i].setEnabled(false);
+                    }
+                }
+
             }
 
 
@@ -251,7 +306,7 @@ public class month extends AppCompatActivity implements View.OnClickListener {
 
         @Override
         protected String doInBackground(String... params){
-            String serverURL = "http://ymc7737.cafe24.com/appmake/getgrade.php";
+            String serverURL = "http://ec2-13-125-229-159.ap-northeast-2.compute.amazonaws.com/getgrade.php";
             String postParameters = "Id=" + params[0];
             try{
                 URL url = new URL(serverURL);
@@ -297,5 +352,26 @@ public class month extends AppCompatActivity implements View.OnClickListener {
             return "error";
         }
 
+    }
+
+    @Override
+    public void onBackPressed(){
+
+        AlertDialog.Builder dialog = new AlertDialog.Builder(month.this);
+        dialog.setTitle("로그 아웃")
+                .setMessage("로그인 창으로 돌아가시겠습니까?")
+                .setPositiveButton("네", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+
+                    }
+                }).create().show();
     }
 }

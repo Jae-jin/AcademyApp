@@ -34,9 +34,12 @@
             app:scale_height="600"
             android:textAlignment="center"
             android:gravity="center"
-            app:scale_textsize="400"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="20sp"
+            app:autoSizeMaxTextSize="50sp"
             tools:ignore="MissingPrefix"
             android:id="@+id/word"
+
             />
 
         <TextView
@@ -47,8 +50,20 @@
             app:scale_height="200"
             android:textAlignment="center"
             android:gravity="center"
-            app:scale_textsize="100"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="20sp"
+            app:autoSizeMaxTextSize="50sp"
             android:id="@+id/mean"
             tools:ignore="MissingPrefix"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_top="1200"
+            app:scale_width="1000"
+            app:scale_height="200"
+            android:text="next"
+            android:id="@+id/buttonnext"
+            tools:ignore="MissingPrefix"
+            />
     </com.ssomai.android.scalablelayout.ScalableLayout>
 </android.support.constraint.ConstraintLayout>

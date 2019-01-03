@@ -5,11 +5,15 @@ import android.content.Intent;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+
+import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity {
     Button Next;
@@ -37,7 +41,7 @@ public class SignUpActivity extends AppCompatActivity {
         rg0 = (RadioGroup)findViewById(R.id.group0);
         rg1 = (RadioGroup)findViewById(R.id.group1);
         rg2 = (RadioGroup)findViewById(R.id.group2);
-
+//        Name.setFilters(new InputFilter[] {filterKor});
 
 
 
@@ -48,19 +52,19 @@ public class SignUpActivity extends AppCompatActivity {
                 {
                     rg1.clearCheck();
                     rg0.check(checkedId);
-                    getgrade = "middle1";
+                    getgrade = "중1";
                 }
                 if(checkedId == R.id.middle2)
                 {
                     rg1.clearCheck();
                     rg0.check(checkedId);
-                    getgrade = "middle2";
+                    getgrade = "중2";
                 }
                 if(checkedId == R.id.middle3)
                 {
                     rg1.clearCheck();
                     rg0.check(checkedId);
-                    getgrade = "middle3";
+                    getgrade = "중3";
                 }
 
             }
@@ -71,15 +75,15 @@ public class SignUpActivity extends AppCompatActivity {
                 if(checkedId == R.id.high1)
                 {rg0.clearCheck();
                 rg1.check(checkedId);
-                getgrade = "high1";}
+                getgrade = "고1";}
                 if(checkedId == R.id.high2)
                 {rg0.clearCheck();
                     rg1.check(checkedId);
-                    getgrade = "high2";}
+                    getgrade = "고2";}
                 if(checkedId == R.id.high3)
                 {rg0.clearCheck();
                     rg1.check(checkedId);
-                    getgrade = "high3";}
+                    getgrade = "고3";}
             }
         });
         rg2.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
@@ -132,4 +136,17 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
     }
+
+
+
+    public InputFilter filterKor = new InputFilter() {
+        @Override
+        public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+            Pattern ps = Pattern.compile("^[ㄱ-가-힣]+$");
+            if(!ps.matcher(source).matches()){
+                return "";
+            }
+            return null;
+        }
+    };
 }

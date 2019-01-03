@@ -103,8 +103,8 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("user_id", getid);
                 intent.putExtra("grade",main[1]);
                 intent.putExtra("class",main[2]);
-                intent.putExtra("filenum",main[3]);
-                intent.putExtra("day",main[4]);
+                intent.putExtra("filenum",Integer.parseInt(main[3]));
+                intent.putExtra("day",Integer.parseInt(main[4]));
                 startActivity(intent);
 
             }
@@ -136,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... params){
-            String serverURL = "http://ymc7737.cafe24.com/appmake/login.php";
+            String serverURL = "http://ec2-13-125-229-159.ap-northeast-2.compute.amazonaws.com/login.php";
             String postParameters = "Id=" + params[0] + "&Pw=" + params[1];
             try{
                 URL url = new URL(serverURL);

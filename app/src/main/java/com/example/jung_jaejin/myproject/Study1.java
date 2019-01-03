@@ -27,23 +27,40 @@ import jxl.read.biff.BiffException;
 import static android.speech.tts.TextToSpeech.ERROR;
 
 
-public class Study1 extends AppCompatActivity {
+public class Study1 extends AppCompatActivity implements View.OnClickListener {
     private TextView word;
     private TextView mean;
     private TextView numofword;
+    private Button gonext;
     private TextToSpeech tts;
     private ArrayList<String> wordlist = new ArrayList<>();//영어단어 집어 넣는 리스트
     private ArrayList<String> meanlist = new ArrayList<>();//영어의미 집어 넣는 리스트
     private int i = 0;//
+    private String user_id;
+    private String grade;
+    private String classss;
+    private int filenum;
+    private int day;
+    private int time;
+    private int realday;
     private int limittime = 300;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_study1);
-
+        Intent intent = getIntent();
+        user_id = intent.getStringExtra("user_id");
+        grade = intent.getStringExtra("grade");
+        classss = intent.getStringExtra("class");
+        filenum = intent.getIntExtra("filenum",0);
+        day = intent.getIntExtra("day",0);
+        time = intent.getIntExtra("time",0);
+        realday = intent.getIntExtra("realday",0);
+        gonext = (Button)findViewById(R.id.buttonnext);
         word = (TextView) findViewById(R.id.word);
         mean = (TextView) findViewById(R.id.mean);
         numofword = (TextView) findViewById(R.id.NumOfWord);
+        gonext.setOnClickListener(this);
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
@@ -54,10 +71,25 @@ public class Study1 extends AppCompatActivity {
         });//영어 단어 소리 내기 위한 객체 생성
         try {
             AssetManager am = getAssets();
-            InputStream is = am.open("English1.xls");
+            InputStream is = null;
+            switch (filenum){
+                case 1:
+                    is = am.open("중1-중2 Day 1-41 단어.xls");
+                    break;
+                case 2:
+                    is = am.open("중3-고1 Day 1-66 단어.xls");
+                    break;
+                case 3:
+                    is = am.open("고2-고3 Day 1-36 단어.xls");
+                    break;
+                case 4:
+                    is = am.open("수능 Day 1-28 단어.xls");
+                    break;
+
+            }
             Workbook wb = Workbook.getWorkbook(is);
             if(wb != null) {
-                Sheet sheet = wb.getSheet(0);   // 시트 불러오기
+                Sheet sheet = wb.getSheet(day);   // 시트 불러오기
                 if(sheet != null) {
 
                     int colTotal = sheet.getColumns();    // 전체 컬럼
@@ -111,6 +143,13 @@ public class Study1 extends AppCompatActivity {
                     else {//단어 다 봤을 경우
                             removeMessages(3);
                             Intent intent = new Intent(getApplicationContext(),Starttest.class);//다음 화면으로 넘어간다.
+                            intent.putExtra("user_id", user_id);
+                            intent.putExtra("grade",grade);
+                            intent.putExtra("class",classss);
+                            intent.putExtra("filenum",filenum);
+                            intent.putExtra("day",day);
+                            intent.putExtra("time",time);
+                            intent.putExtra("realday",realday);
                             startActivity(intent);
                         }
                             break;
@@ -125,7 +164,28 @@ public class Study1 extends AppCompatActivity {
                             handler.sendMessageDelayed(message2, 2000);//2초 있다가 다음 단어 표시
 
                     break;
+
+                case 4:
+                    removeMessages(1);
+                    removeMessages(2);
+                    removeMessages(3);
+                    Intent intent = new Intent(getApplicationContext(),Starttest.class);//다음 화면으로 넘어간다.
+                    intent.putExtra("user_id", user_id);
+                    intent.putExtra("grade",grade);
+                    intent.putExtra("class",classss);
+                    intent.putExtra("filenum",filenum);
+                    intent.putExtra("day",day);
+                    intent.putExtra("realday",realday);
+                    intent.putExtra("time",time);
+                    startActivity(intent);
+                    break;
             }
         }
     };
+
+    @Override
+    public void onClick(View v) {
+        Message message = handler.obtainMessage(4);
+        handler.sendMessageDelayed(message, 1000);
+    }
 }

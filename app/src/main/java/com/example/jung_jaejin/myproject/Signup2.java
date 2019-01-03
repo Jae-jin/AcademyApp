@@ -8,6 +8,8 @@ import android.renderscript.ScriptGroup;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.InputFilter;
+import android.text.Spanned;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -29,6 +31,7 @@ import java.net.ProtocolException;
 import java.net.URL;
 import java.net.URLConnection;
 import java.net.URLEncoder;
+import java.util.regex.Pattern;
 
 public class Signup2 extends AppCompatActivity {
     private Button complete;
@@ -51,7 +54,8 @@ public class Signup2 extends AppCompatActivity {
 
         Id = (EditText) findViewById(R.id.idsign);
         Password = (EditText) findViewById(R.id.passwordsign);
-
+        Id.setFilters(new InputFilter[] {filterAlphaNum});
+        Password.setFilters(new InputFilter[] {filterAlphaNum});
         complete = (Button) findViewById(R.id.complete);
 
         getname = intent.getStringExtra("이름");
@@ -187,7 +191,7 @@ public class Signup2 extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... params){
-            String serverURL = "http://ymc7737.cafe24.com/appmake/student.php";
+            String serverURL = "http://ec2-13-125-229-159.ap-northeast-2.compute.amazonaws.com/student.php";
             String postParameters = "Id=" + params[0] + "&Pw=" + params[1] + "&Name=" + params[2] + "&Phone=" + params[3] + "&Grade=" +
                     params[4] + "&Class=" + params[5];
          try{
@@ -234,5 +238,15 @@ public class Signup2 extends AppCompatActivity {
          return "error";
         }
     }
+    protected InputFilter filterAlphaNum = new InputFilter() {
+        @Override
+        public CharSequence filter(CharSequence source, int start, int end, Spanned dest, int dstart, int dend) {
+            Pattern ps = Pattern.compile("^[a-zA-Z0-9]+$");
+            if(!ps.matcher(source).matches()){
+                return "";
+            }
+            return null;
+        }
+    };
 
 }

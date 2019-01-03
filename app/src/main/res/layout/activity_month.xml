@@ -12,8 +12,9 @@
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:scale_base_height="3400"
-        app:scale_base_width="1000">
+        app:scale_base_height="6500"
+        app:scale_base_width="1000"
+        android:id="@+id/scaleid">
 
         <Button
             android:layout_width="wrap_content"
@@ -26,438 +27,438 @@
             app:scale_width="600"
             android:id="@+id/review_test"
             tools:ignore="MissingPrefix" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id = "@+id/day1"
-            android:text="Day1\n60/3"
-            app:scale_height="200"
-            app:scale_left="100"
-            app:scale_textsize="40"
-            app:scale_top="400"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id = "@+id/day1"-->
+            <!--android:text="Day1\n60/3"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="100"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="400"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id = "@+id/day2"
-            android:text="Day2\n65/5"
-            app:scale_height="200"
-            app:scale_left="400"
-            app:scale_textsize="40"
-            app:scale_top="400"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id = "@+id/day2"-->
+            <!--android:text="Day2\n65/5"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="400"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="400"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day3"
-            android:text="Day3\ntoday"
-            app:scale_height="200"
-            app:scale_left="700"
-            app:scale_textsize="40"
-            app:scale_top="400"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day3"-->
+            <!--android:text="Day3\ntoday"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="700"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="400"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day4"
-            android:text="Day4\nlock"
-            app:scale_height="200"
-            app:scale_left="100"
-            app:scale_textsize="40"
-            app:scale_top="650"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day4"-->
+            <!--android:text="Day4\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="100"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="650"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day5"
-            android:text="Day5\nlock"
-            app:scale_height="200"
-            app:scale_left="400"
-            app:scale_textsize="40"
-            app:scale_top="650"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day5"-->
+            <!--android:text="Day5\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="400"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="650"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day6"
-            android:text="Day6\nlock"
-            app:scale_height="200"
-            app:scale_left="700"
-            app:scale_textsize="40"
-            app:scale_top="650"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day6"-->
+            <!--android:text="Day6\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="700"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="650"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day7"
-            android:text="Day7\nlock"
-            app:scale_height="200"
-            app:scale_left="100"
-            app:scale_textsize="40"
-            app:scale_top="900"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day7"-->
+            <!--android:text="Day7\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="100"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="900"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day8"
-            android:text="Day8\nlock"
-            app:scale_height="200"
-            app:scale_left="400"
-            app:scale_textsize="40"
-            app:scale_top="900"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day8"-->
+            <!--android:text="Day8\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="400"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="900"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day9"
-            android:text="Day9\nlock"
-            app:scale_height="200"
-            app:scale_left="700"
-            app:scale_textsize="40"
-            app:scale_top="900"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day9"-->
+            <!--android:text="Day9\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="700"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="900"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day10"
-            android:text="Day10\nlock"
-            app:scale_height="200"
-            app:scale_left="100"
-            app:scale_textsize="40"
-            app:scale_top="1150"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day10"-->
+            <!--android:text="Day10\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="100"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="1150"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day11"
-            android:text="Day11\nlock"
-            app:scale_height="200"
-            app:scale_left="400"
-            app:scale_textsize="40"
-            app:scale_top="1150"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day11"-->
+            <!--android:text="Day11\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="400"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="1150"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:id="@+id/day12"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Day12\nlock"
-            app:scale_height="200"
-            app:scale_left="700"
-            app:scale_textsize="40"
-            app:scale_top="1150"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:id="@+id/day12"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Day12\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="700"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="1150"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
 
-        <Button
-            android:id="@+id/day13"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Day13\nLock"
-            app:scale_height="200"
-            app:scale_left="100"
-            app:scale_textsize="40"
-            app:scale_top="1400"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:id="@+id/day13"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Day13\nLock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="100"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="1400"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:id="@+id/day14"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Day14\nLock"
-            app:scale_height="200"
-            app:scale_left="400"
-            app:scale_textsize="40"
-            app:scale_top="1400"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:id="@+id/day14"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Day14\nLock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="400"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="1400"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:id="@+id/day15"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Day15\nLock"
-            app:scale_height="200"
-            app:scale_left="700"
-            app:scale_textsize="40"
-            app:scale_top="1400"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:id="@+id/day15"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Day15\nLock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="700"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="1400"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:id="@+id/day16"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Day16\nlock"
-            app:scale_height="200"
-            app:scale_left="100"
-            app:scale_textsize="40"
-            app:scale_top="1650"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:id="@+id/day16"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Day16\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="100"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="1650"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day17"
-            android:text="Day17\nlock"
-            app:scale_height="200"
-            app:scale_left="400"
-            app:scale_textsize="40"
-            app:scale_top="1650"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day17"-->
+            <!--android:text="Day17\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="400"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="1650"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:id="@+id/day18"
-            android:layout_height="wrap_content"
-            android:text="Day18\nlock"
-            app:scale_height="200"
-            app:scale_left="700"
-            app:scale_textsize="40"
-            app:scale_top="1650"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:id="@+id/day18"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Day18\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="700"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="1650"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:id="@+id/day19"
-            android:layout_height="wrap_content"
-            android:text="Day19\nlock"
-            app:scale_height="200"
-            app:scale_left="100"
-            app:scale_textsize="40"
-            app:scale_top="1900"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:id="@+id/day19"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Day19\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="100"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="1900"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Day20\nlock"
-            android:id="@+id/day20"
-            app:scale_height="200"
-            app:scale_left="400"
-            app:scale_textsize="40"
-            app:scale_top="1900"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Day20\nlock"-->
+            <!--android:id="@+id/day20"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="400"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="1900"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Day21\nlock"
-            android:id="@+id/day21"
-            app:scale_height="200"
-            app:scale_left="700"
-            app:scale_textsize="40"
-            app:scale_top="1900"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:text="Day21\nlock"-->
+            <!--android:id="@+id/day21"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="700"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="1900"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day22"
-            android:text="Day22\nlock"
-            app:scale_height="200"
-            app:scale_left="100"
-            app:scale_textsize="40"
-            app:scale_top="2150"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day22"-->
+            <!--android:text="Day22\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="100"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="2150"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day23"
-            android:text="Day23\nlock"
-            app:scale_height="200"
-            app:scale_left="400"
-            app:scale_textsize="40"
-            app:scale_top="2150"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day23"-->
+            <!--android:text="Day23\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="400"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="2150"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day24"
-            android:text="Day24\nlock"
-            app:scale_height="200"
-            app:scale_left="700"
-            app:scale_textsize="40"
-            app:scale_top="2150"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day24"-->
+            <!--android:text="Day24\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="700"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="2150"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day25"
-            android:text="Day25\nLock"
-            app:scale_height="200"
-            app:scale_left="100"
-            app:scale_textsize="40"
-            app:scale_top="2400"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day25"-->
+            <!--android:text="Day25\nLock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="100"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="2400"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day26"
-            android:text="Day26\nLock"
-            app:scale_height="200"
-            app:scale_left="400"
-            app:scale_textsize="40"
-            app:scale_top="2400"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day26"-->
+            <!--android:text="Day26\nLock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="400"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="2400"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day27"
-            android:text="Day27\nLock"
-            app:scale_height="200"
-            app:scale_left="700"
-            app:scale_textsize="40"
-            app:scale_top="2400"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day27"-->
+            <!--android:text="Day27\nLock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="700"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="2400"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day28"
-            android:text="Day28\nlock"
-            app:scale_height="200"
-            app:scale_left="100"
-            app:scale_textsize="40"
-            app:scale_top="2650"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day28"-->
+            <!--android:text="Day28\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="100"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="2650"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day29"
-            android:text="Day29\nlock"
-            app:scale_height="200"
-            app:scale_left="400"
-            app:scale_textsize="40"
-            app:scale_top="2650"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day29"-->
+            <!--android:text="Day29\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="400"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="2650"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day30"
-            android:text="Day30\nlock"
-            app:scale_height="200"
-            app:scale_left="700"
-            app:scale_textsize="40"
-            app:scale_top="2650"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day30"-->
+            <!--android:text="Day30\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="700"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="2650"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day31"
-            android:text="Day31\nlock"
-            app:scale_height="200"
-            app:scale_left="100"
-            app:scale_textsize="40"
-            app:scale_top="2900"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day31"-->
+            <!--android:text="Day31\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="100"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="2900"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day32"
-            android:text="Day32\nlock"
-            app:scale_height="200"
-            app:scale_left="400"
-            app:scale_textsize="40"
-            app:scale_top="2900"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day32"-->
+            <!--android:text="Day32\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="400"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="2900"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day33"
-            android:text="Day33\nlock"
-            app:scale_height="200"
-            app:scale_left="700"
-            app:scale_textsize="40"
-            app:scale_top="2900"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day33"-->
+            <!--android:text="Day33\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="700"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="2900"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day34"
-            android:text="Day34\nlock"
-            app:scale_height="200"
-            app:scale_left="100"
-            app:scale_textsize="40"
-            app:scale_top="3150"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day34"-->
+            <!--android:text="Day34\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="100"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="3150"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day35"
-            android:text="Day35\nlock"
-            app:scale_height="200"
-            app:scale_left="400"
-            app:scale_textsize="40"
-            app:scale_top="3150"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day35"-->
+            <!--android:text="Day35\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="400"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="3150"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/day36"
-            android:text="Day36\nlock"
-            app:scale_height="200"
-            app:scale_left="700"
-            app:scale_textsize="40"
-            app:scale_top="3150"
-            app:scale_width="200"
-            tools:ignore="MissingPrefix" />
+        <!--<Button-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:id="@+id/day36"-->
+            <!--android:text="Day36\nlock"-->
+            <!--app:scale_height="200"-->
+            <!--app:scale_left="700"-->
+            <!--app:scale_textsize="40"-->
+            <!--app:scale_top="3150"-->
+            <!--app:scale_width="200"-->
+            <!--tools:ignore="MissingPrefix" />-->
 
 
 
