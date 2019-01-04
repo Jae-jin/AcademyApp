@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Studystart_review">
+    tools:context=".Studystart_review"
+    android:background="@color/colorSkyBlue">
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -31,7 +32,7 @@
             app:scale_width="840"
             app:scale_height="500"
             android:textAlignment="center"
-            android:text="Tips\n\n위 버튼을 누르면 복습을 시작하게 됩니다. 6일까지의 테스트 중 틀린 단어들을 다시 한번 복습하게 됩니다. 열심히 보고 시험에 꼭 통과하시기를 바랍니다."
+            android:text="Tips\n\n위 버튼을 누르면 복습을 시작하게 됩니다. 6일 단위로 끊어 테스트 중 틀린 단어들을 다시 한번 복습하게 됩니다. 열심히 보고 시험에 꼭 통과하시기를 바랍니다."
             app:scale_textsize="50"
             tools:ignore="MissingPrefix"/>
     </com.ssomai.android.scalablelayout.ScalableLayout>

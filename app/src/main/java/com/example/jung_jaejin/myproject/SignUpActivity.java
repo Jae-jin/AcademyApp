@@ -16,16 +16,16 @@ import android.widget.RadioGroup;
 import java.util.regex.Pattern;
 
 public class SignUpActivity extends AppCompatActivity {
-    Button Next;
-    EditText Name;
-    EditText Phone;
-    RadioGroup rg0;
-    RadioGroup rg1;
-    RadioGroup rg2;
-    String getname;
-    String getphone;
-    String getgrade = "선택안함";
-    String getclass = "선택안함";
+    private Button Next;
+    private EditText Name;
+    private EditText Phone;
+    private RadioGroup rg0;
+    private RadioGroup rg1;
+    private RadioGroup rg2;
+    private String getname;
+    private String getphone;
+    private String getgrade = "선택안함";
+    private String getclass = "선택안함";
 
 
 

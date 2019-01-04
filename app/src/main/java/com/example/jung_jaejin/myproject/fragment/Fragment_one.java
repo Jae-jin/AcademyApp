@@ -16,9 +16,11 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.jung_jaejin.myproject.ChangeWord;
 import com.example.jung_jaejin.myproject.ManageResult;
 import com.example.jung_jaejin.myproject.R;
 import com.ssomai.android.scalablelayout.ScalableLayout;
@@ -44,11 +46,14 @@ public class Fragment_one extends Fragment {
     private TextView[] mText;
     private Button changebutton;
     private CheckBox[] mCheck;
+    private Button changeexcel;
     private ArrayList<String> idlist = new ArrayList<>();
     private ArrayList<String> namelist = new ArrayList<>();
     private ArrayList<Integer> checklist = new ArrayList<>();
+    private ArrayList <String> passidlist = new ArrayList<>();
     private static String TAG = "Fragment_one";
-
+    private Button uncheckall;
+    private int getday;
     public Fragment_one() {
 
     }
@@ -60,7 +65,19 @@ public class Fragment_one extends Fragment {
         v1 = inflater.inflate(R.layout.fragment_fragment_one, container, false);
         s2 = (ScalableLayout) v1.findViewById(R.id.scale11);
         checkall = (Button)v1.findViewById(R.id.checkall);
+        uncheckall = (Button)v1.findViewById(R.id.uncheckall);
         changebutton = (Button)v1.findViewById(R.id.changebutton);
+        changeexcel = (Button)v1.findViewById(R.id.gotochangeexcel);
+
+        changeexcel.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v1.getContext(),ChangeWord.class);
+                startActivity(intent);
+            }
+        });
+
         changebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -107,6 +124,17 @@ public class Fragment_one extends Fragment {
                 }
             }
         });
+        uncheckall.setOnClickListener(new View.OnClickListener(){
+
+            @Override
+            public void onClick(View v) {
+                for(int i=0;i<mCheck.length;i++){
+                    mCheck[i].setChecked(false);
+                }
+            }
+        });
+        getPass passss = new getPass();
+        passss.execute(ManageResult.gradee,ManageResult.classs);
         Student task = new Student();
         task.execute(ManageResult.gradee,ManageResult.classs);
         return v1;
@@ -144,6 +172,7 @@ public class Fragment_one extends Fragment {
                         idlist.add(getarray1);
                         namelist.add(getarray2);
                     }
+
                     mCheck = new CheckBox[length];
                     mText = new TextView[length];
                     for (int i = 0; i < length; i++) {
@@ -156,6 +185,17 @@ public class Fragment_one extends Fragment {
                         s2.setScale_TextSize(idbutton, 50);
                         idbutton.setText(namelist.get(i));
                         s2.addView(idcheck,500,i*100,100,100);
+                        if(passidlist.contains(idlist.get(i))==true)
+                        {
+                            ImageView iv = new ImageView(v1.getContext());
+                            iv.setImageResource(R.drawable.green);
+                            s2.addView(iv,250,i*100,100,100);
+                        }
+                        else{
+                            ImageView iv = new ImageView(v1.getContext());
+                            iv.setImageResource(R.drawable.red);
+                            s2.addView(iv,250,i*100,100,100);
+                        }
                     }
                 } else {
                     AlertDialog.Builder dialog = new AlertDialog.Builder(v1.getContext());
@@ -329,4 +369,105 @@ public class Fragment_one extends Fragment {
             return "error";
         }
     }
+
+    class getPass extends AsyncTask<String, Void, String> {
+        ProgressDialog progressDialog;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            progressDialog = progressDialog.show(v1.getContext(), "Please Wait", null,
+                    true, true);
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+
+            progressDialog.dismiss();
+            Log.d(TAG, "POST response - getday " + result);
+            String main[] = result.split("Q");
+            if (main.length != 1) {
+                String temp[] = main[1].split("&");
+                int length = temp.length;
+                int start = 0;
+
+                if (main[0].equals("ok") == true) {
+                    for (int i = 0; i < length; i++) {
+                        String getpassid = temp[i].split("&")[0];
+
+                        passidlist.add(getpassid);
+
+                    }
+                } else {
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(v1.getContext());
+                    dialog.setTitle("송신 에러")
+                            .setMessage("에러 코드 : " + result)
+                            .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            }).create().show();
+                }
+//                Toast.makeText(v1.getContext(),"체크 박스 개수 : "+ mCheck.length,Toast.LENGTH_LONG).show();
+            }
+            else{
+                idlist.add("thereisno");
+            }
+        }
+
+        @Override
+        protected String doInBackground(String... params) {
+            String serverURL = "http://ec2-13-125-229-159.ap-northeast-2.compute.amazonaws.com/getpass.php";
+            String postParameters = "Grade=" + params[0] + "&Class=" + params[1];
+            try {
+                URL url = new URL(serverURL);
+                HttpURLConnection httpURLConnection = (HttpURLConnection) url.openConnection();
+                httpURLConnection.setReadTimeout(5000);
+                httpURLConnection.setConnectTimeout(5000);
+                httpURLConnection.setRequestMethod("POST");
+                httpURLConnection.setDoInput(true);
+                httpURLConnection.connect();
+
+                OutputStream outputStream = httpURLConnection.getOutputStream();
+                outputStream.write(postParameters.getBytes("UTF-8"));
+                outputStream.flush();
+                outputStream.close();
+
+                int responseStatusCode = httpURLConnection.getResponseCode();
+                Log.d(TAG, "POST response code - " + responseStatusCode);
+
+                InputStream inputStream;
+                if (responseStatusCode == HttpURLConnection.HTTP_OK) {
+                    inputStream = httpURLConnection.getInputStream();
+                } else {
+                    inputStream = httpURLConnection.getErrorStream();
+                }
+
+                InputStreamReader inputStreamReader = new InputStreamReader(inputStream, "UTF-8");
+                BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
+
+                StringBuilder sb = new StringBuilder();
+                String line = null;
+                while ((line = bufferedReader.readLine()) != null) {
+                    sb.append(line);
+                }
+                bufferedReader.close();
+                return sb.toString();
+
+            } catch (UnsupportedEncodingException e) {
+                e.printStackTrace();
+            } catch (ProtocolException e) {
+                e.printStackTrace();
+            } catch (MalformedURLException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+            return "error";
+        }
+    }
+
 }

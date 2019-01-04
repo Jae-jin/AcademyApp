@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ChangeWord"
+    android:background="@color/colorSkyBlue">
+
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:scale_base_width="1000"
+        app:scale_base_height="1600">
+
+
+    <RadioGroup
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:scale_top = "100"
+        app:scale_width = "200"
+        app:scale_left="100"
+        android:id="@+id/gradegroup"
+        app:scale_height="1200"
+        tools:ignore="MissingPrefix">
+        <RadioButton
+            android:id="@+id/middle1pick"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="중1" />
+
+        <RadioButton
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="중2"
+            android:id="@+id/middle2pick"/>
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/middle3pick"
+            android:text="중3" />
+
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/high1pick"
+            android:text="고1" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/high2pick"
+            android:text="고2" />
+        <RadioButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/high3pick"
+            android:text="고3" />
+
+
+
+    </RadioGroup>
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_top = "100"
+            app:scale_width = "200"
+            app:scale_left="700"
+            app:scale_height="500"
+            android:id="@+id/classgroup"
+            tools:ignore="MissingPrefix">
+            <RadioButton
+                android:id="@+id/spick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="S" />
+
+            <RadioButton
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="A"
+                android:id="@+id/apick"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/bpick"
+                android:text="B" />
+
+
+
+
+
+        </RadioGroup>
+        <RadioGroup
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_top = "100"
+            app:scale_width = "400"
+            app:scale_left="300"
+            app:scale_height="1200"
+            android:id="@+id/wordgroup"
+            tools:ignore="MissingPrefix">
+            <RadioButton
+                android:id="@+id/excel1pick"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="중1 ~ 중2단어"
+                />
+
+            <RadioButton
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="중3~고1단어"
+                android:id="@+id/excel2pick"/>
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/excel3pick"
+                android:text="고2~고3단어" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/excel4pick"
+                android:text="수능단어" />
+
+
+
+        </RadioGroup>
+
+        <EditText
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="700"
+            app:scale_top="800"
+            app:scale_width="200"
+            android:id="@+id/getday"
+            tools:ignore="MissingPrefix"
+            />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="700"
+            app:scale_top="1000"
+            app:scale_width="200"
+            app:scale_height="150"
+            android:text="확인"
+            app:scale_textsize="50"
+            android:id="@+id/finish"
+            tools:ignore="MissingPrefix"
+            />
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+
+</LinearLayout>

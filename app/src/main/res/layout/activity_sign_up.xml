@@ -5,7 +5,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context="com.example.jung_jaejin.myproject.SignUpActivity">
+    tools:context="com.example.jung_jaejin.myproject.SignUpActivity"
+    android:background="@color/colorSkyBlue">
 
     <!-- 여기서 가입버튼을 누르면 해당 학생의 번호와 관리자의 번호로 로그인
     아이디가 문자로 전송된다. 전화번호 추가-->
