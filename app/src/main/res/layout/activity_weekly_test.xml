@@ -4,9 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Test">
-
-    <!-- 위에 남은 시간이랑 (234/300) 이런 식으로, 푼 개수를 (5/100) 이런식으로 표기한다. -->
+    tools:context=".WeeklyTest">
 
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
@@ -26,7 +24,7 @@
             android:gravity="center"
             app:scale_textsize="70"
             tools:ignore="MissingPrefix"
-            android:id="@+id/timer"/>
+            android:id="@+id/timerw"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -36,7 +34,7 @@
             app:scale_width="300"
             app:scale_height="100"
             android:textAlignment="center"
-            android:id="@+id/process"
+            android:id="@+id/processw"
             android:gravity="center"
             app:scale_textsize="70"
             tools:ignore="MissingPrefix"
@@ -47,102 +45,70 @@
             android:layout_height="wrap_content"
             app:scale_top="250"
             app:scale_width="1000"
-            app:scale_height="350"
+            app:scale_height="600"
             android:textAlignment="center"
             android:gravity="center"
             app:autoSizeTextType="uniform"
-            android:id="@+id/problem"
-            app:autoSizeMinTextSize="25sp"
-            app:autoSizeMaxTextSize="40sp"
-            tools:ignore="MissingPrefix"
-            android:textStyle="bold"/>
+            android:id="@+id/problemw"
+            app:autoSizeMinTextSize="20sp"
+            app:autoSizeMaxTextSize="50sp"
+            tools:ignore="MissingPrefix"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_top="600"
-            app:scale_left="200"
-            app:scale_width="800"
+            app:scale_top="900"
+            app:scale_width="500"
             app:scale_height="200"
-            android:gravity="center_vertical"
-            app:scale_textsize="60"
+            android:gravity="center"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="20sp"
+            app:autoSizeMaxTextSize="50sp"
             tools:ignore="MissingPrefix"
-            android:id="@+id/answer1"
+            android:id="@+id/answer1w"
             />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_top="800"
-            app:scale_left="200"
-            app:scale_width="800"
+            app:scale_left="500"
+            app:scale_top="900"
+            app:scale_width="500"
             app:scale_height="200"
-            android:gravity="center_vertical"
-            app:scale_textsize="60"
-            android:id="@+id/answer2"
-            tools:ignore="MissingPrefix"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:scale_top="1000"
-            app:scale_left="200"
-            app:scale_width="800"
-            app:scale_height="200"
-            android:gravity="center_vertical"
-            android:id="@+id/answer3"
-            app:scale_textsize="60"
+            android:gravity="center"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="20sp"
+            app:autoSizeMaxTextSize="50sp"
+            android:id="@+id/answer2w"
             tools:ignore="MissingPrefix"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:scale_top="1200"
-            app:scale_left="200"
-            app:scale_width="800"
-            app:scale_height="200"
-            android:gravity="center_vertical"
-            app:scale_textsize="60"
-            android:id="@+id/answer4"
-            tools:ignore="MissingPrefix"/>
-
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:scale_top="600"
-            app:scale_width="200"
+            app:scale_width="500"
             app:scale_height="200"
             android:gravity="center"
-            android:text="1."
+            app:autoSizeTextType="uniform"
+            android:id="@+id/answer3w"
+            app:autoSizeMinTextSize="20sp"
+            app:autoSizeMaxTextSize="50sp"
             tools:ignore="MissingPrefix"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_top="800"
-            app:scale_width="200"
-            app:scale_height="200"
-            android:gravity="center"
-            android:text="2."
-            tools:ignore="MissingPrefix"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:scale_top="1000"
-            app:scale_width="200"
-            app:scale_height="200"
-            android:gravity="center"
-            android:text="3."
-            tools:ignore="MissingPrefix"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            app:scale_left="500"
             app:scale_top="1200"
-            app:scale_width="200"
+            app:scale_width="500"
             app:scale_height="200"
             android:gravity="center"
-            android:text="4."
+            app:autoSizeMinTextSize="20sp"
+            app:autoSizeMaxTextSize="50sp"
+            app:autoSizeTextType="uniform"
+            android:id="@+id/answer4w"
             tools:ignore="MissingPrefix"/>
+
     </com.ssomai.android.scalablelayout.ScalableLayout>
+
 </android.support.constraint.ConstraintLayout>

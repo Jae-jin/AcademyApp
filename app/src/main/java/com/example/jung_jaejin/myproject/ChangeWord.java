@@ -224,4 +224,11 @@ public class ChangeWord extends AppCompatActivity {
             return "error";
         }
     }
+
+    @Override
+    public void onBackPressed() {
+
+       Intent intent = new Intent(getApplicationContext(),ManageResult.class);
+       startActivity(intent);
+    }
 }

@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class Starttest extends AppCompatActivity {
+public class Weekteststart extends AppCompatActivity {
     private Button startTest;
     private String user_id;
     private String grade;
@@ -18,7 +18,7 @@ public class Starttest extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_starttest);
+        setContentView(R.layout.activity_weekteststart);
         Intent intent = getIntent();
         user_id = intent.getStringExtra("user_id");
         grade = intent.getStringExtra("grade");
@@ -34,7 +34,7 @@ public class Starttest extends AppCompatActivity {
         {
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(getApplicationContext(),Test.class);
+                Intent intent = new Intent(getApplicationContext(),WeeklyTest.class);
                 intent.putExtra("user_id", user_id);
                 intent.putExtra("grade",grade);
                 intent.putExtra("class",classss);

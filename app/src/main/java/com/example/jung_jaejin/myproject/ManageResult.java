@@ -70,4 +70,24 @@ public class ManageResult extends AppCompatActivity {
         });
         return builder.create();
     }
+    @Override
+    public void onBackPressed() {
+
+        // Alert을 이용해 종료시키기
+        android.support.v7.app.AlertDialog.Builder dialog = new android.support.v7.app.AlertDialog.Builder(ManageResult.this);
+        dialog  .setTitle("관리자 창 종료")
+                .setMessage("로그인 화면으로 돌아가시겠습니까?")
+                .setPositiveButton("네", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(getApplicationContext(),MainActivity.class);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                }).create().show();
+    }
 }

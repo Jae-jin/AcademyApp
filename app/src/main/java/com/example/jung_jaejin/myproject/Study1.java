@@ -141,6 +141,8 @@ public class Study1 extends AppCompatActivity implements View.OnClickListener {
                             handler.sendMessageDelayed(message1, 2000);//2초 있다가 뜻까지 같이 표시한다.
                         }
                     else {//단어 다 봤을 경우
+                            removeMessages(1);
+                            removeMessages(2);
                             removeMessages(3);
                             Intent intent = new Intent(getApplicationContext(),Starttest.class);//다음 화면으로 넘어간다.
                             intent.putExtra("user_id", user_id);

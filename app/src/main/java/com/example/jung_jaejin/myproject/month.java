@@ -41,7 +41,7 @@ public class month extends AppCompatActivity implements View.OnClickListener {
     private int getFilenum;
     private int getDay;
     private int row;
-    Button todayTest;
+    private Button todayTest;
     private Button review_test;
     private static String TAG = "month";
     private int buttonlimit;
@@ -118,6 +118,12 @@ public class month extends AppCompatActivity implements View.OnClickListener {
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(getApplicationContext(),Studystart_review.class);
+                intent.putExtra("user_id", getId);
+                intent.putExtra("grade",getGrade);
+                intent.putExtra("class",getClass);
+                intent.putExtra("filenum",getFilenum);
+                intent.putExtra("realday",getDay);
+                intent.putExtra("maxscore",maxlist.get(getDay-1));
                 startActivity(intent);
             }
         });

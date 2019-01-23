@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Review"
-    android:background="@color/colorSkyBlue">
+    tools:context=".Review">
 
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
@@ -23,21 +22,23 @@
             android:gravity="center"
             android:textAlignment="center"
             app:scale_textsize="100"
-            android:id="@+id/NumOfWord"
+            android:id="@+id/NumOfWordR"
             tools:ignore="MissingPrefix"
             />
+
         <TextView
+            android:id="@+id/wordR"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textAlignment="center"
+            app:autoSizeMaxTextSize="80sp"
+            app:autoSizeMinTextSize="30sp"
+            app:autoSizeTextType="uniform"
+            app:scale_height="600"
             app:scale_top="300"
             app:scale_width="1000"
-            app:scale_height="600"
-            android:textAlignment="center"
-            android:gravity="center"
-            app:scale_textsize="400"
-            tools:ignore="MissingPrefix"
-            android:id="@+id/word"
-            />
+            tools:ignore="MissingPrefix" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -47,8 +48,20 @@
             app:scale_height="200"
             android:textAlignment="center"
             android:gravity="center"
-            app:scale_textsize="100"
-            android:id="@+id/mean"
+            app:autoSizeTextType="uniform"
+            app:autoSizeMinTextSize="10sp"
+            app:autoSizeMaxTextSize="30sp"
+            android:id="@+id/meanR"
             tools:ignore="MissingPrefix"/>
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_top="1200"
+            app:scale_width="1000"
+            app:scale_height="200"
+            android:text="finish"
+            android:id="@+id/buttonnextre"
+            tools:ignore="MissingPrefix"
+            />
     </com.ssomai.android.scalablelayout.ScalableLayout>
 </android.support.constraint.ConstraintLayout>

@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 
     <application
         android:allowBackup="true"
@@ -36,7 +37,13 @@
             android:name=".ChangeExcel"
             android:label="@string/title_activity_change_excel"
             android:theme="@style/AppTheme" />
-        <activity android:name=".ChangeWord"></activity>
+        <activity android:name=".ChangeWord" />
+        <activity android:name=".Weekteststart" />
+        <activity android:name=".WeeklyTest" />
+        <activity android:name=".MonthlyTest" />
+        <activity android:name=".MonthlyTestStart" />
+        <activity android:name=".ResultofWeekly" />
+        <activity android:name=".ResultofMonthly"></activity>
     </application>
 
 </manifest>

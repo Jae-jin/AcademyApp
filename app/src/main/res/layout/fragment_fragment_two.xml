@@ -4,13 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@color/colorSkyBlue">
+    android:layout_height="wrap_content">
 
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:scale_base_height="4500"
+        app:scale_base_height="8000"
         android:id="@+id/scale"
         app:scale_base_width="1000">
 

@@ -161,7 +161,7 @@ public class Fragment_one extends Fragment {
             String main[] = result.split("Q");
             if (main.length != 1) {
                 String temp[] = main[1].split("&");
-                int length = temp.length;
+                int length = temp.length - 1;
                 int start = 0;
 
                 if (main[0].equals("ok") == true) {

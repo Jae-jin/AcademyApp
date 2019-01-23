@@ -4,8 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Studystart">
-
+    tools:context=".MonthlyTestStart">
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -18,10 +17,10 @@
             app:scale_width="840"
             app:scale_height="300"
             app:scale_top="400"
-            android:text="Start Study"
+            android:text="Start MonthlyTest"
             app:scale_textsize="90"
             tools:ignore="MissingPrefix"
-            android:id="@+id/studyStart"
+            android:id="@+id/startTestm"
             />
 
         <TextView
@@ -30,10 +29,12 @@
             app:scale_left="80"
             app:scale_top="850"
             app:scale_width="840"
-            app:scale_height="500"
+            app:scale_height="520"
             android:textAlignment="center"
-            android:text="Tips\n\n위 버튼을 누르면 학습을 시작하게 됩니다. 단어 100개와 숙어 20개를 학습하게 됩니다. 열심히 보고 시험에 꼭 통과하시기를 바랍니다."
-            app:scale_textsize="50"
+            android:text="Tips\n\n제한시간 60분안에 총 1440문제를 풀어야 합니다. 1440문제를 다 맞추면 통과하게 되고 시험이 종료됩니다. 하나라도 틀리면 다시 재시험을 봐야합니다. 마음의 준비가 끝나셨으면 위에 버튼을 눌러 시험을 시작하세요"
+
+            app:scale_textsize="47"
             tools:ignore="MissingPrefix"/>
+
     </com.ssomai.android.scalablelayout.ScalableLayout>
 </android.support.constraint.ConstraintLayout>

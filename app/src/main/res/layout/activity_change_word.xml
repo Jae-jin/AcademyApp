@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ChangeWord"
-    android:background="@color/colorSkyBlue">
+    tools:context=".ChangeWord">
 
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
@@ -152,6 +151,7 @@
             android:layout_height="wrap_content"
             app:scale_left="700"
             app:scale_top="800"
+            app:scale_textsize="30"
             app:scale_width="200"
             android:id="@+id/getday"
             tools:ignore="MissingPrefix"

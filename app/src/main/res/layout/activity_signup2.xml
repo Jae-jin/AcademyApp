@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".Signup2"
-    android:background="@color/colorSkyBlue">
+    tools:context=".Signup2">
 
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"

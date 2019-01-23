@@ -5,8 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    tools:context=".month"
-    android:background="@color/colorSkyBlue">
+    tools:context=".month">
 
 
     <!-- 중등 고등, S A B 반에 맞는 단어들이 나와야한다. -->

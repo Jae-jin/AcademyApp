@@ -26,13 +26,13 @@ import java.net.MalformedURLException;
 import java.net.URL;
 
 public class MainActivity extends AppCompatActivity {
-    TextView login;
-    TextView signup;
-    String getid;
-    String getpass;
-    EditText Id;
-    EditText Password;
-    Button gotoadminster;
+    private TextView login;
+    private TextView signup;
+    private String getid;
+    private String getpass;
+    private EditText Id;
+    private EditText Password;
+    private Button gotoadminster;
 
     private static String TAG = "MainActivity";
     @Override

@@ -9,6 +9,8 @@ import android.speech.tts.TextToSpeech;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.io.BufferedReader;
@@ -28,11 +30,17 @@ import jxl.read.biff.BiffException;
 
 import static android.speech.tts.TextToSpeech.ERROR;
 
-public class Review extends AppCompatActivity {
-
+public class Review extends AppCompatActivity implements View.OnClickListener {
+    private Button finishbutton;
     private TextView word;
     private TextView mean;
     private TextView numofword;
+    private String getId;
+    private String getGrade;
+    private String getClass;
+    private int getFilenum;
+    private int getday;
+    private int getscore;
     private TextToSpeech tts;
     private ArrayList<String> wordlist = new ArrayList<>();//영어단어 집어 넣는 리스트
     private ArrayList<String> meanlist = new ArrayList<>();//영어의미 집어 넣는 리스트
@@ -42,10 +50,18 @@ public class Review extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_review);
-
-        word = (TextView) findViewById(R.id.word);
-        mean = (TextView) findViewById(R.id.mean);
-        numofword = (TextView) findViewById(R.id.NumOfWord);
+        Intent intent = getIntent();
+        getId = intent.getStringExtra("user_id");
+        getGrade = intent.getStringExtra("grade");
+        getClass = intent.getStringExtra("class");
+        getFilenum = intent.getIntExtra("filenum",0);
+        getday = intent.getIntExtra("realday",0);
+        getscore = intent.getIntExtra("maxscore",0);
+        finishbutton = (Button) findViewById(R.id.buttonnextre);
+        finishbutton.setOnClickListener(this);
+        word = (TextView) findViewById(R.id.wordR);
+        mean = (TextView) findViewById(R.id.meanR);
+        numofword = (TextView) findViewById(R.id.NumOfWordR);
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
@@ -54,54 +70,77 @@ public class Review extends AppCompatActivity {
                 }
             }
         });//영어 단어 소리 내기 위한 객체 생성
-        try{
-            StringBuffer data = new StringBuffer();
-            FileInputStream fis = openFileInput("data.txt");
-            BufferedReader buffer = new BufferedReader(new InputStreamReader(fis));
-            String str = buffer.readLine();
-            while(str != null){
-                data.append(str+"\n");
-                Log.d("TEST  ",str);
-                String[] array = str.split(" ");
-                wordlist.add(array[0]);
-                meanlist.add(array[1]);
-                Log.d("word:",array[0]);
-                Log.d("mean:",array[1]);
-                str = buffer.readLine();
-            }
-            buffer.close();
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
+        if(getscore == 120) {
+            try {
+                StringBuffer data = new StringBuffer();
+                FileInputStream fis = openFileInput("data.txt");
+                BufferedReader buffer = new BufferedReader(new InputStreamReader(fis));
+                String str = buffer.readLine();
+                while (str != null) {
+                    data.append(str + "\n");
+                    Log.d("TEST  ", str);
+                    String[] array = str.split(" ", 2);
+                    wordlist.add(array[0]);
+                    meanlist.add(array[1]);
+                    Log.d("word:", array[0]);
+                    Log.d("mean:", array[1]);
+                    str = buffer.readLine();
+                }
+                buffer.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        else{
+            try {
+                StringBuffer data = new StringBuffer();
+                FileInputStream fis = openFileInput("_data.txt");
+                BufferedReader buffer = new BufferedReader(new InputStreamReader(fis));
+                String str = buffer.readLine();
+                while (str != null) {
+                    data.append(str + "\n");
+                    Log.d("TEST  ", str);
+                    String[] array = str.split(" ", 2);
+                    wordlist.add(array[0]);
+                    meanlist.add(array[1]);
+                    Log.d("word:", array[0]);
+                    Log.d("mean:", array[1]);
+                    str = buffer.readLine();
+                }
+                buffer.close();
+            } catch (FileNotFoundException e) {
+                e.printStackTrace();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
         Message message = handler.obtainMessage(1);
         handler.sendMessageDelayed(message, 1000);//1초 대기
 
     }
     private Handler handler = new Handler(){
         public void handleMessage(Message msg){
-            switch(msg.what){
+            switch(msg.what) {
                 case 1:
                     Message message = handler.obtainMessage(2);
                     handler.sendMessageDelayed(message, 2000);//2초 있다가 단어를 불러온다.
 
                     break;
                 case 2:
-                    if(i<wordlist.size()) {//단어 아직 남았을 때
+                    if (i < wordlist.size()) {//단어 아직 남았을 때
                         word.setText(wordlist.get(i));
                         mean.setText("");//뜻칸 비워두고
                         numofword.setText(i + 1 + "/" + wordlist.size());//i는 몇 번째 단어인지
                         Message message1 = handler.obtainMessage(3);
-                        tts.speak(wordlist.get(i),TextToSpeech.QUEUE_FLUSH,null);//음성 발사
+                        tts.speak(wordlist.get(i), TextToSpeech.QUEUE_FLUSH, null);//음성 발사
                         handler.sendMessageDelayed(message1, 2000);//2초 있다가 뜻까지 같이 표시한다.
-                    }
-                    else {//단어 다 봤을 경우
-                        // 6배수 DAY를 100점맞았을때
-                        // data.txt 파일을 초기화
-                        try{
-                            FileOutputStream last_fos = openFileOutput("data.txt",Context.MODE_APPEND);
+                    } else {
+                        if(getday % 6 == 0){
+                        try {
+                            FileOutputStream last_fos = openFileOutput("data.txt", Context.MODE_APPEND);
 
                             PrintWriter writer = new PrintWriter(last_fos);
 
@@ -113,9 +152,15 @@ public class Review extends AppCompatActivity {
                         }
 
                         removeMessages(3);
-                        Intent intent = new Intent(getApplicationContext(),month.class);//다음 화면으로 넘어간다.
-                        startActivity(intent);
+                        Intent intent = new Intent(getApplicationContext(), month.class);//다음 화면으로 넘어간다.
+                            intent.putExtra("user_id", getId);
+                            intent.putExtra("grade",getGrade);
+                            intent.putExtra("class",getClass);
+                            intent.putExtra("filenum",getFilenum);
+                            intent.putExtra("day",getday);
+                            startActivity(intent);
                     }
+            }
                     break;
 
                 case 3:
@@ -126,9 +171,27 @@ public class Review extends AppCompatActivity {
                     Message message2 = handler.obtainMessage(2);
                     i++;//다음 단어로~
                     handler.sendMessageDelayed(message2, 2000);//2초 있다가 다음 단어 표시
+                    break;
 
+                case 4:
+                    removeMessages(1);
+                    removeMessages(2);
+                    removeMessages(3);
+                    Intent intent = new Intent(getApplicationContext(),month.class);//다음 화면으로 넘어간다.
+                    intent.putExtra("user_id", getId);
+                    intent.putExtra("grade",getGrade);
+                    intent.putExtra("class",getClass);
+                    intent.putExtra("filenum",getFilenum);
+                    intent.putExtra("day",getday);
+                    startActivity(intent);
                     break;
             }
         }
     };
+
+    @Override
+    public void onClick(View v) {
+        Message message = handler.obtainMessage(4);
+        handler.sendMessageDelayed(message, 1000);
+    }
 }
