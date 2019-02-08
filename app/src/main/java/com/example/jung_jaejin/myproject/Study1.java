@@ -43,7 +43,6 @@ public class Study1 extends AppCompatActivity implements View.OnClickListener {
     private int day;
     private int time;
     private int realday;
-    private int limittime = 300;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -116,13 +115,7 @@ public class Study1 extends AppCompatActivity implements View.OnClickListener {
         handler.sendMessageDelayed(message, 1000);//1초 대기
 
     }
-    @Override
-    protected void onDestroy()
-    {
-        super.onDestroy();
 
-        tts.shutdown();
-    }
     private Handler handler = new Handler(){
         public void handleMessage(Message msg){
             switch(msg.what){
@@ -137,6 +130,7 @@ public class Study1 extends AppCompatActivity implements View.OnClickListener {
                             mean.setText("");//뜻칸 비워두고
                             numofword.setText(i + 1 + "/" + wordlist.size());//i는 몇 번째 단어인지
                             Message message1 = handler.obtainMessage(3);
+                            tts.setSpeechRate(0.8f);
                             tts.speak(wordlist.get(i),TextToSpeech.QUEUE_FLUSH,null);//음성 발사
                             handler.sendMessageDelayed(message1, 2000);//2초 있다가 뜻까지 같이 표시한다.
                         }
@@ -152,6 +146,7 @@ public class Study1 extends AppCompatActivity implements View.OnClickListener {
                             intent.putExtra("day",day);
                             intent.putExtra("time",time);
                             intent.putExtra("realday",realday);
+                            tts.shutdown();
                             startActivity(intent);
                         }
                             break;
@@ -179,6 +174,7 @@ public class Study1 extends AppCompatActivity implements View.OnClickListener {
                     intent.putExtra("day",day);
                     intent.putExtra("realday",realday);
                     intent.putExtra("time",time);
+                    tts.shutdown();
                     startActivity(intent);
                     break;
             }

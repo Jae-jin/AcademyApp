@@ -29,6 +29,10 @@ public class WeeklyTest extends AppCompatActivity {
     private TextView answer2;
     private TextView answer3;
     private TextView answer4;
+    private TextView frame1;
+    private TextView frame2;
+    private TextView frame3;
+    private TextView frame4;
     private int choice;
     private int realanswer;
     private int NumOfRight;
@@ -36,9 +40,9 @@ public class WeeklyTest extends AppCompatActivity {
     private int Numrandom;
     private int realday;
     private int SelectProblem;
-    private int limittime=5;
+    private int limittime=7;
     private int currenttime;
-    private int fulltime = 900;
+    private int fulltime;
     private int gonext=0;
     private int start;
     private String user_id;
@@ -71,6 +75,15 @@ public class WeeklyTest extends AppCompatActivity {
         answer2 = (TextView)findViewById(R.id.answer2w);
         answer3 = (TextView)findViewById(R.id.answer3w);
         answer4 = (TextView)findViewById(R.id.answer4w);
+        frame1 = (TextView)findViewById(R.id.frame1w);
+        frame2 = (TextView)findViewById(R.id.frame2w);
+        frame3 = (TextView)findViewById(R.id.frame3w);
+        frame4 = (TextView)findViewById(R.id.frame4w);
+        problem.setBackgroundResource(R.drawable.edge1);
+        frame1.setBackgroundResource(R.drawable.edge);
+        frame2.setBackgroundResource(R.drawable.edge);
+        frame3.setBackgroundResource(R.drawable.edge);
+        frame4.setBackgroundResource(R.drawable.edge);
 
         answer1.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -146,15 +159,16 @@ public class WeeklyTest extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        currenttime = fulltime;
-        timer.setText(currenttime+"/"+fulltime);
+
         NumOfProblem = wordlist.size();
 
         for(int start1 = 0; start1 < wordlist.size();start1++) {
             randomlist.add(start1);
         }
         start=0;
-
+        fulltime = NumOfProblem * 7;
+        currenttime = fulltime;
+        timer.setText(currenttime+"/"+fulltime);
         Collections.shuffle(randomlist);
 
         Message message = handler.obtainMessage(1);

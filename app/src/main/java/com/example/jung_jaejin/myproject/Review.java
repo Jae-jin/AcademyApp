@@ -1,11 +1,13 @@
 package com.example.jung_jaejin.myproject;
 
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetManager;
 import android.os.Handler;
 import android.os.Message;
 import android.speech.tts.TextToSpeech;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -77,15 +79,35 @@ public class Review extends AppCompatActivity implements View.OnClickListener {
                 FileInputStream fis = openFileInput("data.txt");
                 BufferedReader buffer = new BufferedReader(new InputStreamReader(fis));
                 String str = buffer.readLine();
-                while (str != null) {
-                    data.append(str + "\n");
-                    Log.d("TEST  ", str);
-                    String[] array = str.split(" ", 2);
-                    wordlist.add(array[0]);
-                    meanlist.add(array[1]);
-                    Log.d("word:", array[0]);
-                    Log.d("mean:", array[1]);
-                    str = buffer.readLine();
+                if(str != null) {
+                    while (str != null) {
+                        data.append(str + "\n");
+                        Log.d("TEST  ", str);
+                        String[] array = str.split(" ", 2);
+                        wordlist.add(array[0]);
+                        meanlist.add(array[1]);
+                        Log.d("word:", array[0]);
+                        Log.d("mean:", array[1]);
+                        str = buffer.readLine();
+                    }
+                }
+                else{
+                    Log.d("Tag : ","단어없다.");
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(Review.this);
+                    dialog.setTitle("복습 단어가 없음.")
+                            .setMessage("복습할 단어가 없습니다.")
+                            .setPositiveButton("복습할 단어가 없습니다.", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent intent = new Intent(getApplicationContext(),month.class);
+                                    intent.putExtra("user_id", getId);
+                                    intent.putExtra("grade",getGrade);
+                                    intent.putExtra("class",getClass);
+                                    intent.putExtra("filenum",getFilenum);
+                                    intent.putExtra("day",getday);
+                                    startActivity(intent);
+                                }
+                            }).create().show();
                 }
                 buffer.close();
             } catch (FileNotFoundException e) {
@@ -100,6 +122,7 @@ public class Review extends AppCompatActivity implements View.OnClickListener {
                 FileInputStream fis = openFileInput("_data.txt");
                 BufferedReader buffer = new BufferedReader(new InputStreamReader(fis));
                 String str = buffer.readLine();
+                if(str != null){
                 while (str != null) {
                     data.append(str + "\n");
                     Log.d("TEST  ", str);
@@ -109,6 +132,24 @@ public class Review extends AppCompatActivity implements View.OnClickListener {
                     Log.d("word:", array[0]);
                     Log.d("mean:", array[1]);
                     str = buffer.readLine();
+                }}
+                else{
+                    Log.d("Tag : ","단어없다.");
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(Review.this);
+                    dialog.setTitle("복습 단어가 없음.")
+                            .setMessage("복습할 단어가 없습니다.")
+                            .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+                                    Intent intent = new Intent(getApplicationContext(),month.class);
+                                    intent.putExtra("user_id", getId);
+                                    intent.putExtra("grade",getGrade);
+                                    intent.putExtra("class",getClass);
+                                    intent.putExtra("filenum",getFilenum);
+                                    intent.putExtra("day",getday);
+                                    startActivity(intent);
+                                }
+                            }).create().show();
                 }
                 buffer.close();
             } catch (FileNotFoundException e) {
@@ -140,7 +181,7 @@ public class Review extends AppCompatActivity implements View.OnClickListener {
                     } else {
                         if(getday % 6 == 0){
                         try {
-                            FileOutputStream last_fos = openFileOutput("data.txt", Context.MODE_APPEND);
+                            FileOutputStream last_fos = openFileOutput("data.txt", Context.MODE_PRIVATE);
 
                             PrintWriter writer = new PrintWriter(last_fos);
 
@@ -151,6 +192,18 @@ public class Review extends AppCompatActivity implements View.OnClickListener {
                             e.printStackTrace();
                         }
 
+                            try {
+                                FileOutputStream last_fos = openFileOutput("data.txt", Context.MODE_PRIVATE);
+
+                                PrintWriter writer = new PrintWriter(last_fos);
+
+                                writer.print("");
+                                writer.close();
+
+                            } catch (FileNotFoundException e) {
+                                e.printStackTrace();
+                            }
+
                         removeMessages(3);
                         Intent intent = new Intent(getApplicationContext(), month.class);//다음 화면으로 넘어간다.
                             intent.putExtra("user_id", getId);
@@ -158,6 +211,7 @@ public class Review extends AppCompatActivity implements View.OnClickListener {
                             intent.putExtra("class",getClass);
                             intent.putExtra("filenum",getFilenum);
                             intent.putExtra("day",getday);
+                            tts.shutdown();
                             startActivity(intent);
                     }
             }
@@ -167,6 +221,7 @@ public class Review extends AppCompatActivity implements View.OnClickListener {
                     word.setText(wordlist.get(i));
                     mean.setText(meanlist.get(i));//뜻표시
                     numofword.setText(i + 1 + "/" + wordlist.size());
+                    tts.setSpeechRate(0.8f);
                     tts.speak(wordlist.get(i),TextToSpeech.QUEUE_FLUSH,null);
                     Message message2 = handler.obtainMessage(2);
                     i++;//다음 단어로~
@@ -183,6 +238,7 @@ public class Review extends AppCompatActivity implements View.OnClickListener {
                     intent.putExtra("class",getClass);
                     intent.putExtra("filenum",getFilenum);
                     intent.putExtra("day",getday);
+                    tts.shutdown();
                     startActivity(intent);
                     break;
             }

@@ -12,7 +12,6 @@
         app:scale_base_width="1000"
         app:scale_base_height="1600">
 
-
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -45,25 +44,25 @@
             android:layout_height="wrap_content"
             app:scale_top="250"
             app:scale_width="1000"
-            app:scale_height="600"
+            app:scale_height="350"
             android:textAlignment="center"
             android:gravity="center"
             app:autoSizeTextType="uniform"
             android:id="@+id/problemw"
-            app:autoSizeMinTextSize="20sp"
-            app:autoSizeMaxTextSize="50sp"
-            tools:ignore="MissingPrefix"/>
+            app:autoSizeMinTextSize="25sp"
+            app:autoSizeMaxTextSize="40sp"
+            tools:ignore="MissingPrefix"
+            android:textStyle="bold"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_top="900"
-            app:scale_width="500"
+            app:scale_top="615"
+            app:scale_left="200"
+            app:scale_width="800"
             app:scale_height="200"
-            android:gravity="center"
-            app:autoSizeTextType="uniform"
-            app:autoSizeMinTextSize="20sp"
-            app:autoSizeMaxTextSize="50sp"
+            android:gravity="center_vertical"
+            app:scale_textsize="60"
             tools:ignore="MissingPrefix"
             android:id="@+id/answer1w"
             />
@@ -71,43 +70,118 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_left="500"
-            app:scale_top="900"
-            app:scale_width="500"
+            app:scale_top="830"
+            app:scale_left="200"
+            app:scale_width="800"
             app:scale_height="200"
-            android:gravity="center"
-            app:autoSizeTextType="uniform"
-            app:autoSizeMinTextSize="20sp"
-            app:autoSizeMaxTextSize="50sp"
+            android:gravity="center_vertical"
+            app:scale_textsize="60"
             android:id="@+id/answer2w"
             tools:ignore="MissingPrefix"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_top="1200"
-            app:scale_width="500"
+            app:scale_top="1045"
+            app:scale_left="200"
+            app:scale_width="800"
             app:scale_height="200"
-            android:gravity="center"
-            app:autoSizeTextType="uniform"
+            android:gravity="center_vertical"
             android:id="@+id/answer3w"
-            app:autoSizeMinTextSize="20sp"
-            app:autoSizeMaxTextSize="50sp"
+            app:scale_textsize="60"
             tools:ignore="MissingPrefix"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_left="500"
-            app:scale_top="1200"
-            app:scale_width="500"
+            app:scale_top="1260"
+            app:scale_left="200"
+            app:scale_width="800"
             app:scale_height="200"
-            android:gravity="center"
-            app:autoSizeMinTextSize="20sp"
-            app:autoSizeMaxTextSize="50sp"
-            app:autoSizeTextType="uniform"
+            android:gravity="center_vertical"
+            app:scale_textsize="60"
             android:id="@+id/answer4w"
             tools:ignore="MissingPrefix"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_top="615"
+            app:scale_width="200"
+            app:scale_height="200"
+            android:gravity="center"
+            android:text="1."
+            tools:ignore="MissingPrefix"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_top="830"
+            app:scale_width="200"
+            app:scale_height="200"
+            android:gravity="center"
+            android:text="2."
+            tools:ignore="MissingPrefix"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_top="1045"
+            app:scale_width="200"
+            app:scale_height="200"
+            android:gravity="center"
+            android:text="3."
+            tools:ignore="MissingPrefix"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_top="1260"
+            app:scale_width="200"
+            app:scale_height="200"
+            android:gravity="center"
+            android:text="4."
+            tools:ignore="MissingPrefix"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_top="615"
+            app:scale_width="1000"
+            app:scale_height="200"
+            tools:ignore="MissingPrefix"
+            android:id="@+id/frame1w"
+            android:background="#00ffffff"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_top="830"
+            app:scale_width="1000"
+            app:scale_height="200"
+            tools:ignore="MissingPrefix"
+            android:id="@+id/frame2w"
+            android:background="#00ffffff"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_top="1045"
+            app:scale_width="1000"
+            app:scale_height="200"
+            tools:ignore="MissingPrefix"
+            android:id="@+id/frame3w"
+            android:background="#00ffffff"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_top="1260"
+            app:scale_width="1000"
+            app:scale_height="200"
+            android:background="#00ffffff"
+            tools:ignore="MissingPrefix"
+            android:id="@+id/frame4w"
+
+            />
 
     </com.ssomai.android.scalablelayout.ScalableLayout>
 

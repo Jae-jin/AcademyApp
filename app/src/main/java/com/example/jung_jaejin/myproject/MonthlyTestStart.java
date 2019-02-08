@@ -36,7 +36,7 @@ public class MonthlyTestStart extends AppCompatActivity {
         {
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(getApplicationContext(),MonthlyTest.class);
+                Intent intent = new Intent(getApplicationContext(),Showtipofmonthtest.class);
                 intent.putExtra("user_id", user_id);
                 intent.putExtra("grade",grade);
                 intent.putExtra("class",classss);

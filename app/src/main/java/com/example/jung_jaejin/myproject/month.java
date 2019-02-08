@@ -23,10 +23,13 @@ import com.ssomai.android.scalablelayout.ScalableLayout;
 import org.apache.log4j.chainsaw.Main;
 
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
+import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
@@ -57,6 +60,7 @@ public class month extends AppCompatActivity implements View.OnClickListener {
         scalableLayout = (ScalableLayout)findViewById(R.id.scaleid);
 
         review_test = (Button)findViewById(R.id.review_test);
+
         Intent intent = getIntent();
 
 
@@ -149,16 +153,52 @@ public class month extends AppCompatActivity implements View.OnClickListener {
             for(Button tempButton : mButton){
                 if(tempButton == newButton)
                 {
-                    int position = (Integer)v.getTag();
-                    Intent intent = new Intent(month.this, Studystart.class);
-                    intent.putExtra("user_id", getId);
-                    intent.putExtra("grade",getGrade);
-                    intent.putExtra("class",getClass);
-                    intent.putExtra("filenum",getFilenum);
-                    intent.putExtra("day",position);
-                    intent.putExtra("realday",getDay);
-                    intent.putExtra("time",timelist.get(position));
-                    startActivity(intent);
+                    final int position = (Integer)v.getTag();
+                    if((position %3) == 2 &&  gradelist.get(5*position) != -1)
+                    {
+                        AlertDialog.Builder dialog = new AlertDialog.Builder(month.this);
+                        dialog.setTitle("주간 시험 바로보기")
+                                .setMessage("주간 시험으로 바로 넘어가시곘습니까?")
+                                .setPositiveButton("네", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        Intent intent = new Intent(getApplicationContext(),Weekteststart.class);
+                                        intent.putExtra("user_id", getId);
+                                        intent.putExtra("grade",getGrade);
+                                        intent.putExtra("class",getClass);
+                                        intent.putExtra("filenum",getFilenum);
+                                        intent.putExtra("day",position);
+                                        intent.putExtra("realday",getDay);
+                                        startActivity(intent);
+                                    }
+                                })
+                                .setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+                                    @Override
+                                    public void onClick(DialogInterface dialog, int which) {
+                                        Intent intent = new Intent(month.this, Studystart.class);
+                                        intent.putExtra("user_id", getId);
+                                        intent.putExtra("grade",getGrade);
+                                        intent.putExtra("class",getClass);
+                                        intent.putExtra("filenum",getFilenum);
+                                        intent.putExtra("day",position);
+                                        intent.putExtra("realday",getDay);
+                                        intent.putExtra("time",timelist.get(position));
+                                        startActivity(intent);
+                                    }
+                                }).create().show();
+                    }
+                    else{
+                        Intent intent = new Intent(month.this, Studystart.class);
+                        intent.putExtra("user_id", getId);
+                        intent.putExtra("grade",getGrade);
+                        intent.putExtra("class",getClass);
+                        intent.putExtra("filenum",getFilenum);
+                        intent.putExtra("day",position );
+                        intent.putExtra("realday",getDay);
+                        intent.putExtra("time",timelist.get(position));
+                        startActivity(intent);
+                    }
+
                 }
             }
     }
@@ -304,6 +344,31 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                         mButton[i].setEnabled(false);
                     }
                 }
+
+                try {
+                    FileOutputStream last_fos = openFileOutput("data.txt", Context.MODE_PRIVATE);
+
+                    PrintWriter writer = new PrintWriter(last_fos);
+
+                    writer.print("");
+                    writer.close();
+
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+
+                try {
+                    FileOutputStream last_fos = openFileOutput("_data.txt", Context.MODE_PRIVATE);
+
+                    PrintWriter writer = new PrintWriter(last_fos);
+
+                    writer.print("");
+                    writer.close();
+
+                } catch (FileNotFoundException e) {
+                    e.printStackTrace();
+                }
+
 
             }
 

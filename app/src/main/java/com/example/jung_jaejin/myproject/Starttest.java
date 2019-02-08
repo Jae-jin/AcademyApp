@@ -34,15 +34,29 @@ public class Starttest extends AppCompatActivity {
         {
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(getApplicationContext(),Test.class);
-                intent.putExtra("user_id", user_id);
-                intent.putExtra("grade",grade);
-                intent.putExtra("class",classss);
-                intent.putExtra("filenum",filenum);
-                intent.putExtra("day",day);
-                intent.putExtra("time",time);
-                intent.putExtra("realday",realday);
-                startActivity(intent);
+                if((day %6) == 5)
+                {
+                    Intent intent = new Intent(getApplicationContext(),Showtipsofdaytest.class);
+                    intent.putExtra("user_id", user_id);
+                    intent.putExtra("grade",grade);
+                    intent.putExtra("class",classss);
+                    intent.putExtra("filenum",filenum);
+                    intent.putExtra("day",day);
+                    intent.putExtra("time",time);
+                    intent.putExtra("realday",realday);
+                    startActivity(intent);
+                }
+                else{
+                    Intent intent = new Intent(getApplicationContext(),Test.class);
+                    intent.putExtra("user_id", user_id);
+                    intent.putExtra("grade",grade);
+                    intent.putExtra("class",classss);
+                    intent.putExtra("filenum",filenum);
+                    intent.putExtra("day",day);
+                    intent.putExtra("time",time);
+                    intent.putExtra("realday",realday);
+                    startActivity(intent);
+                }
             }
         });
     }

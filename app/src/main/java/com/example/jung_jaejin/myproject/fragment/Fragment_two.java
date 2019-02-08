@@ -66,7 +66,7 @@ public class Fragment_two extends Fragment  {
         {
             gradelist.add(-1);
         }
-        for(int i = 0; i<22;i++)
+        for(int i = 0; i<105;i++)
         {
             gradeweeklist.add(-1);
         }
@@ -124,7 +124,7 @@ public class Fragment_two extends Fragment  {
                         mButton[i] = idbutton;
                         mButton[i].setOnClickListener(this);
                         mButton[i].setTag(i);
-                        s1.addView(idbutton, 0, i * 160, 250, 150);
+                        s1.addView(idbutton, 0, i * 160, 250, 140);
                         s1.setScale_TextSize(idbutton, 50);
                         idbutton.setText(namelist.get(i));
                     }
@@ -283,11 +283,11 @@ public class Fragment_two extends Fragment  {
 
                                 TextView textv = new TextView(v.getContext());
                                 textv.setBackgroundResource(R.drawable.edge);
-                                s1.addView(textv, 250, tr * 100, 150, 100);
+                                s1.addView(textv, 250, tr * 100, 140, 100);
 
                             } else if (tr == 0 && tv != 0) {
                                 TextView textv = new TextView(v.getContext());
-                                s1.addView(textv, 400+120*(tv-1), tr * 100, 120, 100);
+                                s1.addView(textv, 390+120*(tv-1), tr * 100, 120, 100);
                                 textv.setBackgroundResource(R.drawable.edge);
                                 s1.setScale_TextSize(textv, 50);
                                 if (tv == 1) {
@@ -315,7 +315,7 @@ public class Fragment_two extends Fragment  {
                             } else if (tr != 0 && tv == 0) {
                                 TextView textv = new TextView(v.getContext());
                                 textv.setBackgroundResource(R.drawable.edge);
-                                s1.addView(textv, 250, tr * 100, 150, 100);
+                                s1.addView(textv, 250, tr * 100, 140, 100);
                                 s1.setScale_TextSize(textv, 36);
                                 textv.setText("Day" + tr);
 
@@ -323,7 +323,7 @@ public class Fragment_two extends Fragment  {
                             } else {
                                 TextView textv = new TextView(v.getContext());
                                 textv.setBackgroundResource(R.drawable.edge);
-                                s1.addView(textv, 400+120*(tv-1), tr * 100, 120, 100);
+                                s1.addView(textv, 390+120*(tv-1), tr * 100, 120, 100);
                                 s1.setScale_TextSize(textv, 50);
                                 if(gradelist.get(5*(tr-1)+tv-1) == -1){
                                     textv.setText("");
@@ -369,12 +369,12 @@ public class Fragment_two extends Fragment  {
 
                             TextView textv = new TextView(v.getContext());
                             textv.setBackgroundResource(R.drawable.edge);
-                            s1.addView(textv, 250, tr * 100, 150, 100);
+                            s1.addView(textv, 250, tr * 100, 140, 100);
 
                         } else if (tr == 0 && tv != 0) {
                             TextView textv = new TextView(v.getContext());
                             textv.setBackgroundResource(R.drawable.edge);
-                            s1.addView(textv, 400+120*(tv-1), tr * 100, 120, 100);
+                            s1.addView(textv, 390+120*(tv-1), tr * 100, 120, 100);
                             s1.setScale_TextSize(textv, 50);
                             if (tv == 1) {
                                 textv.setText("1st");
@@ -401,17 +401,23 @@ public class Fragment_two extends Fragment  {
                         } else if (tr != 0 && tv == 0) {
                             TextView textv = new TextView(v.getContext());
                             textv.setBackgroundResource(R.drawable.edge);
-                            s1.addView(textv, 250, tr * 100, 150, 100);
+                            s1.addView(textv, 250, tr * 100, 140, 100);
                             s1.setScale_TextSize(textv, 36);
                             textv.setText("Day" + tr);
                             textv.setGravity(Gravity.CENTER);
                         } else {
                             TextView textv = new TextView(v.getContext());
                             textv.setBackgroundResource(R.drawable.edge);
-                            s1.addView(textv, 400+120*(tv-1), tr * 100, 120, 100);
+                            s1.addView(textv, 390+120*(tv-1), tr * 100, 120, 100);
                             s1.setScale_TextSize(textv, 50);
-                            textv.setText("" + gradelist.get(5 * (tr - 1) + tv - 1));
-                            textv.setGravity(Gravity.CENTER);
+                            if(gradelist.get(5*(tr-1)+tv-1) == -1){
+                                textv.setText("");
+                                textv.setGravity(Gravity.CENTER);
+                            }
+                            else {
+                                textv.setText("" + gradelist.get(5 * (tr - 1) + tv - 1));
+                                textv.setGravity(Gravity.CENTER);
+                            }
                         }
                     }
 
@@ -502,13 +508,16 @@ public class Fragment_two extends Fragment  {
 
                             String getarray1 = temp[i].split(",")[0];
                             String getarray2 = temp[i].split(",")[1];
+                            String getarray3 = temp[i].split(",")[2];
                             int qq = Integer.parseInt(getarray1);
                             int qqq = Integer.parseInt(getarray2);
+                            int qqqq = Integer.parseInt(getarray3);
                             while (qqq != start) {
                                 start++;
                             }
-
-                            gradeweeklist.set((start / 3) - 1, qq);
+                            if(start <= 21) {
+                                gradeweeklist.set(5 * (start / 3) + qqqq - 1, qq);
+                            }
 
                         }
 
@@ -527,12 +536,12 @@ public class Fragment_two extends Fragment  {
                                 break;
                         }
                         for (int tr = 0; tr < (gradelimit / 3) + 1; tr++) {
-                            for (int tv = 0; tv < 2; tv++) {
+                            for (int tv = 0; tv < 6; tv++) {
                                 if (tr == 0 && tv == 0) {
 
                                     TextView textv = new TextView(v.getContext());
                                     textv.setBackgroundResource(R.drawable.edge);
-                                    s1.addView(textv, 250, gradelimit * 100 + 200 + tr * 100, 150, 100);
+                                    s1.addView(textv, 250, gradelimit * 100 + 200 + tr * 100, 140, 100);
 
                                 } else if (tr == 0 && tv != 0) {
                                     TextView textv = new TextView(v.getContext());
@@ -543,11 +552,27 @@ public class Fragment_two extends Fragment  {
                                         textv.setText("1st");
                                         textv.setGravity(Gravity.CENTER);
                                     }
+                                    if (tv == 2) {
+                                        textv.setText("2nd");
+                                        textv.setGravity(Gravity.CENTER);
+                                    }
+                                    if (tv == 3) {
+                                        textv.setText("3rd");
+                                        textv.setGravity(Gravity.CENTER);
+                                    }
+                                    if (tv == 4) {
+                                        textv.setText("4th");
+                                        textv.setGravity(Gravity.CENTER);
+                                    }
+                                    if (tv == 5) {
+                                        textv.setText("5th");
+                                        textv.setGravity(Gravity.CENTER);
+                                    }
 
                                 } else if (tr != 0 && tv == 0) {
                                     TextView textv = new TextView(v.getContext());
                                     textv.setBackgroundResource(R.drawable.edge);
-                                    s1.addView(textv, 250, gradelimit * 100 + 200 + tv * 100, 150, 100);
+                                    s1.addView(textv, 250, gradelimit * 100 + 200 + tv * 100, 140, 100);
                                     s1.setScale_TextSize(textv, 30);
                                     textv.setText("Week" + tr);
                                     textv.setGravity(Gravity.CENTER);
@@ -557,7 +582,7 @@ public class Fragment_two extends Fragment  {
                                     s1.addView(textv, 250 + 120 * tv, gradelimit * 100 + 200 + tv * 100, 120, 100);
                                     s1.setScale_TextSize(textv, 50);
                                     if(gradeweeklist.get((tr - 1) + tv - 1) != -1) {
-                                        textv.setText("" + gradeweeklist.get((tr - 1) + tv - 1));
+                                        textv.setText("" + gradeweeklist.get(5 * (tr - 1) + tv - 1));
                                         textv.setGravity(Gravity.CENTER);
                                     }
                                     else{
@@ -586,37 +611,53 @@ public class Fragment_two extends Fragment  {
                         break;
                 }
                 for (int tr = 0; tr < (gradelimit / 3) + 1; tr++) {
-                    for (int tv = 0; tv < 2; tv++) {
+                    for (int tv = 0; tv < 6; tv++) {
                         if (tr == 0 && tv == 0) {
 
                             TextView textv = new TextView(v.getContext());
                             textv.setBackgroundResource(R.drawable.edge);
-                            s1.addView(textv, 250, gradelimit * 100 + 200 + tr * 100, 150, 100);
+                            s1.addView(textv, 250, gradelimit * 100 + 200 + tr * 100, 140, 100);
 
                         } else if (tr == 0 && tv != 0) {
                             TextView textv = new TextView(v.getContext());
                             textv.setBackgroundResource(R.drawable.edge);
-                            s1.addView(textv, 400+120*(tv-1), gradelimit * 100 + 200 + tr * 100, 120, 100);
+                            s1.addView(textv, 390+120*(tv-1), gradelimit * 100 + 200 + tr * 100, 120, 100);
                             s1.setScale_TextSize(textv, 50);
                             if (tv == 1) {
                                 textv.setText("1st");
+                                textv.setGravity(Gravity.CENTER);
+                            }
+                            if (tv == 2) {
+                                textv.setText("2nd");
+                                textv.setGravity(Gravity.CENTER);
+                            }
+                            if (tv == 3) {
+                                textv.setText("3rd");
+                                textv.setGravity(Gravity.CENTER);
+                            }
+                            if (tv == 4) {
+                                textv.setText("4th");
+                                textv.setGravity(Gravity.CENTER);
+                            }
+                            if (tv == 5) {
+                                textv.setText("5th");
                                 textv.setGravity(Gravity.CENTER);
                             }
 
                         } else if (tr != 0 && tv == 0) {
                             TextView textv = new TextView(v.getContext());
                             textv.setBackgroundResource(R.drawable.edge);
-                            s1.addView(textv, 250, gradelimit * 100 + 200 + tr * 100, 150, 100);
+                            s1.addView(textv, 250, gradelimit * 100 + 200 + tr * 100, 140, 100);
                             s1.setScale_TextSize(textv, 30);
                             textv.setText("Week" + tr);
                             textv.setGravity(Gravity.CENTER);
                         } else {
                             TextView textv = new TextView(v.getContext());
                             textv.setBackgroundResource(R.drawable.edge);
-                            s1.addView(textv, 400+120*(tv-1), gradelimit * 100 + 200 + tr * 100, 120, 100);
+                            s1.addView(textv, 390+120*(tv-1), gradelimit * 100 + 200 + tr * 100, 120, 100);
                             s1.setScale_TextSize(textv, 50);
                             if(gradeweeklist.get((tr - 1) + tv - 1) != -1) {
-                                textv.setText("" + gradeweeklist.get((tr - 1) + tv - 1));
+                                textv.setText("" + gradeweeklist.get(5 * (tr - 1) + tv - 1));
                                 textv.setGravity(Gravity.CENTER);
                             }
                             else{
@@ -743,12 +784,12 @@ public class Fragment_two extends Fragment  {
 
                                         TextView textv = new TextView(v.getContext());
                                         textv.setBackgroundResource(R.drawable.edge);
-                                        s1.addView(textv, 250, gradelimit * 100 + 400 + gradelimit / 3 * 100 + tr * 100, 150, 100);
+                                        s1.addView(textv, 250, gradelimit * 100 + 390 + gradelimit / 3 * 100 + tr * 100, 140, 100);
 
                                     } else if (tr == 0 && tv != 0) {
                                         TextView textv = new TextView(v.getContext());
                                         textv.setBackgroundResource(R.drawable.edge);
-                                        s1.addView(textv, 400+120*(tv-1), gradelimit * 100 + 400 + gradelimit / 3 * 100 + tr * 100, 120, 100);
+                                        s1.addView(textv, 390+120*(tv-1), gradelimit * 100 + 390 + gradelimit / 3 * 100 + tr * 100, 120, 100);
                                         s1.setScale_TextSize(textv, 50);
                                         if (tv == 1) {
                                             textv.setText("1st");
@@ -758,14 +799,14 @@ public class Fragment_two extends Fragment  {
                                     } else if (tr != 0 && tv == 0) {
                                         TextView textv = new TextView(v.getContext());
                                         textv.setBackgroundResource(R.drawable.edge);
-                                        s1.addView(textv, 250, gradelimit * 100 + 400 + gradelimit / 3 * 100 + tr * 100, 150, 100);
+                                        s1.addView(textv, 250, gradelimit * 100 + 390 + gradelimit / 3 * 100 + tr * 100, 140, 100);
                                         s1.setScale_TextSize(textv, 30);
                                         textv.setText("Month" + tr);
                                         textv.setGravity(Gravity.CENTER);
                                     } else {
                                         TextView textv = new TextView(v.getContext());
                                         textv.setBackgroundResource(R.drawable.edge);
-                                        s1.addView(textv, 400+120*(tv-1), gradelimit * 100 + 400 + gradelimit / 3 * 100 + tr * 100, 120, 100);
+                                        s1.addView(textv, 390+120*(tv-1), gradelimit * 100 + 390 + gradelimit / 3 * 100 + tr * 100, 120, 100);
                                         s1.setScale_TextSize(textv, 30);
                                         if(gradeweeklist.get((tr - 1) + tv - 1) != -1) {
                                             textv.setText("" + gradeweeklist.get((tr - 1) + tv - 1));
@@ -807,12 +848,12 @@ public class Fragment_two extends Fragment  {
 
                                 TextView textv = new TextView(v.getContext());
                                 textv.setBackgroundResource(R.drawable.edge);
-                                s1.addView(textv, 250, gradelimit * 100 + 400 + gradelimit / 3 * 100 + tr * 100, 150, 100);
+                                s1.addView(textv, 250, gradelimit * 100 + 390 + gradelimit / 3 * 100 + tr * 100, 140, 100);
 
                             } else if (tr == 0 && tv != 0) {
                                 TextView textv = new TextView(v.getContext());
                                 textv.setBackgroundResource(R.drawable.edge);
-                                s1.addView(textv, 400+120*(tv-1), gradelimit * 100 + 400 + gradelimit / 3 * 100 + tr * 100, 120, 100);
+                                s1.addView(textv, 390+120*(tv-1), gradelimit * 100 + 390 + gradelimit / 3 * 100 + tr * 100, 120, 100);
                                 s1.setScale_TextSize(textv, 50);
                                 if (tv == 1) {
                                     textv.setText("1st");
@@ -822,14 +863,14 @@ public class Fragment_two extends Fragment  {
                             } else if (tr != 0 && tv == 0) {
                                 TextView textv = new TextView(v.getContext());
                                 textv.setBackgroundResource(R.drawable.edge);
-                                s1.addView(textv, 250, gradelimit * 100 + 400 + gradelimit / 3 * 100 + tr * 100, 150, 100);
+                                s1.addView(textv, 250, gradelimit * 100 + 390 + gradelimit / 3 * 100 + tr * 100, 140, 100);
                                 s1.setScale_TextSize(textv, 30);
                                 textv.setText("Month" + tr);
                                 textv.setGravity(Gravity.CENTER);
                             } else {
                                 TextView textv = new TextView(v.getContext());
                                 textv.setBackgroundResource(R.drawable.edge);
-                                s1.addView(textv, 400+120*(tv-1), gradelimit * 100 + 400 + gradelimit / 3 * 100 + tr * 100, 120, 100);
+                                s1.addView(textv, 390+120*(tv-1), gradelimit * 100 + 390 + gradelimit / 3 * 100 + tr * 100, 120, 100);
                                 s1.setScale_TextSize(textv, 50);
                                 if(gradeweeklist.get((tr - 1) + tv - 1) != -1) {
                                     textv.setText("" + gradeweeklist.get((tr - 1) + tv - 1));

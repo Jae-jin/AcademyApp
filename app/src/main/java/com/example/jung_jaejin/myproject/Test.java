@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.res.AssetManager;
+import android.graphics.Color;
 import android.os.Handler;
 import android.os.Message;
 import android.speech.tts.TextToSpeech;
@@ -33,6 +34,10 @@ public class Test extends AppCompatActivity {
     private TextView answer2;
     private TextView answer3;
     private TextView answer4;
+    private TextView frame1;
+    private TextView frame2;
+    private TextView frame3;
+    private TextView frame4;
     private int choice;
     private int realanswer;
     private int NumOfRight;
@@ -40,9 +45,9 @@ public class Test extends AppCompatActivity {
     private int Numrandom;
     private int realday;
     private int SelectProblem;
-    private int limittime=5;
+    private int limittime=7;
     private int currenttime;
-    private int fulltime = 300;
+    private int fulltime;
     private int gonext=0;
     private int start;
     private String user_id;
@@ -79,6 +84,15 @@ public class Test extends AppCompatActivity {
         answer2 = (TextView)findViewById(R.id.answer2);
         answer3 = (TextView)findViewById(R.id.answer3);
         answer4 = (TextView)findViewById(R.id.answer4);
+        frame1 = (TextView)findViewById(R.id.frame1);
+        frame2 = (TextView)findViewById(R.id.frame2);
+        frame3 = (TextView)findViewById(R.id.frame3);
+        frame4 = (TextView)findViewById(R.id.frame4);
+        problem.setBackgroundResource(R.drawable.edge1);
+        frame1.setBackgroundResource(R.drawable.edge);
+        frame2.setBackgroundResource(R.drawable.edge);
+        frame3.setBackgroundResource(R.drawable.edge);
+        frame4.setBackgroundResource(R.drawable.edge);
 
         answer1.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -152,8 +166,7 @@ public class Test extends AppCompatActivity {
             e.printStackTrace();
         }
 
-        currenttime = fulltime;
-        timer.setText(currenttime+"/"+fulltime);
+
         NumOfProblem = wordlist.size();
 
         for(int start1 = 0; start1 < wordlist.size();start1++) {
@@ -162,7 +175,9 @@ public class Test extends AppCompatActivity {
         start=0;
 
         Collections.shuffle(randomlist);
-
+        fulltime = NumOfProblem * 7;
+        currenttime = fulltime;
+        timer.setText(currenttime+"/"+fulltime);
         Message message = handler.obtainMessage(1);
         handler.sendMessageDelayed(message, 1000);
         Message message1 = handler.obtainMessage(2);
@@ -304,7 +319,7 @@ public class Test extends AppCompatActivity {
                         if (gonext == 1 && limittime > 0) {
                             if (choice == realanswer) {
                                 NumOfRight++;
-                                limittime = 5;
+                                limittime = 7;
                                 gonext = 0;
                                 start++;
                                 Message message1 = handler.obtainMessage(2);
@@ -312,7 +327,7 @@ public class Test extends AppCompatActivity {
                             } else {
 
                                 if(start < meanlist.size()) {
-                                    limittime = 5;
+                                    limittime = 7;
                                     gonext = 0;
                                     //Log.d("값",wordlist.get(randomlist.get(start)));
                                     //Log.d("값",meanlist.get(randomlist.get(start)));
@@ -342,7 +357,7 @@ public class Test extends AppCompatActivity {
                                 wrong_wordlist.add(wordlist.get(randomlist.get(start)));
 
                                 start++;
-                                limittime = 5;
+                                limittime = 7;
                                 Message message1 = handler.obtainMessage(2);
                                 handler.sendMessage(message1);
                             }

@@ -173,7 +173,7 @@ public class ResultPage extends AppCompatActivity {
             Log.d(TAG, "POST response - " + result);
             if(result.equals("success")==true){
 
-                if((day % 3) == 0) {
+                if((day % 3) == 2) {
                     AlertDialog.Builder dialog = new AlertDialog.Builder(ResultPage.this);
                     dialog.setTitle("데이터베이스 입력 성공 및 주간 시험 보기")
                             .setPositiveButton("주간 시험 보기", new DialogInterface.OnClickListener() {

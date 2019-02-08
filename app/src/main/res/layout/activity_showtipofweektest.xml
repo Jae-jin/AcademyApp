@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Showtipofweektest">
+
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:scale_base_width="1000"
+        app:scale_base_height="1600">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="80"
+            app:scale_top="300"
+            app:scale_width="840"
+            app:scale_height="200"
+            android:gravity="center"
+            android:text="Tips"
+            app:scale_textsize="130"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            tools:ignore="MissingPrefix"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="80"
+            app:scale_top="600"
+            app:scale_width="840"
+            app:scale_height="700"
+            android:text="제한시간 42분안에 총 360문제를 풀어야 합니다. 360문제를 다 맞추면 통과하게 되고 시험이 종료됩니다. \n하나라도 틀리면 다시 재시험을 봐야합니다."
+            app:scale_textsize="70"
+            android:textAlignment="center"
+            tools:ignore="MissingPrefix"
+            android:textColor="#000000"/>
+
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+
+
+</android.support.constraint.ConstraintLayout>

@@ -168,7 +168,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:scale_top="1150"
-        app:scale_left="230"
+        app:scale_left="200"
         app:scale_width="600"
         app:scale_height="100"
         android:gravity="center"
@@ -197,6 +197,13 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="B" />
+
+        <RadioButton
+            android:id="@+id/Zclass"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Z" />
     </RadioGroup>
 
     <TextView

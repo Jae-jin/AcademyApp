@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -53,19 +54,19 @@
             app:autoSizeTextType="uniform"
             android:id="@+id/problem"
             app:autoSizeMinTextSize="25sp"
-            app:autoSizeMaxTextSize="40sp"
+            app:autoSizeMaxTextSize="33sp"
             tools:ignore="MissingPrefix"
             android:textStyle="bold"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_top="600"
+            app:scale_top="615"
             app:scale_left="200"
             app:scale_width="800"
             app:scale_height="200"
             android:gravity="center_vertical"
-            app:scale_textsize="60"
+            app:scale_textsize="50"
             tools:ignore="MissingPrefix"
             android:id="@+id/answer1"
             />
@@ -73,36 +74,36 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_top="800"
+            app:scale_top="830"
             app:scale_left="200"
             app:scale_width="800"
             app:scale_height="200"
             android:gravity="center_vertical"
-            app:scale_textsize="60"
+            app:scale_textsize="50"
             android:id="@+id/answer2"
             tools:ignore="MissingPrefix"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_top="1000"
+            app:scale_top="1045"
             app:scale_left="200"
             app:scale_width="800"
             app:scale_height="200"
             android:gravity="center_vertical"
             android:id="@+id/answer3"
-            app:scale_textsize="60"
+            app:scale_textsize="50"
             tools:ignore="MissingPrefix"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_top="1200"
+            app:scale_top="1260"
             app:scale_left="200"
             app:scale_width="800"
             app:scale_height="200"
             android:gravity="center_vertical"
-            app:scale_textsize="60"
+            app:scale_textsize="50"
             android:id="@+id/answer4"
             tools:ignore="MissingPrefix"/>
 
@@ -110,7 +111,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_top="600"
+            app:scale_top="615"
             app:scale_width="200"
             app:scale_height="200"
             android:gravity="center"
@@ -120,7 +121,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_top="800"
+            app:scale_top="830"
             app:scale_width="200"
             app:scale_height="200"
             android:gravity="center"
@@ -129,7 +130,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_top="1000"
+            app:scale_top="1045"
             app:scale_width="200"
             app:scale_height="200"
             android:gravity="center"
@@ -138,11 +139,54 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_top="1200"
+            app:scale_top="1260"
             app:scale_width="200"
             app:scale_height="200"
             android:gravity="center"
             android:text="4."
             tools:ignore="MissingPrefix"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_top="615"
+            app:scale_width="1000"
+            app:scale_height="200"
+            android:color="#00000000"
+            tools:ignore="MissingPrefix"
+            android:id="@+id/frame1"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_top="830"
+            app:scale_width="1000"
+            android:color="#00000000"
+            app:scale_height="200"
+            tools:ignore="MissingPrefix"
+            android:id="@+id/frame2"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_top="1045"
+            app:scale_width="1000"
+            app:scale_height="200"
+            tools:ignore="MissingPrefix"
+            android:id="@+id/frame3"
+            android:color="#00000000"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_top="1260"
+            app:scale_width="1000"
+            app:scale_height="200"
+            tools:ignore="MissingPrefix"
+            android:id="@+id/frame4"
+            android:color="#00000000"
+            />
+
     </com.ssomai.android.scalablelayout.ScalableLayout>
 </android.support.constraint.ConstraintLayout>

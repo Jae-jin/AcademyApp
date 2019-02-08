@@ -34,7 +34,7 @@ public class Weekteststart extends AppCompatActivity {
         {
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(getApplicationContext(),WeeklyTest.class);
+                Intent intent = new Intent(getApplicationContext(),Showtipofweektest.class);
                 intent.putExtra("user_id", user_id);
                 intent.putExtra("grade",grade);
                 intent.putExtra("class",classss);

@@ -9,7 +9,7 @@
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:scale_base_height="8000"
+        app:scale_base_height="11000"
         android:id="@+id/scale"
         app:scale_base_width="1000">
 

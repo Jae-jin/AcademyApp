@@ -235,17 +235,21 @@ public class ResultofWeekly extends AppCompatActivity {
             progressDialog.dismiss();
             Log.d(TAG, "POST response - " + result);
             String main[] = result.split("Q");
-            if(main[1].equals("No")==false){
-                time = Integer.parseInt(main[1]);
-                resultbutton.setEnabled(true);
+            if(main[0].equals("ok")==true) {
+                if (main[1].equals("No") == false) {
+                    time = Integer.parseInt(main[1]);
+                    resultbutton.setEnabled(true);
+                } else {
+                    time = 0;
+                    resultbutton.setEnabled(true);
+                }
             }
             else{
                 AlertDialog.Builder dialog = new AlertDialog.Builder(ResultofWeekly.this);
-                dialog.setTitle("데이터베이스 연동 실패")
-                        .setPositiveButton("재시도", new DialogInterface.OnClickListener() {
+                dialog.setTitle("데이터베이스 입력 실패")
+                        .setPositiveButton("확인", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
-
                             }
                         }).create().show();
             }

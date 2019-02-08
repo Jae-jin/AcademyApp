@@ -24,6 +24,7 @@
             app:scale_left="200"
             app:scale_textsize="50"
             app:scale_top="100"
+            android:textStyle="bold"
             app:scale_width="600"
             android:id="@+id/review_test"
             tools:ignore="MissingPrefix" />

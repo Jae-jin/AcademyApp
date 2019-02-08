@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Showtipofstudy">
+
+    <com.ssomai.android.scalablelayout.ScalableLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:scale_base_width="1000"
+        app:scale_base_height="1600">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="80"
+            app:scale_top="300"
+            app:scale_width="840"
+            app:scale_height="200"
+            android:gravity="center"
+            android:text="Tips"
+            app:scale_textsize="130"
+            android:textStyle="bold"
+            android:textColor="#000000"
+            tools:ignore="MissingPrefix"/>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_left="80"
+            app:scale_top="600"
+            app:scale_width="840"
+            app:scale_height="700"
+            android:text="한 단어당 4초씩 총 8분에 걸쳐서 120개의 단어를 학습할 것입니다. 2초간 영어단어가 나오고 이후 2초간 단어의 뜻이 나올 것입니다. 잘 학습해서 시험을 잘 보도록 합시다."
+            app:scale_textsize="70"
+            android:textAlignment="center"
+            tools:ignore="MissingPrefix"
+            android:textColor="#000000"/>
+    </com.ssomai.android.scalablelayout.ScalableLayout>
+
+</android.support.constraint.ConstraintLayout>
