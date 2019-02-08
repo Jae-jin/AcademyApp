@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -45,6 +46,7 @@ public class ResultofMonthly extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_resultof_monthly);
         Intent intent = getIntent();
 
@@ -193,6 +195,32 @@ public class ResultofMonthly extends AppCompatActivity {
             }
             return "error";
         }
+    }
+
+    @Override
+    public void onBackPressed() {
+
+        // Alert을 이용해 종료시키기
+        AlertDialog.Builder dialog = new AlertDialog.Builder(ResultofMonthly.this);
+        dialog  .setTitle("시험 종료")
+                .setMessage("데이터베이스 기록을 하지 않고 main화면으로 이동하시겠습니까?")
+                .setPositiveButton("네", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(getApplicationContext(),month.class);
+                        intent.putExtra("user_id", user_id);
+                        intent.putExtra("grade",grade);
+                        intent.putExtra("class",classss);
+                        intent.putExtra("filenum",filenum);
+                        intent.putExtra("day",realday);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                }).create().show();
     }
 
 }

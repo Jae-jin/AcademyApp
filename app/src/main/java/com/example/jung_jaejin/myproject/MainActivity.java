@@ -3,6 +3,7 @@ package com.example.jung_jaejin.myproject;
 import android.app.ProgressDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -38,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
 
         gotoadminster = (Button) findViewById(R.id.administerbutton);
@@ -51,14 +53,20 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 getid = Id.getText().toString();
                 getpass = Password.getText().toString();
-                if(getid.replace(" ","").equals("")==true ||
-                        getpass.replace(" ","").equals("")==true){
-                    Toast.makeText(getApplicationContext(), "입력창이 비었습니다.", Toast.LENGTH_SHORT).show();
+                if(getid.equals("Issyk805")== true && getpass.equals("131216eprep")==true) {
+                    Intent intent = new Intent(getApplicationContext(),ManageResult.class);
+                    startActivity(intent);
                 }
-                else {
-                    Login task = new Login();
-                    task.execute(getid,getpass);
+                else
+                {
+                    if (getid.replace(" ", "").equals("") == true ||
+                            getpass.replace(" ", "").equals("") == true) {
+                        Toast.makeText(getApplicationContext(), "입력창이 비었습니다.", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Login task = new Login();
+                        task.execute(getid, getpass);
 
+                    }
                 }
             }
         });

@@ -17,10 +17,12 @@
             app:scale_width="840"
             app:scale_height="300"
             app:scale_top="550"
-            android:text="Start MonthlyTest"
-            app:scale_textsize="90"
+            android:text="Start\nMonthlyTest"
+            app:scale_textsize="80"
             tools:ignore="MissingPrefix"
             android:id="@+id/startTestm"
+            android:background="#1e90ff"
+            android:textColor="#000000"
             />
 
 

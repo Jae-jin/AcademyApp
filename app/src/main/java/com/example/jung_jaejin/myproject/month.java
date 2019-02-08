@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -56,6 +57,7 @@ public class month extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_month);
         scalableLayout = (ScalableLayout)findViewById(R.id.scaleid);
 
@@ -69,6 +71,7 @@ public class month extends AppCompatActivity implements View.OnClickListener {
         getClass = intent.getStringExtra("class");
         getFilenum = intent.getIntExtra("filenum",0);
         getDay = intent.getIntExtra("day",0);
+
         Grade task = new Grade();
         task.execute(getId);
 
@@ -175,29 +178,87 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                                 .setNegativeButton("아니요", new DialogInterface.OnClickListener() {
                                     @Override
                                     public void onClick(DialogInterface dialog, int which) {
-                                        Intent intent = new Intent(month.this, Studystart.class);
-                                        intent.putExtra("user_id", getId);
-                                        intent.putExtra("grade",getGrade);
-                                        intent.putExtra("class",getClass);
-                                        intent.putExtra("filenum",getFilenum);
-                                        intent.putExtra("day",position);
-                                        intent.putExtra("realday",getDay);
-                                        intent.putExtra("time",timelist.get(position));
-                                        startActivity(intent);
+                                        AlertDialog.Builder dialog1 = new AlertDialog.Builder(month.this);
+                                        dialog1.setTitle("일일 시험 바로보기")
+                                                .setMessage("일일 시험으로 바로 넘어가시곘습니까?")
+                                                .setPositiveButton("네", new DialogInterface.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(DialogInterface dialog, int which) {
+                                                        Intent intent = new Intent(month.this, Starttest.class);
+                                                        intent.putExtra("user_id", getId);
+                                                        intent.putExtra("grade",getGrade);
+                                                        intent.putExtra("class",getClass);
+                                                        intent.putExtra("filenum",getFilenum);
+                                                        intent.putExtra("day",position);
+                                                        intent.putExtra("realday",getDay);
+                                                        intent.putExtra("time",timelist.get(position));
+                                                        startActivity(intent);
+                                                    }
+                                                })
+                                                .setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+                                                    @Override
+                                                    public void onClick(DialogInterface dialog, int which) {
+                                                        Intent intent = new Intent(month.this, Studystart.class);
+                                                        intent.putExtra("user_id", getId);
+                                                        intent.putExtra("grade",getGrade);
+                                                        intent.putExtra("class",getClass);
+                                                        intent.putExtra("filenum",getFilenum);
+                                                        intent.putExtra("day",position);
+                                                        intent.putExtra("realday",getDay);
+                                                        intent.putExtra("time",timelist.get(position));
+                                                        startActivity(intent);
+                                                    }
+                                                }).create().show();
                                     }
                                 }).create().show();
                     }
                     else{
-                        Intent intent = new Intent(month.this, Studystart.class);
-                        intent.putExtra("user_id", getId);
-                        intent.putExtra("grade",getGrade);
-                        intent.putExtra("class",getClass);
-                        intent.putExtra("filenum",getFilenum);
-                        intent.putExtra("day",position );
-                        intent.putExtra("realday",getDay);
-                        intent.putExtra("time",timelist.get(position));
-                        startActivity(intent);
+                        if(gradelist.get(5*position) != -1)
+                        {
+                            AlertDialog.Builder dialog = new AlertDialog.Builder(month.this);
+                            dialog.setTitle("일일 시험 바로보기")
+                                    .setMessage("일일 시험으로 바로 넘어가시곘습니까?")
+                                    .setPositiveButton("네", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            Intent intent = new Intent(getApplicationContext(),Weekteststart.class);
+                                            intent.putExtra("user_id", getId);
+                                            intent.putExtra("grade",getGrade);
+                                            intent.putExtra("class",getClass);
+                                            intent.putExtra("filenum",getFilenum);
+                                            intent.putExtra("day",position);
+                                            intent.putExtra("realday",getDay);
+                                            startActivity(intent);
+                                        }
+                                    })
+                                    .setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+                                        @Override
+                                        public void onClick(DialogInterface dialog, int which) {
+                                            Intent intent = new Intent(month.this, Studystart.class);
+                                            intent.putExtra("user_id", getId);
+                                            intent.putExtra("grade",getGrade);
+                                            intent.putExtra("class",getClass);
+                                            intent.putExtra("filenum",getFilenum);
+                                            intent.putExtra("day",position);
+                                            intent.putExtra("realday",getDay);
+                                            intent.putExtra("time",timelist.get(position));
+                                            startActivity(intent);
+                                        }
+                                    }).create().show();
+                        }
+                        else{
+                            Intent intent = new Intent(month.this, Studystart.class);
+                            intent.putExtra("user_id", getId);
+                            intent.putExtra("grade",getGrade);
+                            intent.putExtra("class",getClass);
+                            intent.putExtra("filenum",getFilenum);
+                            intent.putExtra("day",position );
+                            intent.putExtra("realday",getDay);
+                            intent.putExtra("time",timelist.get(position));
+                            startActivity(intent);
+                        }
                     }
+
 
                 }
             }

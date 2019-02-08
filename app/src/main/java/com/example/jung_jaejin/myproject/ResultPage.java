@@ -4,6 +4,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.os.AsyncTask;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
@@ -56,6 +57,7 @@ public class ResultPage extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_result_page);
         Intent intent = getIntent();
 
@@ -123,7 +125,7 @@ public class ResultPage extends AppCompatActivity {
         else{
             howmuch.setText(NumOfRight + "/" + NumOfProblem);
             passorfail.setText("Fail");
-            result.setText("다시하기");
+            result.setText("완료");
 //            Log.d("틀린 단어:", wrong_wordlist.get(0));
 //            Log.d("틀린 단어:", wrong_meanlist.get(0));
 
@@ -133,7 +135,7 @@ public class ResultPage extends AppCompatActivity {
                 FileOutputStream fos = openFileOutput("_data.txt", Context.MODE_PRIVATE);
 
                 PrintWriter writer = new PrintWriter(fos);
-                for(int i =0;i<NumOfProblem-NumOfRight;i++)
+                for(int i =0;i<(NumOfProblem-NumOfRight);i++)
                 {
                     writer.println(wrong_wordlist.get(i)+" "+wrong_meanlist.get(i));
 //                    Log.d("확인:",wrong_wordlist.get(i));
@@ -291,6 +293,31 @@ public class ResultPage extends AppCompatActivity {
             }
             return "error";
         }
+    }
+    @Override
+    public void onBackPressed() {
+
+        // Alert을 이용해 종료시키기
+        AlertDialog.Builder dialog = new AlertDialog.Builder(ResultPage.this);
+        dialog  .setTitle("시험 종료")
+                .setMessage("데이터베이스에 기록하지 않고 main화면으로 가시겠습니까?")
+                .setPositiveButton("네", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Intent intent = new Intent(getApplicationContext(),month.class);
+                        intent.putExtra("user_id", user_id);
+                        intent.putExtra("grade",grade);
+                        intent.putExtra("class",classss);
+                        intent.putExtra("filenum",filenum);
+                        intent.putExtra("day",realday);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                }).create().show();
     }
 
 }

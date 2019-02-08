@@ -59,6 +59,8 @@
             app:scale_top="400"
             app:scale_width="550"
             app:scale_height="200"
+            app:scale_textsize="90"
+            android:singleLine="true"
             tools:ignore="MissingPrefix"
             />
 
@@ -71,6 +73,8 @@
             app:scale_width="550"
             app:scale_height="200"
             tools:ignore="MissingPrefix"
+            android:singleLine="true"
+            android:inputType="textPassword"
             />
 
         <TextView

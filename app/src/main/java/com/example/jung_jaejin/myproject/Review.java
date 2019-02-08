@@ -3,6 +3,7 @@ package com.example.jung_jaejin.myproject;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.res.AssetManager;
 import android.os.Handler;
 import android.os.Message;
@@ -51,6 +52,7 @@ public class Review extends AppCompatActivity implements View.OnClickListener {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_review);
         Intent intent = getIntent();
         getId = intent.getStringExtra("user_id");
@@ -241,6 +243,13 @@ public class Review extends AppCompatActivity implements View.OnClickListener {
                     tts.shutdown();
                     startActivity(intent);
                     break;
+
+                case 5:
+                    removeMessages(1);
+                    removeMessages(2);
+                    removeMessages(3);
+                    removeMessages(4);
+                    break;
             }
         }
     };
@@ -249,5 +258,33 @@ public class Review extends AppCompatActivity implements View.OnClickListener {
     public void onClick(View v) {
         Message message = handler.obtainMessage(4);
         handler.sendMessageDelayed(message, 1000);
+    }
+    @Override
+    public void onBackPressed() {
+
+        // Alert을 이용해 종료시키기
+        AlertDialog.Builder dialog = new AlertDialog.Builder(Review.this);
+        dialog  .setTitle("시험 종료")
+                .setMessage("복습 준비 화면으로 돌아가시겠습니까?")
+                .setPositiveButton("네", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Message message = handler.obtainMessage(5);
+                        handler.sendMessage(message);
+                        Intent intent = new Intent(getApplicationContext(),Studystart_review.class);
+                        intent.putExtra("user_id", getId);
+                        intent.putExtra("grade",getGrade);
+                        intent.putExtra("class",getClass);
+                        intent.putExtra("filenum",getFilenum);
+                        intent.putExtra("day",getday);
+                        intent.putExtra("maxscore",getscore);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                }).create().show();
     }
 }

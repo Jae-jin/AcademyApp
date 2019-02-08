@@ -27,7 +27,9 @@
             android:textStyle="bold"
             app:scale_width="600"
             android:id="@+id/review_test"
-            tools:ignore="MissingPrefix" />
+            tools:ignore="MissingPrefix"
+            android:background="#1e90ff"
+            android:textColor="#000000"/>
         <!--<Button-->
             <!--android:layout_width="wrap_content"-->
             <!--android:layout_height="wrap_content"-->

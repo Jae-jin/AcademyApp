@@ -15,28 +15,32 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_left="80"
-            app:scale_top="100"
-            app:scale_width="300"
-            app:scale_height="100"
             android:textAlignment="center"
             android:gravity="center"
             app:scale_textsize="70"
             tools:ignore="MissingPrefix"
-            android:id="@+id/timerm"/>
+            android:id="@+id/timerm"
+            app:scale_left="80"
+            app:scale_top="100"
+            app:scale_width="400"
+            app:scale_height="100"
+            android:textColor="#000000"
+            android:textStyle="bold"/>
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_left="620"
+            app:scale_left="570"
             app:scale_top="100"
-            app:scale_width="300"
+            app:scale_width="350"
             app:scale_height="100"
             android:textAlignment="center"
             android:id="@+id/processm"
             android:gravity="center"
             app:scale_textsize="70"
             tools:ignore="MissingPrefix"
+            android:textColor="#000000"
+            android:textStyle="bold"
             />
 
         <TextView
@@ -50,9 +54,10 @@
             app:autoSizeTextType="uniform"
             android:id="@+id/problemm"
             app:autoSizeMinTextSize="25sp"
-            app:autoSizeMaxTextSize="40sp"
+            app:autoSizeMaxTextSize="33sp"
             tools:ignore="MissingPrefix"
-            android:textStyle="bold"/>
+            android:textStyle="bold"
+            android:textColor="#000000"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -62,9 +67,10 @@
             app:scale_width="800"
             app:scale_height="200"
             android:gravity="center_vertical"
-            app:scale_textsize="60"
+            app:scale_textsize="50"
             tools:ignore="MissingPrefix"
             android:id="@+id/answer1m"
+            android:textColor="#000000"
             />
 
         <TextView
@@ -75,9 +81,10 @@
             app:scale_width="800"
             app:scale_height="200"
             android:gravity="center_vertical"
-            app:scale_textsize="60"
+            app:scale_textsize="50"
             android:id="@+id/answer2m"
-            tools:ignore="MissingPrefix"/>
+            tools:ignore="MissingPrefix"
+            android:textColor="#000000"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -88,8 +95,9 @@
             app:scale_height="200"
             android:gravity="center_vertical"
             android:id="@+id/answer3m"
-            app:scale_textsize="60"
-            tools:ignore="MissingPrefix"/>
+            app:scale_textsize="50"
+            tools:ignore="MissingPrefix"
+            android:textColor="#000000"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -99,45 +107,48 @@
             app:scale_width="800"
             app:scale_height="200"
             android:gravity="center_vertical"
-            app:scale_textsize="60"
+            app:scale_textsize="50"
             android:id="@+id/answer4m"
-            tools:ignore="MissingPrefix"/>
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:scale_top="615"
-            app:scale_width="200"
-            app:scale_height="200"
-            android:gravity="center"
-            android:text="1."
-            tools:ignore="MissingPrefix"/>
+            tools:ignore="MissingPrefix"
+            android:textColor="#000000"/>
 
-        <TextView
+        <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:scale_top="630"
+        app:scale_width="200"
+        app:scale_height="200"
+        android:src="@drawable/number1"
+        tools:ignore="MissingPrefix"/>
+
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_top="830"
+            app:scale_top="845"
             app:scale_width="200"
             app:scale_height="200"
-            android:gravity="center"
-            android:text="2."
+            android:src="@drawable/number2"
+            android:scaleType="centerInside"
             tools:ignore="MissingPrefix"/>
-        <TextView
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_top="1045"
+            app:scale_top="1060"
             app:scale_width="200"
             app:scale_height="200"
             android:gravity="center"
-            android:text="3."
+            android:src="@drawable/number3"
+            android:scaleType="centerInside"
             tools:ignore="MissingPrefix"/>
-        <TextView
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_top="1260"
+            app:scale_top="1275"
             app:scale_width="200"
             app:scale_height="200"
             android:gravity="center"
-            android:text="4."
+            android:src="@drawable/number4"
+            android:scaleType="centerInside"
             tools:ignore="MissingPrefix"/>
 
         <TextView

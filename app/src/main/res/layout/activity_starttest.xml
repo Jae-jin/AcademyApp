@@ -19,10 +19,12 @@
             app:scale_width="840"
             app:scale_height="300"
             app:scale_top="550"
-            android:text="Start Test"
-            app:scale_textsize="90"
+            android:text="Start DailyTest"
+            app:scale_textsize="85"
             tools:ignore="MissingPrefix"
-            android:id="@+id/startTest" />
+            android:id="@+id/startTest"
+            android:background="#1e90ff"
+            android:textColor="#000000"/>
 
 
 

@@ -1,9 +1,12 @@
 package com.example.jung_jaejin.myproject;
 
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.content.res.AssetManager;
 import android.os.Handler;
 import android.os.Message;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -56,6 +59,7 @@ public class MonthlyTest extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_monthly_test);
         Intent intent = getIntent();
         user_id = intent.getStringExtra("user_id");
@@ -340,9 +344,42 @@ public class MonthlyTest extends AppCompatActivity {
                         }
 
                         break;
+
+                    case 4:
+                        removeMessages(1);
+                        removeMessages(2);
+                        removeMessages(3);
+                        break;
                 }
 
             }
         };
+    }
+    @Override
+    public void onBackPressed() {
+
+        // Alert을 이용해 종료시키기
+        AlertDialog.Builder dialog = new AlertDialog.Builder(MonthlyTest.this);
+        dialog  .setTitle("시험 종료")
+                .setMessage("월간 시험을 종료하시겠습니까?")
+                .setPositiveButton("네", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        Message message = handler.obtainMessage(4);
+                        handler.sendMessage(message);
+                        Intent intent = new Intent(getApplicationContext(),month.class);
+                        intent.putExtra("user_id", user_id);
+                        intent.putExtra("grade",grade);
+                        intent.putExtra("class",classss);
+                        intent.putExtra("filenum",filenum);
+                        intent.putExtra("day",realday);
+                        startActivity(intent);
+                    }
+                })
+                .setNegativeButton("아니요", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                    }
+                }).create().show();
     }
 }
