@@ -19,7 +19,7 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="복습하기"
+            android:text="Review-복습하기"
             app:scale_height="150"
             app:scale_left="200"
             app:scale_textsize="50"
@@ -28,7 +28,7 @@
             app:scale_width="600"
             android:id="@+id/review_test"
             tools:ignore="MissingPrefix"
-            android:background="#1e90ff"
+            android:background="@drawable/edge"
             android:textColor="#000000"/>
         <!--<Button-->
             <!--android:layout_width="wrap_content"-->

@@ -12,12 +12,13 @@
         app:scale_base_height="1600">
 
 
+
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textAlignment="center"
             android:gravity="center"
-            app:scale_textsize="70"
+            app:scale_textsize="65"
             tools:ignore="MissingPrefix"
             android:id="@+id/timerm"
             app:scale_left="80"
@@ -115,9 +116,10 @@
         <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        app:scale_top="630"
-        app:scale_width="200"
-        app:scale_height="200"
+            app:scale_top="670"
+            app:scale_width="100"
+            app:scale_height="100"
+            app:scale_left="50"
         android:src="@drawable/number1"
         tools:ignore="MissingPrefix"/>
 

@@ -10,6 +10,7 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import java.io.IOException;
@@ -23,7 +24,6 @@ import jxl.Workbook;
 import jxl.read.biff.BiffException;
 
 public class WeeklyTest extends AppCompatActivity {
-
 
     private TextView timer;
     private TextView process;
@@ -88,7 +88,6 @@ public class WeeklyTest extends AppCompatActivity {
         frame2.setBackgroundResource(R.drawable.edge);
         frame3.setBackgroundResource(R.drawable.edge);
         frame4.setBackgroundResource(R.drawable.edge);
-
         answer1.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
@@ -118,6 +117,7 @@ public class WeeklyTest extends AppCompatActivity {
             }
         });
 
+
         try {
             AssetManager am = getAssets();
             InputStream is = null;
@@ -134,7 +134,18 @@ public class WeeklyTest extends AppCompatActivity {
                 case 4:
                     is = am.open("수능 Day 1-28 단어.xls");
                     break;
-
+                case 5:
+                    is = am.open("해커스 텝스 보카 600 day 1-10.xls");
+                    break;
+                case 6:
+                    is = am.open("해커스 텝스 보카 800 day 1-25.xls");
+                    break;
+                case 7:
+                    is = am.open("해커스 텝스 보카 900 day 1-8.xls");
+                    break;
+                case 8:
+                    is = am.open("해커스 텝스 보카 주요단어 day 1-12.xls");
+                    break;
             }
             Workbook wb = Workbook.getWorkbook(is);
             for(int i = 0;i<3;i++)
@@ -194,7 +205,7 @@ public class WeeklyTest extends AppCompatActivity {
                             removeMessages(1);
                             removeMessages(2);
                             removeMessages(3);
-                            Intent intent = new Intent(getApplicationContext(), ResultPage.class);
+                            Intent intent = new Intent(getApplicationContext(), ResultofWeekly.class);
                             intent.putExtra("numOfRight", NumOfRight);
                             intent.putExtra("numOfProblem", NumOfProblem);
                             intent.putExtra("user_id", user_id);
@@ -287,7 +298,7 @@ public class WeeklyTest extends AppCompatActivity {
                         } else {
                             removeMessages(1);
                             removeMessages(3);
-                            Intent intent = new Intent(getApplicationContext(), ResultPage.class);
+                            Intent intent = new Intent(getApplicationContext(), ResultofWeekly.class);
                             intent.putExtra("numOfRight", NumOfRight);
                             intent.putExtra("numOfProblem", NumOfProblem);
                             intent.putExtra("user_id", user_id);
@@ -310,7 +321,7 @@ public class WeeklyTest extends AppCompatActivity {
                         if (gonext == 1 && limittime > 0) {
                             if (choice == realanswer) {
                                 NumOfRight++;
-                                limittime = 5;
+                                limittime = 7;
                                 gonext = 0;
                                 start++;
                                 Message message1 = handler.obtainMessage(2);
@@ -318,7 +329,7 @@ public class WeeklyTest extends AppCompatActivity {
                             } else {
 
                                 if(start < meanlist.size()) {
-                                    limittime = 5;
+                                    limittime = 7;
                                     gonext = 0;
                                     //Log.d("값",wordlist.get(randomlist.get(start)));
                                     //Log.d("값",meanlist.get(randomlist.get(start)));
@@ -342,7 +353,7 @@ public class WeeklyTest extends AppCompatActivity {
                         if (limittime == 0) {
                             if(start < meanlist.size()) {
                                 start++;
-                                limittime = 5;
+                                limittime = 7;
                                 Message message1 = handler.obtainMessage(2);
                                 handler.sendMessage(message1);
                             }

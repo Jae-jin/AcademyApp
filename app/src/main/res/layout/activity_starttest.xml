@@ -23,7 +23,7 @@
             app:scale_textsize="85"
             tools:ignore="MissingPrefix"
             android:id="@+id/startTest"
-            android:background="#1e90ff"
+            android:background="@drawable/edge"
             android:textColor="#000000"/>
 
 

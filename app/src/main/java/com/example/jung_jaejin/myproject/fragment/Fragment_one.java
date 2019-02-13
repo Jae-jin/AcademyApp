@@ -6,6 +6,7 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
 import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -184,6 +185,7 @@ public class Fragment_one extends Fragment {
                         s2.addView(idbutton, 0, i * 100, 250, 150);
                         s2.setScale_TextSize(idbutton, 50);
                         idbutton.setText(namelist.get(i));
+                        idbutton.setTextColor(Color.parseColor("#000000"));
                         s2.addView(idcheck,500,i*100,100,100);
                         if(passidlist.contains(idlist.get(i))==true)
                         {

@@ -88,6 +88,18 @@ public class Study1 extends AppCompatActivity implements View.OnClickListener {
                 case 4:
                     is = am.open("수능 Day 1-28 단어.xls");
                     break;
+                case 5:
+                    is = am.open("해커스 텝스 보카 600 day 1-10.xls");
+                    break;
+                case 6:
+                    is = am.open("해커스 텝스 보카 800 day 1-25.xls");
+                    break;
+                case 7:
+                    is = am.open("해커스 텝스 보카 900 day 1-8.xls");
+                    break;
+                case 8:
+                    is = am.open("해커스 텝스 보카 주요단어 day 1-12.xls");
+                    break;
 
             }
             Workbook wb = Workbook.getWorkbook(is);

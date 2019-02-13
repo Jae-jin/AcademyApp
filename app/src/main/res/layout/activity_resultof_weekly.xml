@@ -23,7 +23,8 @@
             android:text="120 / 120"
             android:gravity="center"
             app:scale_textsize="100"
-            tools:ignore="MissingPrefix"/>
+            tools:ignore="MissingPrefix"
+            android:textColor="#000000"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -36,7 +37,8 @@
             android:text="PASS"
             android:gravity="center"
             app:scale_textsize="100"
-            tools:ignore="MissingPrefix"/>
+            tools:ignore="MissingPrefix"
+            android:textColor="#000000"/>
 
         <Button
             android:layout_width="wrap_content"
@@ -49,6 +51,8 @@
             app:scale_textsize="80"
             tools:ignore="MissingPrefix"
             android:id="@+id/resultw"
+            android:background="@drawable/edge"
+            android:textColor="#000000"
             />
 
 

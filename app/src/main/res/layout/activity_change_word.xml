@@ -98,6 +98,13 @@
                 android:id="@+id/bpick"
                 android:text="B" />
 
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/zpick"
+                android:text="Z" />
+
 
 
 
@@ -142,6 +149,31 @@
                 android:id="@+id/excel4pick"
                 android:text="수능단어" />
 
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/excel5pick"
+                android:text="텝스600" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/excel6pick"
+                android:text="텝스800" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/excel7pick"
+                android:text="텝스900" />
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:id="@+id/excel8pick"
+                android:text="텝스 주요 단어" />
+
 
 
         </RadioGroup>
@@ -150,9 +182,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:scale_left="700"
-            app:scale_top="800"
-            app:scale_textsize="30"
+            app:scale_top="700"
+            app:scale_textsize="80"
             app:scale_width="200"
+            app:scale_height="200"
             android:id="@+id/getday"
             tools:ignore="MissingPrefix"
             />
@@ -168,6 +201,7 @@
             app:scale_textsize="50"
             android:id="@+id/finish"
             tools:ignore="MissingPrefix"
+            android:background="@drawable/edge"
             />
     </com.ssomai.android.scalablelayout.ScalableLayout>
 

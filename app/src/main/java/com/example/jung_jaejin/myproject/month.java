@@ -88,6 +88,18 @@ public class month extends AppCompatActivity implements View.OnClickListener {
             case 4:
                 buttonlimit = 66;
                 break;
+            case 5:
+                buttonlimit = 10;
+                break;
+            case 6:
+                buttonlimit = 25;
+                break;
+            case 7:
+                buttonlimit = 8;
+                break;
+            case 8:
+                buttonlimit = 12;
+                break;
         }
         for(int i = 0; i<buttonlimit*5;i++)
         {
@@ -298,9 +310,9 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                         while (qqq != start ) {
                             start++;
                         }
-
-                        gradelist.set(5 * start + qqqq-1, qq);
-
+                        if(qqqq<=5) {
+                            gradelist.set(5 * start + qqqq - 1, qq);
+                        }
                     }
 //                Toast.makeText(month.this," : " + gradelist.get(7),Toast.LENGTH_LONG).show();
                     for (int i = 0; i < buttonlimit; i++) {
@@ -318,7 +330,7 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                                 }
                                 if (j == 4) {
                                     maxlist.add(max);
-                                    timelist.add(j);
+                                    timelist.add(maxtime);
                                 }
                             } else if (gradelist.get(5 * i + j) == -1 && j != 0 && pass == 0) {
 

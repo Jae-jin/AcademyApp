@@ -32,7 +32,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="1학년" />
+            android:text="1학년"
+            android:textColor="#000000"/>
 
         <RadioButton
 
@@ -40,14 +41,16 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="2학년"
-            android:id="@+id/middle2"/>
+            android:id="@+id/middle2"
+            android:textColor="#000000"/>
 
         <RadioButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:id="@+id/middle3"
-            android:text="3학년" />
+            android:text="3학년"
+            android:textColor="#000000"/>
 
     </RadioGroup>
         <TextView
@@ -61,6 +64,7 @@
             app:scale_textsize="80"
             android:gravity="center"
             tools:ignore="MissingPrefix"
+            android:textColor="#000000"
             />
         <TextView
             android:layout_width="wrap_content"
@@ -73,6 +77,7 @@
             app:scale_textsize="80"
             android:gravity="center"
             tools:ignore="MissingPrefix"
+            android:textColor="#000000"
             />
 
     <EditText
@@ -148,6 +153,7 @@
         android:gravity="center"
         app:scale_textsize="70"
         tools:ignore="MissingPrefix"
+        android:textColor="#000000"
         />
 
     <TextView
@@ -162,6 +168,7 @@
         app:scale_textsize="70"
         android:gravity="center"
         tools:ignore="MissingPrefix"
+        android:textColor="#000000"
         />
 
     <RadioGroup
@@ -182,6 +189,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="#000000"
             android:text="S" />
 
         <RadioButton
@@ -189,6 +197,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="#000000"
             android:text="A" />
 
         <RadioButton
@@ -196,6 +205,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="#000000"
             android:text="B" />
 
         <RadioButton
@@ -203,6 +213,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:textColor="#000000"
             android:text="Z" />
     </RadioGroup>
 
@@ -217,7 +228,8 @@
         android:text="반"
         app:scale_textsize="70"
         android:gravity="center"
-        tools:ignore="MissingPrefix"/>
+        tools:ignore="MissingPrefix"
+        android:textColor="#000000"/>
 
     <Button
         android:id="@+id/next"
@@ -230,7 +242,8 @@
         app:scale_textsize="80"
         android:gravity="center"
         tools:ignore="MissingPrefix"
-        android:text="다음" />
+        android:text="다음"
+        android:background="@drawable/edge"/>
 
     </com.ssomai.android.scalablelayout.ScalableLayout>
 

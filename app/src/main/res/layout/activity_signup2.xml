@@ -24,7 +24,8 @@
             app:scale_textsize="100"
             android:text="ID"
             android:gravity="center"
-            tools:ignore="MissingPrefix" />
+            tools:ignore="MissingPrefix"
+            android:textColor="#000000"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -35,7 +36,8 @@
             app:scale_textsize="80"
             android:text="비밀번호"
             android:gravity="center"
-            tools:ignore="MissingPrefix" />
+            tools:ignore="MissingPrefix"
+            android:textColor="#000000"/>
 
         <EditText
             android:layout_width="wrap_content"
@@ -70,7 +72,8 @@
             app:scale_textsize="80"
             android:gravity="center"
             tools:ignore="MissingPrefix"
-            android:text="가입완료" />
+            android:text="가입완료"
+            android:background="@drawable/edge"/>
     </com.ssomai.android.scalablelayout.ScalableLayout>
 
 </ScrollView>

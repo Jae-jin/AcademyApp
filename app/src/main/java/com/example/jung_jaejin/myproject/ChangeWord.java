@@ -95,6 +95,10 @@ public class ChangeWord extends AppCompatActivity {
                     classgroup.check(checkedId);
                     classss = "B";
                 }
+                if(checkedId == R.id.zpick){
+                    classgroup.check(checkedId);
+                    classss = "Z";
+                }
             }
         });
 
@@ -116,6 +120,22 @@ public class ChangeWord extends AppCompatActivity {
                 if(checkedId == R.id.excel4pick){
                     excelgroup.check(checkedId);
                     filenum = "4";
+                }
+                if(checkedId == R.id.excel5pick){
+                    excelgroup.check(checkedId);
+                    filenum = "5";
+                }
+                if(checkedId == R.id.excel6pick){
+                    excelgroup.check(checkedId);
+                    filenum = "6";
+                }
+                if(checkedId == R.id.excel7pick){
+                    excelgroup.check(checkedId);
+                    filenum = "7";
+                }
+                if(checkedId == R.id.excel8pick){
+                    excelgroup.check(checkedId);
+                    filenum = "8";
                 }
             }
         });

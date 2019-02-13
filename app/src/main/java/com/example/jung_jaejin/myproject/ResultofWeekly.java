@@ -57,9 +57,9 @@ public class ResultofWeekly extends AppCompatActivity {
         realday = intent.getIntExtra("realday",0);
         gettime gettimeclass = new gettime();
         gettimeclass.execute(user_id,"주",Integer.toString(day));
-        howmuch = (TextView) findViewById(R.id.Howmuch);
-        passorfail = (TextView) findViewById(R.id.PassOrFail);
-        resultbutton = (Button)findViewById(R.id.result);
+        howmuch = (TextView) findViewById(R.id.Howmuchw);
+        passorfail = (TextView) findViewById(R.id.PassOrFailw);
+        resultbutton = (Button)findViewById(R.id.resultw);
         resultbutton.setEnabled(false);
         if(IsPass == 1){
             howmuch.setText(NumOfRight + "/" + NumOfProblem);
@@ -103,7 +103,7 @@ public class ResultofWeekly extends AppCompatActivity {
             Log.d(TAG, "POST response - " + result);
             if(result.equals("success")==true){
 
-                if((day % 12 )== 0) {
+                if((day % 12 )== 11) {
                     AlertDialog.Builder dialog = new AlertDialog.Builder(ResultofWeekly.this);
                     dialog.setTitle("데이터베이스 입력 성공 및 월간시험 보기")
                             .setPositiveButton("확인", new DialogInterface.OnClickListener() {
@@ -235,12 +235,13 @@ public class ResultofWeekly extends AppCompatActivity {
         protected void onPostExecute(String result){
             super.onPostExecute(result);
             progressDialog.dismiss();
-            Log.d(TAG, "POST response - " + result);
+            Log.d(TAG, "POST responsesadasd - " + result);
             String main[] = result.split("Q");
             if(main[0].equals("ok")==true) {
                 if (main[1].equals("No") == false) {
                     time = Integer.parseInt(main[1]);
                     resultbutton.setEnabled(true);
+                    Log.d(TAG, "MAX time - " + time);
                 } else {
                     time = 0;
                     resultbutton.setEnabled(true);
@@ -248,7 +249,7 @@ public class ResultofWeekly extends AppCompatActivity {
             }
             else{
                 AlertDialog.Builder dialog = new AlertDialog.Builder(ResultofWeekly.this);
-                dialog.setTitle("데이터베이스 입력 실패")
+                dialog.setTitle("데이터베이스 통신 실패")
                         .setPositiveButton("확인", new DialogInterface.OnClickListener() {
                             @Override
                             public void onClick(DialogInterface dialog, int which) {
@@ -263,8 +264,8 @@ public class ResultofWeekly extends AppCompatActivity {
         }
         @Override
         protected String doInBackground(String... strings) {
-            String serverURL = "http://ec2-13-125-229-159.ap-northeast-2.compute.amazonaws.com/getmaxtime.php";
-            String postParameters = "Id=" + strings[0] + "&Type" + strings[1] + "&Day" + strings[2];
+            String serverURL = "http://ec2-13-125-229-159.ap-northeast-2.compute.amazonaws.com/getmaxtime1.php";
+            String postParameters = "Id=" + strings[0] + "&Type=" + strings[1] + "&Day=" + strings[2];
             try{
                 URL url = new URL(serverURL);
                 HttpURLConnection httpURLConnection = (HttpURLConnection)url.openConnection();

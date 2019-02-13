@@ -60,9 +60,9 @@ public class ResultofMonthly extends AppCompatActivity {
         day = intent.getIntExtra("day",0);
         realday = intent.getIntExtra("realday",0);
 
-        howmuch = (TextView) findViewById(R.id.Howmuch);
-        passorfail = (TextView) findViewById(R.id.PassOrFail);
-        result = (Button)findViewById(R.id.result);
+        howmuch = (TextView) findViewById(R.id.Howmuchm);
+        passorfail = (TextView) findViewById(R.id.PassOrFailm);
+        result = (Button)findViewById(R.id.resultm);
 
 
 

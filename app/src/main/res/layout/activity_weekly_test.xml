@@ -115,9 +115,10 @@
         <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:scale_top="630"
-            app:scale_width="200"
-            app:scale_height="200"
+            app:scale_top="670"
+            app:scale_width="100"
+            app:scale_height="100"
+            app:scale_left="50"
             android:src="@drawable/number1"
             tools:ignore="MissingPrefix"/>
 

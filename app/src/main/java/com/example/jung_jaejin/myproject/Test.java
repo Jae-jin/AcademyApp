@@ -41,7 +41,7 @@ public class Test extends AppCompatActivity {
     private TextView frame4;
     private int choice;
     private int realanswer;
-    private int NumOfRight;
+    private int NumOfRight=0;
     private int NumOfProblem;
     private int Numrandom;
     private int realday;
@@ -141,6 +141,18 @@ public class Test extends AppCompatActivity {
                 case 4:
                     is = am.open("수능 Day 1-28 단어.xls");
                     break;
+                case 5:
+                    is = am.open("해커스 텝스 보카 600 day 1-10.xls");
+                    break;
+                case 6:
+                    is = am.open("해커스 텝스 보카 800 day 1-25.xls");
+                    break;
+                case 7:
+                    is = am.open("해커스 텝스 보카 900 day 1-8.xls");
+                    break;
+                case 8:
+                    is = am.open("해커스 텝스 보카 주요단어 day 1-12.xls");
+                    break;
 
             }
             Workbook wb = Workbook.getWorkbook(is);
@@ -177,7 +189,7 @@ public class Test extends AppCompatActivity {
         start=0;
 
         Collections.shuffle(randomlist);
-        fulltime = NumOfProblem * 7;
+        fulltime = NumOfProblem*7;
         currenttime = fulltime;
         timer.setText(currenttime+"/"+fulltime);
         Message message = handler.obtainMessage(1);
@@ -199,7 +211,7 @@ public class Test extends AppCompatActivity {
                         currenttime--;
                         limittime--;
                         timer.setText(currenttime + "/" + fulltime);
-                        if (currenttime == 0) {
+                        if (currenttime == -1) {
                             removeMessages(1);
                             removeMessages(2);
                             removeMessages(3);
@@ -213,6 +225,8 @@ public class Test extends AppCompatActivity {
                             intent.putExtra("day",day);
                             intent.putExtra("time",time);
                             intent.putExtra("realday",realday);
+                            intent.putExtra("wrong_meanlist", wrong_meanlist);
+                            intent.putExtra("wrong_wordlist", wrong_wordlist);
                             if (NumOfProblem == NumOfRight) {
                                 intent.putExtra("pass", 1);
                             } else {

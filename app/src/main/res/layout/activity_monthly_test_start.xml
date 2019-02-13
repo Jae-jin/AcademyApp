@@ -21,8 +21,8 @@
             app:scale_textsize="80"
             tools:ignore="MissingPrefix"
             android:id="@+id/startTestm"
-            android:background="#1e90ff"
             android:textColor="#000000"
+            android:background="@drawable/edge"
             />
 
 
