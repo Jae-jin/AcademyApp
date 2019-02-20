@@ -201,7 +201,7 @@ public class WeeklyTest extends AppCompatActivity {
                         currenttime--;
                         limittime--;
                         timer.setText(currenttime + "/" + fulltime);
-                        if (currenttime == 0) {
+                        if (currenttime == -1) {
                             removeMessages(1);
                             removeMessages(2);
                             removeMessages(3);

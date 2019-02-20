@@ -201,7 +201,10 @@ public class MainActivity extends AppCompatActivity {
                 .setPositiveButton("네", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
+                        moveTaskToBack(true);
                         finish();
+                        android.os.Process.killProcess(android.os.Process.myPid());
+
                     }
                 })
                 .setNegativeButton("아니요", new DialogInterface.OnClickListener() {

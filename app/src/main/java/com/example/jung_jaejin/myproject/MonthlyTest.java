@@ -172,13 +172,13 @@ public class MonthlyTest extends AppCompatActivity {
         }
 
 
-        NumOfProblem = wordlist.size();
+        NumOfProblem = 600;
 
         for(int start1 = 0; start1 < wordlist.size();start1++) {
             randomlist.add(start1);
         }
         start=0;
-        fulltime = NumOfProblem * 7;
+        fulltime = 4200;
         currenttime = fulltime;
         timer.setText(currenttime+"/"+fulltime);
         Collections.shuffle(randomlist);
@@ -198,7 +198,7 @@ public class MonthlyTest extends AppCompatActivity {
                         currenttime--;
                         limittime--;
                         timer.setText(currenttime + "/" + fulltime);
-                        if (currenttime == 0) {
+                        if (currenttime == -1) {
                             removeMessages(1);
                             removeMessages(2);
                             removeMessages(3);
