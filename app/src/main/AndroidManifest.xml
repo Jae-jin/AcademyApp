@@ -33,10 +33,6 @@
         <activity android:name=".Study1" />
         <activity android:name=".Studystart_review" />
         <activity android:name=".Review" />
-        <activity
-            android:name=".ChangeExcel"
-            android:label="@string/title_activity_change_excel"
-            android:theme="@style/AppTheme" />
         <activity android:name=".ChangeWord" />
         <activity android:name=".Weekteststart" />
         <activity android:name=".WeeklyTest" />
