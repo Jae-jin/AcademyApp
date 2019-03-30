@@ -38,6 +38,7 @@ public class ResultofWeekly extends AppCompatActivity {
     private int day;
     private int realday;
     private int time;
+    private int getPlus;
     private static String TAG = "ResultofMonthly";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,6 +56,7 @@ public class ResultofWeekly extends AppCompatActivity {
         filenum = intent.getIntExtra("filenum",0);
         day = intent.getIntExtra("day",0);
         realday = intent.getIntExtra("realday",0);
+        getPlus = intent.getIntExtra("plus",0);
         gettime gettimeclass = new gettime();
         gettimeclass.execute(user_id,"주",Integer.toString(day));
         howmuch = (TextView) findViewById(R.id.Howmuchw);
@@ -116,6 +118,7 @@ public class ResultofWeekly extends AppCompatActivity {
                                     intent.putExtra("filenum",filenum);
                                     intent.putExtra("day",day);
                                     intent.putExtra("realday",realday);
+                                    intent.putExtra("plus",getPlus);
                                     startActivity(intent);
                                 }
                             })
@@ -128,6 +131,7 @@ public class ResultofWeekly extends AppCompatActivity {
                             intent.putExtra("class", classss);
                             intent.putExtra("filenum", filenum);
                             intent.putExtra("day", realday);
+                            intent.putExtra("plus",getPlus);
                             startActivity(intent);
                         }
                     }).create().show();
@@ -145,6 +149,7 @@ public class ResultofWeekly extends AppCompatActivity {
                                     intent.putExtra("class", classss);
                                     intent.putExtra("filenum", filenum);
                                     intent.putExtra("day", realday);
+                                    intent.putExtra("plus",getPlus);
                                     startActivity(intent);
                                 }
                             }).create().show();
@@ -330,6 +335,7 @@ public class ResultofWeekly extends AppCompatActivity {
                         intent.putExtra("class",classss);
                         intent.putExtra("filenum",filenum);
                         intent.putExtra("day",realday);
+                        intent.putExtra("plus",getPlus);
                         startActivity(intent);
                     }
                 })

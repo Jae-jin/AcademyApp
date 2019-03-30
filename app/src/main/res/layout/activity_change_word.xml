@@ -154,25 +154,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:id="@+id/excel5pick"
-                android:text="텝스600" />
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/excel6pick"
-                android:text="텝스800" />
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/excel7pick"
-                android:text="텝스900" />
-            <RadioButton
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:id="@+id/excel8pick"
-                android:text="텝스 주요 단어" />
+                android:text="텝스단어" />
 
 
 

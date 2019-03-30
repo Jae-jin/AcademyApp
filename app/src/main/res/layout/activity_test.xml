@@ -21,7 +21,7 @@
             android:layout_height="wrap_content"
             app:scale_left="80"
             app:scale_top="100"
-            app:scale_width="300"
+            app:scale_width="400"
             app:scale_height="100"
             android:textAlignment="center"
             android:gravity="center"
@@ -202,6 +202,7 @@
             android:id="@+id/frame4"
             android:color="#00000000"
             />
+
 
     </com.ssomai.android.scalablelayout.ScalableLayout>
 </android.support.constraint.ConstraintLayout>

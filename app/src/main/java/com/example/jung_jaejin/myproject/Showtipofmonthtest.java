@@ -19,6 +19,7 @@ public class Showtipofmonthtest extends AppCompatActivity {
     private int time;
     private int realday;
     private int currenttime = 6;
+    private int getPlus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +33,7 @@ public class Showtipofmonthtest extends AppCompatActivity {
         day = intent.getIntExtra("day",0);
         time = intent.getIntExtra("time",0);
         realday = intent.getIntExtra("realday",0);
+        getPlus = intent.getIntExtra("plus",0);
         Message message = handler.obtainMessage(1);
         handler.sendMessageDelayed(message,1000);
     }
@@ -50,6 +52,7 @@ public class Showtipofmonthtest extends AppCompatActivity {
                         intent.putExtra("day",day);
                         intent.putExtra("time",time);
                         intent.putExtra("realday",realday);
+                        intent.putExtra("plus",getPlus);
                         startActivity(intent);
                     }
                     else{
@@ -83,6 +86,7 @@ public class Showtipofmonthtest extends AppCompatActivity {
                         intent.putExtra("filenum",filenum);
                         intent.putExtra("day",day);
                         intent.putExtra("realday",realday);
+                        intent.putExtra("plus",getPlus);
                         startActivity(intent);
                     }
                 })

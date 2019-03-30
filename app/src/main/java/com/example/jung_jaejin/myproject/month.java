@@ -44,6 +44,9 @@ public class month extends AppCompatActivity implements View.OnClickListener {
     private String getClass;
     private int getFilenum;
     private int getDay;
+    private int getRealDay;
+    private int getPlus;
+    private int Plusday;
     private int row;
     private Button todayTest;
     private Button review_test;
@@ -70,38 +73,30 @@ public class month extends AppCompatActivity implements View.OnClickListener {
         getGrade = intent.getStringExtra("grade");
         getClass = intent.getStringExtra("class");
         getFilenum = intent.getIntExtra("filenum",0);
-        getDay = intent.getIntExtra("day",0);
-
+        getRealDay = intent.getIntExtra("day",0);
+        getPlus = intent.getIntExtra("plus",0);
+        Plusday = getPlus + getRealDay;
         Grade task = new Grade();
         task.execute(getId);
 
         switch (getFilenum){
             case 1:
-                buttonlimit = 36;
-                break;
-            case 2:
-                buttonlimit = 28;
-                break;
-            case 3:
                 buttonlimit = 41;
                 break;
-            case 4:
+            case 2:
                 buttonlimit = 66;
                 break;
+            case 3:
+                buttonlimit = 36;
+                break;
+            case 4:
+                buttonlimit = 28;
+                break;
             case 5:
-                buttonlimit = 10;
-                break;
-            case 6:
-                buttonlimit = 25;
-                break;
-            case 7:
-                buttonlimit = 8;
-                break;
-            case 8:
-                buttonlimit = 12;
+                buttonlimit = 55;
                 break;
         }
-        for(int i = 0; i<buttonlimit*5;i++)
+        for(int i = 0; i<buttonlimit*10;i++)
         {
             gradelist.add(-1);
         }
@@ -122,7 +117,7 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                     mButton[3*i+j] = idbutton;
                     mButton[3*i+j].setTag(3*i+j);
                     scalableLayout.addView(idbutton, 100 + 300 * j, 400 + 250 * i, 200, 200);
-                    scalableLayout.setScale_TextSize(idbutton, 40);
+                    scalableLayout.setScale_TextSize(idbutton, 35);
                 }
                 else{
                     continue;
@@ -141,8 +136,9 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                 intent.putExtra("grade",getGrade);
                 intent.putExtra("class",getClass);
                 intent.putExtra("filenum",getFilenum);
-                intent.putExtra("realday",getDay);
-                intent.putExtra("maxscore",maxlist.get(getDay-1));
+                intent.putExtra("realday",Plusday);
+                intent.putExtra("maxscore",maxlist.get(Plusday-1));
+                intent.putExtra("plus",getPlus);
                 startActivity(intent);
             }
         });
@@ -169,7 +165,7 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                 if(tempButton == newButton)
                 {
                     final int position = (Integer)v.getTag();
-                    if((position %3) == 2 &&  gradelist.get(5*position) != -1)
+                    if((position %3) == 2 &&  gradelist.get(10*position) != -1)
                     {
                         AlertDialog.Builder dialog = new AlertDialog.Builder(month.this);
                         dialog.setTitle("주간 시험 바로보기")
@@ -183,7 +179,8 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                                         intent.putExtra("class",getClass);
                                         intent.putExtra("filenum",getFilenum);
                                         intent.putExtra("day",position);
-                                        intent.putExtra("realday",getDay);
+                                        intent.putExtra("realday",Plusday);
+                                        intent.putExtra("plus",getPlus);
                                         startActivity(intent);
                                     }
                                 })
@@ -202,8 +199,9 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                                                         intent.putExtra("class",getClass);
                                                         intent.putExtra("filenum",getFilenum);
                                                         intent.putExtra("day",position);
-                                                        intent.putExtra("realday",getDay);
+                                                        intent.putExtra("realday",Plusday);
                                                         intent.putExtra("time",timelist.get(position));
+                                                        intent.putExtra("plus",getPlus);
                                                         startActivity(intent);
                                                     }
                                                 })
@@ -216,8 +214,9 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                                                         intent.putExtra("class",getClass);
                                                         intent.putExtra("filenum",getFilenum);
                                                         intent.putExtra("day",position);
-                                                        intent.putExtra("realday",getDay);
+                                                        intent.putExtra("realday",Plusday);
                                                         intent.putExtra("time",timelist.get(position));
+                                                        intent.putExtra("plus",getPlus);
                                                         startActivity(intent);
                                                     }
                                                 }).create().show();
@@ -225,7 +224,7 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                                 }).create().show();
                     }
                     else{
-                        if(gradelist.get(5*position) != -1)
+                        if(gradelist.get(10*position) != -1)
                         {
                             AlertDialog.Builder dialog = new AlertDialog.Builder(month.this);
                             dialog.setTitle("일일 시험 바로보기")
@@ -233,13 +232,14 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                                     .setPositiveButton("네", new DialogInterface.OnClickListener() {
                                         @Override
                                         public void onClick(DialogInterface dialog, int which) {
-                                            Intent intent = new Intent(getApplicationContext(),Weekteststart.class);
+                                            Intent intent = new Intent(getApplicationContext(),Starttest.class);
                                             intent.putExtra("user_id", getId);
                                             intent.putExtra("grade",getGrade);
                                             intent.putExtra("class",getClass);
                                             intent.putExtra("filenum",getFilenum);
                                             intent.putExtra("day",position);
-                                            intent.putExtra("realday",getDay);
+                                            intent.putExtra("realday",Plusday);
+                                            intent.putExtra("plus",getPlus);
                                             startActivity(intent);
                                         }
                                     })
@@ -252,8 +252,9 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                                             intent.putExtra("class",getClass);
                                             intent.putExtra("filenum",getFilenum);
                                             intent.putExtra("day",position);
-                                            intent.putExtra("realday",getDay);
+                                            intent.putExtra("realday",Plusday);
                                             intent.putExtra("time",timelist.get(position));
+                                            intent.putExtra("plus",getPlus);
                                             startActivity(intent);
                                         }
                                     }).create().show();
@@ -265,8 +266,9 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                             intent.putExtra("class",getClass);
                             intent.putExtra("filenum",getFilenum);
                             intent.putExtra("day",position );
-                            intent.putExtra("realday",getDay);
+                            intent.putExtra("realday",Plusday);
                             intent.putExtra("time",timelist.get(position));
+                            intent.putExtra("plus",getPlus);
                             startActivity(intent);
                         }
                     }
@@ -310,8 +312,8 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                         while (qqq != start ) {
                             start++;
                         }
-                        if(qqqq<=5) {
-                            gradelist.set(5 * start + qqqq - 1, qq);
+                        if(qqqq<=10) {
+                            gradelist.set(10 * start + qqqq - 1, qq);
                         }
                     }
 //                Toast.makeText(month.this," : " + gradelist.get(7),Toast.LENGTH_LONG).show();
@@ -319,25 +321,25 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                         int max = 0;
                         int maxtime = 0;
                         int pass = 0;
-                        for (int j = 0; j < 5; j++) {
-                            if (gradelist.get(5 * i + j) != -1 && pass == 0) {
-                                if (gradelist.get(5 * i + j) > max) {
-                                    max = gradelist.get(5 * i + j);
+                        for (int j = 0; j < 10; j++) {
+                            if (gradelist.get(10 * i + j) != -1 && pass == 0) {
+                                if (gradelist.get(10 * i + j) > max) {
+                                    max = gradelist.get(10 * i + j);
                                     maxtime = j+1;
                                 }
                                 else {
                                     maxtime = j+1;
                                 }
-                                if (j == 4) {
+                                if (j == 9) {
                                     maxlist.add(max);
                                     timelist.add(maxtime);
                                 }
-                            } else if (gradelist.get(5 * i + j) == -1 && j != 0 && pass == 0) {
+                            } else if (gradelist.get(10 * i + j) == -1 && j != 0 && pass == 0) {
 
                                 maxlist.add(max);
                                 timelist.add(maxtime);
                                 pass = 1;
-                            } else if (gradelist.get(5 * i + j) == -1 && j == 0 && pass == 0) {
+                            } else if (gradelist.get(10 * i + j) == -1 && j == 0 && pass == 0) {
                                 maxtime = j;
                                 maxlist.add(max);
                                 timelist.add(maxtime);
@@ -352,9 +354,9 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                     for (int i = 0; i < buttonlimit; i++) {
                         mButton[i].setTag(i);
 //                    mButton[i].setOnClickListener(this);
-                        if (i+1 == getDay) {
+                        if (i+1 == Plusday) {
                             mButton[i].setText("Day" + (i + 1) + "\n" + "Today");
-                        } else if (i+1 < getDay) {
+                        } else if (i+1 < Plusday) {
                             mButton[i].setText("Day" + (i + 1) + "\n" + maxlist.get(i) + "/" + timelist.get(i));
                         } else {
                             mButton[i].setText("Day" + (i + 1) + "\n" + "Lock");
@@ -378,22 +380,22 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                     int max = 0;
                     int maxtime = 0;
                     int pass = 0;
-                    for (int j = 0; j < 5; j++) {
-                        if (gradelist.get(5 * i + j) != -1 && pass == 0) {
-                            if (gradelist.get(5 * i + j) > max) {
-                                max = gradelist.get(5 * i + j);
+                    for (int j = 0; j < 10; j++) {
+                        if (gradelist.get(10 * i + j) != -1 && pass == 0) {
+                            if (gradelist.get(10 * i + j) > max) {
+                                max = gradelist.get(10 * i + j);
                                 maxtime = j;
                             }
-                            if (j == 4) {
+                            if (j == 9) {
                                 maxlist.add(max);
                                 timelist.add(j);
                             }
-                        } else if (gradelist.get(5 * i + j) == -1 && j != 0 && pass == 0) {
+                        } else if (gradelist.get(10 * i + j) == -1 && j != 0 && pass == 0) {
                             maxtime = j - 1;
                             maxlist.add(max);
                             timelist.add(maxtime);
                             pass = 1;
-                        } else if (gradelist.get(5 * i + j) == -1 && j == 0 && pass == 0) {
+                        } else if (gradelist.get(10 * i + j) == -1 && j == 0 && pass == 0) {
                             maxtime = j;
                             maxlist.add(max);
                             timelist.add(maxtime);
@@ -408,9 +410,9 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                 for (int i = 0; i < buttonlimit; i++) {
                     mButton[i].setTag(i);
 //                    mButton[i].setOnClickListener(this);
-                    if (i+1 == getDay) {
+                    if (i+1 == Plusday) {
                         mButton[i].setText("Day" + (i + 1) + "\n" + "Today");
-                    } else if (i +1< getDay) {
+                    } else if (i +1< Plusday) {
                         mButton[i].setText("Day" + (i + 1) + "\n" + maxlist.get(i) + "/" + timelist.get(i));
                     } else {
                         mButton[i].setText("Day" + (i + 1) + "\n" + "Lock");
@@ -430,17 +432,7 @@ public class month extends AppCompatActivity implements View.OnClickListener {
                     e.printStackTrace();
                 }
 
-                try {
-                    FileOutputStream last_fos = openFileOutput("_data.txt", Context.MODE_PRIVATE);
 
-                    PrintWriter writer = new PrintWriter(last_fos);
-
-                    writer.print("");
-                    writer.close();
-
-                } catch (FileNotFoundException e) {
-                    e.printStackTrace();
-                }
 
 
             }

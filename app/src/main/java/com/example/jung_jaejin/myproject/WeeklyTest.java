@@ -43,9 +43,9 @@ public class WeeklyTest extends AppCompatActivity {
     private int Numrandom;
     private int realday;
     private int SelectProblem;
-    private int limittime=7;
-    private int currenttime;
-    private int fulltime;
+    private float limittime=7;
+    private float currenttime;
+    private float fulltime;
     private int gonext=0;
     private int start;
     private String user_id;
@@ -54,6 +54,7 @@ public class WeeklyTest extends AppCompatActivity {
     private int filenum;
     private int day;
     private int time;
+    private int getPlus;
     private ArrayList<String> wordlist = new ArrayList<>();
     private ArrayList<String> meanlist = new ArrayList<>();
     private ArrayList<Integer> randomlist = new ArrayList<>();
@@ -71,6 +72,7 @@ public class WeeklyTest extends AppCompatActivity {
         day = intent.getIntExtra("day",0);
         time = intent.getIntExtra("time",0);
         realday = intent.getIntExtra("realday",0);
+        intent.putExtra("plus",getPlus);
         Random random = new Random();
         timer = (TextView)findViewById(R.id.timerw);
         process = (TextView)findViewById(R.id.processw);
@@ -137,15 +139,6 @@ public class WeeklyTest extends AppCompatActivity {
                 case 5:
                     is = am.open("해커스 텝스 보카 600 day 1-10.xls");
                     break;
-                case 6:
-                    is = am.open("해커스 텝스 보카 800 day 1-25.xls");
-                    break;
-                case 7:
-                    is = am.open("해커스 텝스 보카 900 day 1-8.xls");
-                    break;
-                case 8:
-                    is = am.open("해커스 텝스 보카 주요단어 day 1-12.xls");
-                    break;
             }
             Workbook wb = Workbook.getWorkbook(is);
             for(int i = 0;i<3;i++)
@@ -181,9 +174,9 @@ public class WeeklyTest extends AppCompatActivity {
             randomlist.add(start1);
         }
         start=0;
-        fulltime = NumOfProblem * 7;
+        fulltime = (float) (NumOfProblem * 8.5);
         currenttime = fulltime;
-        timer.setText(currenttime+"/"+fulltime);
+        timer.setText((int)currenttime+"/"+(int)fulltime);
         Collections.shuffle(randomlist);
 
         Message message = handler.obtainMessage(1);
@@ -198,9 +191,9 @@ public class WeeklyTest extends AppCompatActivity {
             public void handleMessage(Message msg) {
                 switch (msg.what) {
                     case 1:
-                        currenttime--;
-                        limittime--;
-                        timer.setText(currenttime + "/" + fulltime);
+                        currenttime = (float) (currenttime - 0.5);
+                        limittime = (float)(limittime - 0.5);
+                        timer.setText((int)currenttime + "/" + (int)fulltime);
                         if (currenttime == -1) {
                             removeMessages(1);
                             removeMessages(2);
@@ -215,7 +208,8 @@ public class WeeklyTest extends AppCompatActivity {
                             intent.putExtra("day",day);
                             intent.putExtra("time",time);
                             intent.putExtra("realday",realday);
-                            if (NumOfProblem == NumOfRight) {
+                            intent.putExtra("plus",getPlus);
+                            if (NumOfRight > (int)(NumOfProblem * 0.9)) {
                                 intent.putExtra("pass", 1);
                             } else {
                                 intent.putExtra("pass", 0);
@@ -223,7 +217,7 @@ public class WeeklyTest extends AppCompatActivity {
                             startActivity(intent);
                         } else {
                             Message message = handler.obtainMessage(1);
-                            handler.sendMessageDelayed(message, 1000);
+                            handler.sendMessageDelayed(message, 500);
                         }
                         break;
 
@@ -308,7 +302,7 @@ public class WeeklyTest extends AppCompatActivity {
                             intent.putExtra("day",day);
                             intent.putExtra("time",time);
                             intent.putExtra("realday",realday);
-                            if (NumOfProblem == NumOfRight) {
+                            if ( NumOfRight > (int)(NumOfProblem*0.9)) {
                                 intent.putExtra("pass", 1);
                             } else {
                                 intent.putExtra("pass", 0);
@@ -321,15 +315,15 @@ public class WeeklyTest extends AppCompatActivity {
                         if (gonext == 1 && limittime > 0) {
                             if (choice == realanswer) {
                                 NumOfRight++;
-                                limittime = 7;
+                                limittime = (float) 8.5;
                                 gonext = 0;
                                 start++;
                                 Message message1 = handler.obtainMessage(2);
-                                handler.sendMessage(message1);
+                                handler.sendMessageDelayed(message1,1500);
                             } else {
 
                                 if(start < meanlist.size()) {
-                                    limittime = 7;
+                                    limittime = (float) 8.5;
                                     gonext = 0;
                                     //Log.d("값",wordlist.get(randomlist.get(start)));
                                     //Log.d("값",meanlist.get(randomlist.get(start)));
@@ -338,7 +332,7 @@ public class WeeklyTest extends AppCompatActivity {
 
 
                                     Message message1 = handler.obtainMessage(2);
-                                    handler.sendMessage(message1);
+                                    handler.sendMessageDelayed(message1,1500);
                                 }
 
                             }
@@ -353,9 +347,9 @@ public class WeeklyTest extends AppCompatActivity {
                         if (limittime == 0) {
                             if(start < meanlist.size()) {
                                 start++;
-                                limittime = 7;
+                                limittime = (float) 8.5;
                                 Message message1 = handler.obtainMessage(2);
-                                handler.sendMessage(message1);
+                                handler.sendMessageDelayed(message1,1500);
                             }
                         }
 
@@ -391,6 +385,7 @@ public class WeeklyTest extends AppCompatActivity {
                         intent.putExtra("class",classss);
                         intent.putExtra("filenum",filenum);
                         intent.putExtra("day",realday);
+                        intent.putExtra("plus",getPlus);
                         startActivity(intent);
                     }
                 })

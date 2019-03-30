@@ -30,11 +30,10 @@ import jxl.read.biff.BiffException;
 import static android.speech.tts.TextToSpeech.ERROR;
 
 
-public class Study1 extends AppCompatActivity implements View.OnClickListener {
+public class Study1 extends AppCompatActivity {
     private TextView word;
     private TextView mean;
     private TextView numofword;
-    private Button gonext;
     private TextToSpeech tts;
     private ArrayList<String> wordlist = new ArrayList<>();//영어단어 집어 넣는 리스트
     private ArrayList<String> meanlist = new ArrayList<>();//영어의미 집어 넣는 리스트
@@ -46,6 +45,8 @@ public class Study1 extends AppCompatActivity implements View.OnClickListener {
     private int day;
     private int time;
     private int realday;
+    private int getPlus;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -59,11 +60,11 @@ public class Study1 extends AppCompatActivity implements View.OnClickListener {
         day = intent.getIntExtra("day",0);
         time = intent.getIntExtra("time",0);
         realday = intent.getIntExtra("realday",0);
-        gonext = (Button)findViewById(R.id.buttonnext);
+        getPlus = intent.getIntExtra("plus",0);
         word = (TextView) findViewById(R.id.word);
         mean = (TextView) findViewById(R.id.mean);
         numofword = (TextView) findViewById(R.id.NumOfWord);
-        gonext.setOnClickListener(this);
+
         tts = new TextToSpeech(this, new TextToSpeech.OnInitListener() {
             @Override
             public void onInit(int status) {
@@ -91,16 +92,6 @@ public class Study1 extends AppCompatActivity implements View.OnClickListener {
                 case 5:
                     is = am.open("해커스 텝스 보카 600 day 1-10.xls");
                     break;
-                case 6:
-                    is = am.open("해커스 텝스 보카 800 day 1-25.xls");
-                    break;
-                case 7:
-                    is = am.open("해커스 텝스 보카 900 day 1-8.xls");
-                    break;
-                case 8:
-                    is = am.open("해커스 텝스 보카 주요단어 day 1-12.xls");
-                    break;
-
             }
             Workbook wb = Workbook.getWorkbook(is);
             if(wb != null) {
@@ -162,6 +153,7 @@ public class Study1 extends AppCompatActivity implements View.OnClickListener {
                             intent.putExtra("day",day);
                             intent.putExtra("time",time);
                             intent.putExtra("realday",realday);
+                            intent.putExtra("plus",getPlus);
                             tts.shutdown();
                             startActivity(intent);
                         }
@@ -178,39 +170,20 @@ public class Study1 extends AppCompatActivity implements View.OnClickListener {
 
                     break;
 
+
                 case 4:
-                    removeMessages(1);
-                    removeMessages(2);
-                    removeMessages(3);
-                    Intent intent = new Intent(getApplicationContext(),Starttest.class);//다음 화면으로 넘어간다.
-                    intent.putExtra("user_id", user_id);
-                    intent.putExtra("grade",grade);
-                    intent.putExtra("class",classss);
-                    intent.putExtra("filenum",filenum);
-                    intent.putExtra("day",day);
-                    intent.putExtra("realday",realday);
-                    intent.putExtra("time",time);
-                    tts.shutdown();
-                    startActivity(intent);
-                    break;
-
-                case 5:
 
                     removeMessages(1);
                     removeMessages(2);
                     removeMessages(3);
-                    removeMessages(4);
+
 
                     break;
             }
         }
     };
 
-    @Override
-    public void onClick(View v) {
-        Message message = handler.obtainMessage(4);
-        handler.sendMessageDelayed(message, 1000);
-    }
+
 
     @Override
     public void onBackPressed() {
@@ -222,7 +195,7 @@ public class Study1 extends AppCompatActivity implements View.OnClickListener {
                 .setPositiveButton("네", new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialog, int which) {
-                        Message message = handler.obtainMessage(5);
+                        Message message = handler.obtainMessage(4);
                         handler.sendMessage(message);
                         Intent intent = new Intent(getApplicationContext(),Studystart.class);
                         intent.putExtra("user_id", user_id);
@@ -232,6 +205,7 @@ public class Study1 extends AppCompatActivity implements View.OnClickListener {
                         intent.putExtra("day",day);
                         intent.putExtra("realday",realday);
                         intent.putExtra("time",time);
+                        intent.putExtra("plus",getPlus);
                         startActivity(intent);
                     }
                 })

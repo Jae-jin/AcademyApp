@@ -18,6 +18,7 @@ public class Weekteststart extends AppCompatActivity {
     private int day;
     private int time;
     private int realday;
+    private int getPlus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -46,6 +47,7 @@ public class Weekteststart extends AppCompatActivity {
                 intent.putExtra("day",day);
                 intent.putExtra("time",time);
                 intent.putExtra("realday",realday);
+                intent.putExtra("plus",getPlus);
                 startActivity(intent);
             }
         });
@@ -66,6 +68,7 @@ public class Weekteststart extends AppCompatActivity {
                         intent.putExtra("class",classss);
                         intent.putExtra("filenum",filenum);
                         intent.putExtra("day",realday);
+                        intent.putExtra("plus",getPlus);
                         startActivity(intent);
                     }
                 })

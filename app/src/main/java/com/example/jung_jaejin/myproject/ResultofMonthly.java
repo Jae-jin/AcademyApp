@@ -42,6 +42,7 @@ public class ResultofMonthly extends AppCompatActivity {
     private int filenum;
     private int day;
     private int realday;
+    private int getPlus;
     private static String TAG = "ResultofMonthly";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -59,7 +60,7 @@ public class ResultofMonthly extends AppCompatActivity {
         filenum = intent.getIntExtra("filenum",0);
         day = intent.getIntExtra("day",0);
         realday = intent.getIntExtra("realday",0);
-
+        getPlus = intent.getIntExtra("plus",0);
         howmuch = (TextView) findViewById(R.id.Howmuchm);
         passorfail = (TextView) findViewById(R.id.PassOrFailm);
         result = (Button)findViewById(R.id.resultm);
@@ -122,6 +123,7 @@ public class ResultofMonthly extends AppCompatActivity {
                                 intent.putExtra("class",classss);
                                 intent.putExtra("filenum",filenum);
                                 intent.putExtra("day",realday);
+                                intent.putExtra("plus",getPlus);
 
                                 startActivity(intent);
                             }

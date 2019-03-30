@@ -18,7 +18,8 @@ public class Showtipofstudy extends AppCompatActivity {
     private int day;
     private int time;
     private int realday;
-    private int currenttime = 6;
+    private int currenttime = 4;
+    private int getPlus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -32,6 +33,7 @@ public class Showtipofstudy extends AppCompatActivity {
         day = intent.getIntExtra("day",0);
         time = intent.getIntExtra("time",0);
         realday = intent.getIntExtra("realday",0);
+        getPlus = intent.getIntExtra("plus",0);
 
         Message message = handler.obtainMessage(1);
         handler.sendMessageDelayed(message,1000);
@@ -51,6 +53,7 @@ public class Showtipofstudy extends AppCompatActivity {
                     intent.putExtra("day",day);
                     intent.putExtra("time",time);
                     intent.putExtra("realday",realday);
+                    intent.putExtra("plus",getPlus);
                     startActivity(intent);
                 }
                 else{
@@ -85,6 +88,7 @@ public class Showtipofstudy extends AppCompatActivity {
                         intent.putExtra("day",day);
                         intent.putExtra("realday",realday);
                         intent.putExtra("time",time);
+                        intent.putExtra("plus",getPlus);
                         startActivity(intent);
 
                     }

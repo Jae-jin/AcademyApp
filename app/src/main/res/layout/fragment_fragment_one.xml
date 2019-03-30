@@ -49,7 +49,7 @@
             <com.ssomai.android.scalablelayout.ScalableLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                app:scale_base_height="2000"
+                app:scale_base_height="8000"
                 android:id="@+id/scale11"
                 app:scale_base_width="1000">
 
@@ -81,6 +81,18 @@
             app:scale_height="130"
             android:text="단어 바꾸기"
             app:scale_textsize="35"
+            app:scale_top="1300"
+            tools:ignore="MissingPrefix" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_width="250"
+            android:id="@+id/deletestudent"
+            app:scale_left="220"
+            app:scale_height="130"
+            android:text="학생 삭제"
+            app:scale_textsize="40"
             app:scale_top="1300"
             tools:ignore="MissingPrefix" />
     </com.ssomai.android.scalablelayout.ScalableLayout>

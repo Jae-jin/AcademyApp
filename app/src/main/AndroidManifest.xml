@@ -9,7 +9,7 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/eprep"
+        android:icon="@drawable/eprep22"
         android:label="Eprep"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"

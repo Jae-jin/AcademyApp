@@ -23,6 +23,7 @@ public class Studystart_review extends AppCompatActivity {
     private int getFilenum;
     private int getday;
     private int getscore;
+    private int getPlus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +38,7 @@ public class Studystart_review extends AppCompatActivity {
         getFilenum = intent.getIntExtra("filenum",0);
         getday = intent.getIntExtra("realday",0);
         getscore = intent.getIntExtra("maxscore",0);
-
+        getPlus = intent.getIntExtra("plus",0);
         studyreview.setOnClickListener(new View.OnClickListener()
         {
             @Override
@@ -49,6 +50,7 @@ public class Studystart_review extends AppCompatActivity {
                 intent.putExtra("filenum",getFilenum);
                 intent.putExtra("realday",getday);
                 intent.putExtra("maxscore",getscore);
+                intent.putExtra("plus",getPlus);
                 startActivity(intent);
             }
         });
@@ -74,17 +76,6 @@ public class Studystart_review extends AppCompatActivity {
                                     e.printStackTrace();
                                 }
 
-                                try {
-                                    FileOutputStream last_fos = openFileOutput("_data.txt", Context.MODE_PRIVATE);
-
-                                    PrintWriter writer = new PrintWriter(last_fos);
-
-                                    writer.print("");
-                                    writer.close();
-
-                                } catch (FileNotFoundException e) {
-                                    e.printStackTrace();
-                                }
                             }
                         })
                         .setNegativeButton("아니요", new DialogInterface.OnClickListener() {
@@ -111,7 +102,8 @@ public class Studystart_review extends AppCompatActivity {
                         intent.putExtra("grade",getGrade);
                         intent.putExtra("class",getClass);
                         intent.putExtra("filenum",getFilenum);
-                        intent.putExtra("day",getday);
+                        intent.putExtra("day",getday-getPlus);
+                        intent.putExtra("plus",getPlus);
                         startActivity(intent);
                     }
                 })

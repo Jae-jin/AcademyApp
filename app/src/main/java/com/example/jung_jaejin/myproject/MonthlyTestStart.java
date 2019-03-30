@@ -21,6 +21,7 @@ public class MonthlyTestStart extends AppCompatActivity {
     private int day;
     private int time;
     private int realday;
+    private int getPlus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,7 +35,7 @@ public class MonthlyTestStart extends AppCompatActivity {
         day = intent.getIntExtra("day",0);
         time = intent.getIntExtra("time",0);
         realday = intent.getIntExtra("realday",0);
-
+        getPlus = intent.getIntExtra("plus",0);
         startTest = (Button)findViewById(R.id.startTestm);
 
         startTest.setOnClickListener(new View.OnClickListener()
@@ -48,6 +49,7 @@ public class MonthlyTestStart extends AppCompatActivity {
                 intent.putExtra("filenum",filenum);
                 intent.putExtra("day",day);
                 intent.putExtra("realday",realday);
+                intent.putExtra("plus",getPlus);
                 startActivity(intent);
             }
         });
@@ -68,6 +70,7 @@ public class MonthlyTestStart extends AppCompatActivity {
                         intent.putExtra("class",classss);
                         intent.putExtra("filenum",filenum);
                         intent.putExtra("day",realday);
+                        intent.putExtra("plus",getPlus);
                         startActivity(intent);
                     }
                 })

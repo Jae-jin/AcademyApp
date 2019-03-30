@@ -44,11 +44,12 @@ public class Review extends AppCompatActivity implements View.OnClickListener {
     private int getFilenum;
     private int getday;
     private int getscore;
+    private int getPlus;
     private TextToSpeech tts;
     private ArrayList<String> wordlist = new ArrayList<>();//영어단어 집어 넣는 리스트
     private ArrayList<String> meanlist = new ArrayList<>();//영어의미 집어 넣는 리스트
-    private int i = 0;//
-    private int limittime = 300;
+    private int i = 0;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,6 +62,7 @@ public class Review extends AppCompatActivity implements View.OnClickListener {
         getFilenum = intent.getIntExtra("filenum",0);
         getday = intent.getIntExtra("realday",0);
         getscore = intent.getIntExtra("maxscore",0);
+        getPlus = intent.getIntExtra("plus",0);
         finishbutton = (Button) findViewById(R.id.buttonnextre);
         finishbutton.setOnClickListener(this);
         word = (TextView) findViewById(R.id.wordR);
@@ -75,7 +77,7 @@ public class Review extends AppCompatActivity implements View.OnClickListener {
             }
         });//영어 단어 소리 내기 위한 객체 생성
 
-        if(getscore == 120) {
+
             try {
                 StringBuffer data = new StringBuffer();
                 FileInputStream fis = openFileInput("data.txt");
@@ -107,6 +109,7 @@ public class Review extends AppCompatActivity implements View.OnClickListener {
                                     intent.putExtra("class",getClass);
                                     intent.putExtra("filenum",getFilenum);
                                     intent.putExtra("day",getday);
+                                    intent.putExtra("plus",getPlus);
                                     startActivity(intent);
                                 }
                             }).create().show();
@@ -117,49 +120,8 @@ public class Review extends AppCompatActivity implements View.OnClickListener {
             } catch (IOException e) {
                 e.printStackTrace();
             }
-        }
-        else{
-            try {
-                StringBuffer data = new StringBuffer();
-                FileInputStream fis = openFileInput("_data.txt");
-                BufferedReader buffer = new BufferedReader(new InputStreamReader(fis));
-                String str = buffer.readLine();
-                if(str != null){
-                while (str != null) {
-                    data.append(str + "\n");
-                    Log.d("TEST  ", str);
-                    String[] array = str.split(" ", 2);
-                    wordlist.add(array[0]);
-                    meanlist.add(array[1]);
-                    Log.d("word:", array[0]);
-                    Log.d("mean:", array[1]);
-                    str = buffer.readLine();
-                }}
-                else{
-                    Log.d("Tag : ","단어없다.");
-                    AlertDialog.Builder dialog = new AlertDialog.Builder(Review.this);
-                    dialog.setTitle("복습 단어가 없음.")
-                            .setMessage("복습할 단어가 없습니다.")
-                            .setPositiveButton("확인", new DialogInterface.OnClickListener() {
-                                @Override
-                                public void onClick(DialogInterface dialog, int which) {
-                                    Intent intent = new Intent(getApplicationContext(),month.class);
-                                    intent.putExtra("user_id", getId);
-                                    intent.putExtra("grade",getGrade);
-                                    intent.putExtra("class",getClass);
-                                    intent.putExtra("filenum",getFilenum);
-                                    intent.putExtra("day",getday);
-                                    startActivity(intent);
-                                }
-                            }).create().show();
-                }
-                buffer.close();
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
-                e.printStackTrace();
-            }
-        }
+
+
         Message message = handler.obtainMessage(1);
         handler.sendMessageDelayed(message, 1000);//1초 대기
 
@@ -213,6 +175,7 @@ public class Review extends AppCompatActivity implements View.OnClickListener {
                             intent.putExtra("class",getClass);
                             intent.putExtra("filenum",getFilenum);
                             intent.putExtra("day",getday);
+                            intent.putExtra("plus",getPlus);
                             tts.shutdown();
                             startActivity(intent);
                     }
@@ -240,6 +203,7 @@ public class Review extends AppCompatActivity implements View.OnClickListener {
                     intent.putExtra("class",getClass);
                     intent.putExtra("filenum",getFilenum);
                     intent.putExtra("day",getday);
+                    intent.putExtra("plus",getPlus);
                     tts.shutdown();
                     startActivity(intent);
                     break;
@@ -276,8 +240,9 @@ public class Review extends AppCompatActivity implements View.OnClickListener {
                         intent.putExtra("grade",getGrade);
                         intent.putExtra("class",getClass);
                         intent.putExtra("filenum",getFilenum);
-                        intent.putExtra("day",getday);
+                        intent.putExtra("day",getday-getPlus);
                         intent.putExtra("maxscore",getscore);
+                        intent.putExtra("plus",getPlus);
                         startActivity(intent);
                     }
                 })

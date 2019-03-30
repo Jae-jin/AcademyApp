@@ -18,6 +18,7 @@ public class Studystart extends AppCompatActivity {
     private int day;
     private int time;
     private int realday;
+    private int getPlus;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,7 +32,7 @@ public class Studystart extends AppCompatActivity {
         day = intent.getIntExtra("day",0);
         time = intent.getIntExtra("time",0);
         realday = intent.getIntExtra("realday",0);
-
+        getPlus = intent.getIntExtra("plus",0);
 
         studyStart = (Button)findViewById(R.id.studyStart);
 
@@ -48,6 +49,7 @@ public class Studystart extends AppCompatActivity {
                     intent.putExtra("day",day);
                     intent.putExtra("time",time);
                     intent.putExtra("realday",realday);
+                    intent.putExtra("plus",getPlus);
                     startActivity(intent);
 
                 }
@@ -60,6 +62,7 @@ public class Studystart extends AppCompatActivity {
                     intent.putExtra("day", day);
                     intent.putExtra("time", time);
                     intent.putExtra("realday", realday);
+                    intent.putExtra("plus",getPlus);
                     startActivity(intent);
                 }
 
@@ -81,7 +84,8 @@ public class Studystart extends AppCompatActivity {
                         intent.putExtra("grade",grade);
                         intent.putExtra("class",classss);
                         intent.putExtra("filenum",filenum);
-                        intent.putExtra("day",realday);
+                        intent.putExtra("day",realday - getPlus);
+                        intent.putExtra("plus",getPlus);
                         startActivity(intent);
                     }
                 })

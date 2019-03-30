@@ -125,18 +125,6 @@ public class ChangeWord extends AppCompatActivity {
                     excelgroup.check(checkedId);
                     filenum = "5";
                 }
-                if(checkedId == R.id.excel6pick){
-                    excelgroup.check(checkedId);
-                    filenum = "6";
-                }
-                if(checkedId == R.id.excel7pick){
-                    excelgroup.check(checkedId);
-                    filenum = "7";
-                }
-                if(checkedId == R.id.excel8pick){
-                    excelgroup.check(checkedId);
-                    filenum = "8";
-                }
             }
         });
 

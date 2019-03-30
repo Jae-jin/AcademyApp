@@ -63,11 +63,11 @@ public class Fragment_two extends Fragment  {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstancestate){
-        for(int i = 0; i<330;i++)
+        for(int i = 0; i<660;i++)
         {
             gradelist.add(-1);
         }
-        for(int i = 0; i<105;i++)
+        for(int i = 0; i<210;i++)
         {
             gradeweeklist.add(-1);
         }
@@ -76,7 +76,7 @@ public class Fragment_two extends Fragment  {
             grademonthlist.add(-1);
         }
         v = inflater.inflate(R.layout.fragment_fragment_two,container,false);
-        s1 = (ScalableLayout)v.findViewById(R.id.scale);
+        s1 = (ScalableLayout)v.findViewById(R.id.scale123);
         Student task = new Student();
         task.execute(ManageResult.gradee,ManageResult.classs);
         return v;
@@ -205,7 +205,7 @@ public class Fragment_two extends Fragment  {
                 if(tempButton == newButton)
                 {
                     refresh();
-                    for(int i = 0; i<330;i++)
+                    for(int i = 0; i<660;i++)
                     {
                         gradelist.set(i,-1);
                     }
@@ -258,8 +258,8 @@ public class Fragment_two extends Fragment  {
                         while (qqq != start) {
                             start++;
                         }
-                        if(qqqq<=5) {
-                            gradelist.set(5 * start + qqqq - 1, qq);
+                        if(qqqq<=10) {
+                            gradelist.set(10 * start + qqqq - 1, qq);
                         }
                     }
 
@@ -277,21 +277,12 @@ public class Fragment_two extends Fragment  {
                             gradelimit = 66;
                             break;
                         case 5:
-                            gradelimit = 10;
-                            break;
-                        case 6:
-                            gradelimit = 25;
-                            break;
-                        case 7:
-                            gradelimit = 8;
-                            break;
-                        case 8:
-                            gradelimit = 12;
+                            gradelimit = 55;
                             break;
                     }
                     for (int tr = 0; tr < gradelimit+1; tr++) {
 
-                        for (int tv = 0; tv < 6; tv++) {
+                        for (int tv = 0; tv < 11; tv++) {
                             if (tr == 0 && tv == 0) {
 
                                 TextView textv = new TextView(v.getContext());
@@ -322,17 +313,10 @@ public class Fragment_two extends Fragment  {
                                     textv.setTextColor(Color.BLACK);
 
                                 }
-                                if (tv == 4) {
-                                    textv.setText("4th");
+                                else{
+                                    textv.setText(""+tv+"th");
                                     textv.setGravity(Gravity.CENTER);
                                     textv.setTextColor(Color.BLACK);
-
-                                }
-                                if (tv == 5) {
-                                    textv.setText("5th");
-                                    textv.setGravity(Gravity.CENTER);
-                                    textv.setTextColor(Color.BLACK);
-
                                 }
 
                             } else if (tr != 0 && tv == 0) {
@@ -349,13 +333,13 @@ public class Fragment_two extends Fragment  {
                                 textv.setBackgroundResource(R.drawable.edge);
                                 s1.addView(textv, 390+120*(tv-1), tr * 100, 120, 100);
                                 s1.setScale_TextSize(textv, 50);
-                                if(gradelist.get(5*(tr-1)+tv-1) == -1){
+                                if(gradelist.get(10*(tr-1)+tv-1) == -1){
                                     textv.setText("");
                                     textv.setGravity(Gravity.CENTER);
 
                                 }
                                 else {
-                                    textv.setText("" + gradelist.get(5 * (tr - 1) + tv - 1));
+                                    textv.setText("" + gradelist.get(10 * (tr - 1) + tv - 1));
                                     textv.setGravity(Gravity.CENTER);
                                     textv.setTextColor(Color.BLACK);
                                 }
@@ -387,22 +371,13 @@ public class Fragment_two extends Fragment  {
                         gradelimit = 66;
                         break;
                     case 5:
-                        gradelimit = 10;
-                        break;
-                    case 6:
-                        gradelimit = 25;
-                        break;
-                    case 7:
-                        gradelimit = 8;
-                        break;
-                    case 8:
-                        gradelimit = 12;
+                        gradelimit = 55;
                         break;
 
                 }
                 for (int tr = 0; tr < gradelimit+1; tr++) {
 
-                    for (int tv = 0; tv < 6; tv++) {
+                    for (int tv = 0; tv < 11; tv++) {
                         if (tr == 0 && tv == 0) {
 
                             TextView textv = new TextView(v.getContext());
@@ -433,17 +408,10 @@ public class Fragment_two extends Fragment  {
                                 textv.setTextColor(Color.BLACK);
 
                             }
-                            if (tv == 4) {
-                                textv.setText("4th");
+                            else{
+                                textv.setText(""+tv+"th");
                                 textv.setGravity(Gravity.CENTER);
                                 textv.setTextColor(Color.BLACK);
-
-                            }
-                            if (tv == 5) {
-                                textv.setText("5th");
-                                textv.setGravity(Gravity.CENTER);
-                                textv.setTextColor(Color.BLACK);
-
                             }
 
                         } else if (tr != 0 && tv == 0) {
@@ -460,12 +428,12 @@ public class Fragment_two extends Fragment  {
                             textv.setBackgroundResource(R.drawable.edge);
                             s1.addView(textv, 390+120*(tv-1), tr * 100, 120, 100);
                             s1.setScale_TextSize(textv, 50);
-                            if(gradelist.get(5*(tr-1)+tv-1) == -1){
+                            if(gradelist.get(10*(tr-1)+tv-1) == -1){
                                 textv.setText("");
                                 textv.setGravity(Gravity.CENTER);
                             }
                             else {
-                                textv.setText("" + gradelist.get(5 * (tr - 1) + tv - 1));
+                                textv.setText("" + gradelist.get(10 * (tr - 1) + tv - 1));
                                 textv.setGravity(Gravity.CENTER);
                                 textv.setTextColor(Color.BLACK);
                             }
@@ -566,8 +534,8 @@ public class Fragment_two extends Fragment  {
                             while (qqq != start) {
                                 start++;
                             }
-                            if(start <= 21 && qqqq <= 5) {
-                                gradeweeklist.set(5 * (start / 3) + qqqq - 1, qq);
+                            if(start <= 21 && qqqq <= 10) {
+                                gradeweeklist.set(10 * (start / 3) + qqqq - 1, qq);
                             }
 
                         }
@@ -586,20 +554,11 @@ public class Fragment_two extends Fragment  {
                                 gradelimit = 66;
                                 break;
                             case 5:
-                                gradelimit = 10;
-                                break;
-                            case 6:
-                                gradelimit = 25;
-                                break;
-                            case 7:
-                                gradelimit = 8;
-                                break;
-                            case 8:
-                                gradelimit = 12;
+                                gradelimit = 55;
                                 break;
                         }
                         for (int tr = 0; tr < (gradelimit / 3) + 1; tr++) {
-                            for (int tv = 0; tv < 6; tv++) {
+                            for (int tv = 0; tv < 11; tv++) {
                                 if (tr == 0 && tv == 0) {
 
                                     TextView textv = new TextView(v.getContext());
@@ -629,17 +588,10 @@ public class Fragment_two extends Fragment  {
                                         textv.setTextColor(Color.BLACK);
 
                                     }
-                                    if (tv == 4) {
-                                        textv.setText("4th");
+                                    else{
+                                        textv.setText(""+tv+"th");
                                         textv.setGravity(Gravity.CENTER);
                                         textv.setTextColor(Color.BLACK);
-
-                                    }
-                                    if (tv == 5) {
-                                        textv.setText("5th");
-                                        textv.setGravity(Gravity.CENTER);
-                                        textv.setTextColor(Color.BLACK);
-
                                     }
 
                                 } else if (tr != 0 && tv == 0) {
@@ -656,8 +608,8 @@ public class Fragment_two extends Fragment  {
                                     textv.setBackgroundResource(R.drawable.edge);
                                     s1.addView(textv, 390+120*(tv-1), gradelimit * 100 + 200 + tr * 100, 120, 100);
                                     s1.setScale_TextSize(textv, 50);
-                                    if(gradeweeklist.get(5* (tr - 1) + tv - 1) != -1) {
-                                        textv.setText("" + gradeweeklist.get(5 * (tr - 1) + tv - 1));
+                                    if(gradeweeklist.get(10* (tr - 1) + tv - 1) != -1) {
+                                        textv.setText("" + gradeweeklist.get(10 * (tr - 1) + tv - 1));
                                         textv.setGravity(Gravity.CENTER);
                                         textv.setTextColor(Color.BLACK);
                                     }
@@ -686,20 +638,11 @@ public class Fragment_two extends Fragment  {
                         gradelimit = 66;
                         break;
                     case 5:
-                        gradelimit = 10;
-                        break;
-                    case 6:
-                        gradelimit = 25;
-                        break;
-                    case 7:
-                        gradelimit = 8;
-                        break;
-                    case 8:
-                        gradelimit = 12;
+                        gradelimit = 55;
                         break;
                 }
                 for (int tr = 0; tr < (gradelimit / 3) + 1; tr++) {
-                    for (int tv = 0; tv < 6; tv++) {
+                    for (int tv = 0; tv < 11; tv++) {
                         if (tr == 0 && tv == 0) {
 
                             TextView textv = new TextView(v.getContext());
@@ -729,19 +672,11 @@ public class Fragment_two extends Fragment  {
                                 textv.setTextColor(Color.BLACK);
 
                             }
-                            if (tv == 4) {
-                                textv.setText("4th");
+                            else{
+                                textv.setText(""+tv+"th");
                                 textv.setGravity(Gravity.CENTER);
                                 textv.setTextColor(Color.BLACK);
-
                             }
-                            if (tv == 5) {
-                                textv.setText("5th");
-                                textv.setGravity(Gravity.CENTER);
-                                textv.setTextColor(Color.BLACK);
-
-                            }
-
                         } else if (tr != 0 && tv == 0) {
                             TextView textv = new TextView(v.getContext());
                             textv.setBackgroundResource(R.drawable.edge3);
@@ -756,8 +691,8 @@ public class Fragment_two extends Fragment  {
                             textv.setBackgroundResource(R.drawable.edge);
                             s1.addView(textv, 390+120*(tv-1), gradelimit * 100 + 200 + tr * 100, 120, 100);
                             s1.setScale_TextSize(textv, 50);
-                            if(gradeweeklist.get(5 * (tr - 1) + tv - 1) != -1) {
-                                textv.setText("" + gradeweeklist.get(5 * (tr - 1) + tv - 1));
+                            if(gradeweeklist.get(10 * (tr - 1) + tv - 1) != -1) {
+                                textv.setText("" + gradeweeklist.get(10 * (tr - 1) + tv - 1));
                                 textv.setGravity(Gravity.CENTER);
                                 textv.setTextColor(Color.BLACK);
                             }
@@ -876,18 +811,8 @@ public class Fragment_two extends Fragment  {
                                 gradelimit = 66;
                                 break;
                             case 5:
-                                gradelimit = 10;
+                                gradelimit = 55;
                                 break;
-                            case 6:
-                                gradelimit = 25;
-                                break;
-                            case 7:
-                                gradelimit = 8;
-                                break;
-                            case 8:
-                                gradelimit = 12;
-                                break;
-
                         }
                         if (gradelimit / 12 >= 1) {
                             for (int tr = 0; tr < (gradelimit / 12) + 1; tr++) {
@@ -957,16 +882,7 @@ public class Fragment_two extends Fragment  {
                         gradelimit = 66;
                         break;
                     case 5:
-                        gradelimit = 10;
-                        break;
-                    case 6:
-                        gradelimit = 25;
-                        break;
-                    case 7:
-                        gradelimit = 8;
-                        break;
-                    case 8:
-                        gradelimit = 12;
+                        gradelimit = 55;
                         break;
 
                 }

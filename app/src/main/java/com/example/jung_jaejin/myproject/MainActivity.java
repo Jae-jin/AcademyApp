@@ -42,7 +42,6 @@ public class MainActivity extends AppCompatActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
         setContentView(R.layout.activity_main);
 
-        gotoadminster = (Button) findViewById(R.id.administerbutton);
         Id = (EditText)findViewById(R.id.signinid);
         Password = (EditText)findViewById(R.id.signinps);
         login = (TextView) findViewById(R.id.login);
@@ -74,18 +73,28 @@ public class MainActivity extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
-                Intent intent = new Intent(getApplicationContext(),SignUpActivity.class);
-                startActivity(intent);
+                getid = Id.getText().toString();
+                getpass = Password.getText().toString();
+                if(getid.equals("Issyk805")== true && getpass.equals("131216eprep")==true) {
+                    Intent intent = new Intent(getApplicationContext(),SignUpActivity.class);
+                    startActivity(intent);
+                }
+
+                else{
+                    AlertDialog.Builder dialog = new AlertDialog.Builder(MainActivity.this);
+                    dialog.setTitle("접근 실패")
+                            .setMessage("접근할 수 없습니다.")
+                            .setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                                @Override
+                                public void onClick(DialogInterface dialog, int which) {
+
+                                }
+                            }).create().show();
+                }
             }
         });
 
-        gotoadminster.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v){
-                Intent intent = new Intent(getApplicationContext(),ManageResult.class);
-                startActivity(intent);
-            }
-        });
+
     }
     class Login extends AsyncTask<String, Void, String> {
         ProgressDialog progressDialog;
@@ -113,6 +122,7 @@ public class MainActivity extends AppCompatActivity {
                 intent.putExtra("class",main[2]);
                 intent.putExtra("filenum",Integer.parseInt(main[3]));
                 intent.putExtra("day",Integer.parseInt(main[4]));
+                intent.putExtra("plus",Integer.parseInt(main[5]));
                 startActivity(intent);
 
             }
@@ -144,7 +154,7 @@ public class MainActivity extends AppCompatActivity {
 
         @Override
         protected String doInBackground(String... params){
-            String serverURL = "http://ec2-13-125-229-159.ap-northeast-2.compute.amazonaws.com/login.php";
+            String serverURL = "http://ec2-13-125-229-159.ap-northeast-2.compute.amazonaws.com/loginex.php";
             String postParameters = "Id=" + params[0] + "&Pw=" + params[1];
             try{
                 URL url = new URL(serverURL);

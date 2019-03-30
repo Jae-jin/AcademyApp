@@ -6,17 +6,31 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
+
     <com.ssomai.android.scalablelayout.ScalableLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:scale_base_height="11000"
-        android:id="@+id/scale"
+        android:id="@+id/scale1132321"
         app:scale_base_width="1000">
 
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:scale_width="1000"
+            app:scale_height="11000"
+            tools:ignore="MissingPrefix">
 
 
+            <com.ssomai.android.scalablelayout.ScalableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:scale_base_height="11000"
+                android:id="@+id/scale123"
+                app:scale_base_width="2000">
 
-
+            </com.ssomai.android.scalablelayout.ScalableLayout>
+        </HorizontalScrollView>
     </com.ssomai.android.scalablelayout.ScalableLayout>
 
 </ScrollView>
